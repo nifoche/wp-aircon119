@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.site-header .primary-menu > li > a {
+		@apply inline-flex items-center border-b-2 border-transparent pb-1.5 text-base font-black tracking-tight text-white/90 no-underline transition-colors hover:text-white;
+	}
+
+	.site-header .primary-menu > li.current-menu-item > a,
+	.site-header .primary-menu > li.current-menu-ancestor > a {
+		@apply border-brand-orange text-brand-orange;
+	}
+
+	body.admin-bar .site-header {
+		top: 32px;
+	}
+
+	@media screen and (max-width: 782px) {
+		body.admin-bar .site-header {
+			top: 46px;
+		}
+	}
+}

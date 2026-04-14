@@ -8,6 +8,11 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$phone_display = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' );
+$phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
+$phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
+$quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -16,40 +21,72 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class( 'flex min-h-screen flex-col bg-slate-50 text-slate-900 antialiased' ); ?>>
+<body <?php body_class( 'flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 antialiased' ); ?>>
 <?php wp_body_open(); ?>
 
-<a class="skip-link screen-reader-text sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:shadow" href="#primary">
+<a class="skip-link screen-reader-text sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:shadow" href="#primary">
 	<?php esc_html_e( '本文へスキップ', 'gd-aircon-repair' ); ?>
 </a>
 
-<header class="border-b border-slate-200 bg-white">
-	<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4">
-		<div class="flex items-center gap-3">
+<header class="site-header fixed left-0 right-0 top-0 z-50 border-b-4 border-brand-orange bg-brand-navy shadow-header">
+	<div class="mx-auto flex max-w-[1280px] flex-col gap-4 px-4 pb-5 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 lg:px-6">
+		<div class="flex shrink-0 items-center justify-between sm:justify-start">
 			<?php if ( has_custom_logo() ) : ?>
-				<?php the_custom_logo(); ?>
+				<div class="custom-logo-wrap [&_img]:max-h-8 [&_img]:w-auto">
+					<?php the_custom_logo(); ?>
+				</div>
 			<?php else : ?>
-				<a class="text-lg font-bold text-slate-900 no-underline hover:text-slate-700" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<a class="text-2xl font-bold tracking-tight text-white no-underline hover:text-white/90" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<?php bloginfo( 'name' ); ?>
 				</a>
 			<?php endif; ?>
 		</div>
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
-			<nav class="text-sm font-medium text-slate-700" aria-label="<?php esc_attr_e( 'メインメニュー', 'gd-aircon-repair' ); ?>">
+			<nav class="min-w-0 flex-1 sm:flex sm:justify-center" aria-label="<?php esc_attr_e( 'メインメニュー', 'gd-aircon-repair' ); ?>">
 				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => 'primary',
-						'menu_class'     => 'flex flex-wrap gap-6 list-none p-0 m-0',
+						'menu_class'     => 'primary-menu m-0 flex list-none flex-wrap items-center gap-6 p-0 md:gap-8',
 						'container'      => false,
 						'fallback_cb'    => false,
+						'depth'          => 1,
 					)
 				);
 				?>
 			</nav>
+		<?php else : ?>
+			<nav class="min-w-0 flex-1 sm:flex sm:justify-center" aria-label="<?php esc_attr_e( 'メインメニュー', 'gd-aircon-repair' ); ?>">
+				<?php gd_aircon_repair_fallback_primary_menu(); ?>
+			</nav>
 		<?php endif; ?>
+
+		<div class="flex shrink-0 flex-wrap items-center justify-end gap-3">
+			<a
+				class="inline-flex items-center gap-2 rounded bg-brand-sky px-6 py-3 text-base font-extrabold uppercase tracking-tight text-white shadow-md no-underline ring-1 ring-black/5 transition hover:bg-brand-sky/90"
+				href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" focusable="false">
+					<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+				</svg>
+				<span><?php echo esc_html( $phone_display ); ?></span>
+			</a>
+			<a
+				class="inline-flex h-12 items-center justify-center gap-1 rounded bg-brand-orange px-4 py-1 text-white shadow-md no-underline ring-1 ring-black/5 transition hover:bg-brand-orange/95"
+				href="<?php echo esc_url( $quote_url ); ?>"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" focusable="false">
+					<path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
+				</svg>
+				<span class="text-lg font-bold leading-8"><?php esc_html_e( 'WEBで', 'gd-aircon-repair' ); ?></span>
+				<span class="text-2xl font-black leading-none text-brand-skydeep"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
+				<span class="text-lg font-bold leading-8"><?php esc_html_e( 'お見積り', 'gd-aircon-repair' ); ?></span>
+			</a>
+		</div>
 	</div>
 </header>
 
-<main id="primary" class="site-main flex-1 w-full">
+<div class="site-header-offset h-[88px] shrink-0" aria-hidden="true"></div>
+
+<main id="primary" class="site-main w-full flex-1">

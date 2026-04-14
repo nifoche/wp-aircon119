@@ -75,11 +75,19 @@ function gd_aircon_repair_scripts() {
 	$css_path = $theme_dir . '/assets/css/app.css';
 	$deps     = array();
 
+	wp_enqueue_style(
+		'gd-aircon-repair-fonts',
+		'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap',
+		array(),
+		null
+	);
+	$deps[] = 'gd-aircon-repair-fonts';
+
 	if ( file_exists( $css_path ) ) {
 		wp_enqueue_style(
 			'gd-aircon-repair-app',
 			$theme_uri . '/assets/css/app.css',
-			array(),
+			array( 'gd-aircon-repair-fonts' ),
 			(string) filemtime( $css_path )
 		);
 		$deps[] = 'gd-aircon-repair-app';
@@ -121,3 +129,45 @@ function gd_aircon_repair_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'gd_aircon_repair_widgets_init' );
+
+/**
+ * メインメニュー未設定時のフォールバック（Figma準拠のラベル）
+ */
+function gd_aircon_repair_fallback_primary_menu() {
+	$items = array(
+		array(
+			'url'   => home_url( '/' ),
+			'label' => __( 'ホーム', 'gd-aircon-repair' ),
+			'current' => is_front_page() || is_home(),
+		),
+		array(
+			'url'     => home_url( '/symptoms/' ),
+			'label'   => __( '症状', 'gd-aircon-repair' ),
+			'current' => is_page( 'symptoms' ),
+		),
+		array(
+			'url'     => home_url( '/types/' ),
+			'label'   => __( '業務用エアコンの形状', 'gd-aircon-repair' ),
+			'current' => is_page( 'types' ),
+		),
+		array(
+			'url'     => home_url( '/error-codes/' ),
+			'label'   => __( 'エラーコード', 'gd-aircon-repair' ),
+			'current' => is_page( 'error-codes' ),
+		),
+	);
+
+	echo '<ul class="primary-menu flex flex-wrap items-center gap-6 md:gap-8 list-none m-0 p-0">';
+
+	foreach ( $items as $item ) {
+		$classes = array( 'menu-item' );
+		if ( ! empty( $item['current'] ) ) {
+			$classes[] = 'current-menu-item';
+		}
+		echo '<li class="' . esc_attr( implode( ' ', $classes ) ) . '">';
+		echo '<a href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['label'] ) . '</a>';
+		echo '</li>';
+	}
+
+	echo '</ul>';
+}
