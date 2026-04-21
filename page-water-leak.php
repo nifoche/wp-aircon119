@@ -19,29 +19,29 @@ $phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
 $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) );
 
-$assets = 'http://localhost:3845/assets/';
-$hero_bg = $assets . 'e55f40f59b1f786159e5bc3341126f1ca3a06460.png';
+$assets = get_template_directory_uri() . '/assets/images/symptoms/water-leak/';
+$hero_bg = $assets . '01.jpg';
 
 $info_blocks = array(
 	array(
 		'title' => __( '水漏れの主な原因', 'gd-aircon-repair' ),
 		'text'  => __( '業務用エアコンの水漏れは、冷房／除湿で発生した結露水（ドレン）が排水できず、ドレンパンからあふれるケースが典型です。原因として多いのはドレンホースの詰まり（ホコリ・カビ・スライム等）や折れ、勾配不良による排水不良です。加えて、ドレンポンプ不良、ドレンパンの汚れ・破損、室内機の傾き、冷媒配管の断熱材ズレによる結露、高湿度下で低温設定を続けた吹出口結露も原因になり得ます。', 'gd-aircon-repair' ),
-		'image' => $assets . '775fb1b04ed7b64aa65e6171a9966dc04ea17589.png',
+		'image' => $assets . '02.jpg',
 	),
 	array(
 		'title' => __( '自分で確認して良い範囲', 'gd-aircon-repair' ),
 		'text'  => __( 'まず運転を停止し、可能なら主電源もOFFにして安全を確保しましょう。次にバケツやタオルで養生し、漏れている位置・量・発生条件（冷房／除湿、換気中、高湿度、雨天など）を記録してください。外観で確認できる範囲として、フィルターの目詰まり、吹出口やパネル周辺の結露、ドレンホース先端の潰れ／障害物、露出配管の断熱材ズレを確認してください。エラー表示があれば控え、天井内や機器内部には触れず業者へ相談しましょう。', 'gd-aircon-repair' ),
-		'image' => $assets . 'f2dadddac545eeea3ff08820f4c6237614edd002.png',
+		'image' => $assets . '03.jpg',
 	),
 	array(
 		'title' => __( '放置するとどうなるのか', 'gd-aircon-repair' ),
 		'text'  => __( '放置すると天井材・壁紙・床材が濡れて劣化し、カビや異臭が発生して店舗・オフィス環境が悪化します。水が照明や配線、室内機の電装部に及ぶと漏電・ショートの危険が増え、停止や重大故障、火災リスクにつながる可能性があります。漏水が長引くほど修繕範囲が広がり、什器・商品・PCへの二次被害や営業停止リスクも高まります。被害が小さいうちに原因を切り分け、点検・清掃を手配することが重要です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'a248a8bc50cb18932d967633fd9f07b43b1f8841.png',
+		'image' => $assets . '04.jpg',
 	),
 	array(
 		'title' => __( 'やってはいけないこと', 'gd-aircon-repair' ),
 		'text'  => __( '水漏れ状態のまま運転を続ける、濡れた状態で電源やブレーカー周りに触るのは避けてください。自己判断で分解・配線・天井内作業を行うと感電や破損の恐れがあります。また、市販の洗浄スプレー等で内部洗浄すると、流し切れない汚れがドレンパン／ホースに残って詰まりを悪化させたり、薬剤が電装部にかかって故障する可能性があります。ほこり取り棒やエアダスター等の使用も破損や事故につながり得るためそれらは控え、応急は養生までに留めて業者へ依頼してください。', 'gd-aircon-repair' ),
-		'image' => $assets . '41e59468f4525610fd2d1687ffcc9baf1632961f.png',
+		'image' => $assets . '05.jpg',
 		'title_class' => 'text-4xl lg:text-[36px]',
 	),
 );
@@ -78,11 +78,11 @@ $faq_items = array(
 	),
 	array(
 		'question' => __( '修理依頼時に、業者へ何を伝えると早いですか？', 'gd-aircon-repair' ),
-		'answer'   => __( '型番・設置場所（室内／室外）・漏水の位置・写真・エラー表示・運転モード・発生時刻を共有すると、手元の在庫・工具・人数の調整が早くなります。', 'gd-aircon-repair' ),
+		'answer'   => __( 'メーカー／型番、室内機タイプ、漏れている場所、発生条件、水の量、エラーコード有無を伝えると初動が早いです。写真があるとさらにスムーズです。', 'gd-aircon-repair' ),
 		'open'     => false,
 	),
 );
-$faq_avatar = $assets . 'b8d113eca40a4fb03d4acb57d2677f94820896f6.png';
+$faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 ?>
 
 <div class="bg-[#f9fcff]">
@@ -167,41 +167,6 @@ $faq_avatar = $assets . 'b8d113eca40a4fb03d4acb57d2677f94820896f6.png';
 		<?php endforeach; ?>
 	</div>
 
-	<section class="bg-white py-16 lg:py-24">
-		<div class="mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 lg:gap-10 lg:px-6">
-			<div class="flex flex-col items-center gap-8">
-				<h2 class="text-center text-4xl font-black text-brand-navy"><?php esc_html_e( '水漏れ修理の対応実績', 'gd-aircon-repair' ); ?></h2>
-				<span class="h-2 w-24 bg-brand-orange" aria-hidden="true"></span>
-			</div>
-
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-8">
-				<?php foreach ( $case_studies as $case ) : ?>
-					<article class="overflow-hidden rounded-lg bg-white shadow-[0_10px_15px_-3px_rgba(0,0,0,0.16),0_4px_6px_-4px_rgba(0,0,0,0.1)]">
-						<div class="relative h-[280px] overflow-hidden">
-							<img
-								class="absolute inset-0 h-full w-full object-cover"
-								src="<?php echo esc_url( $case_image ); ?>"
-								alt=""
-								loading="lazy"
-								width="400"
-								height="280"
-							>
-							<div class="absolute left-5 top-5 rounded bg-brand-navy px-3 py-2 text-base font-bold leading-none text-white">
-								<?php echo esc_html( $case['area'] ); ?>
-							</div>
-						</div>
-						<div class="flex flex-col gap-2 p-6">
-							<div class="flex flex-wrap items-start justify-between gap-2 text-xl font-bold">
-								<span class="text-brand-navy"><?php echo esc_html( $case['label'] ); ?></span>
-								<span class="text-right text-xl font-extrabold text-brand-orange"><?php echo esc_html( $case['price'] ); ?></span>
-							</div>
-						</div>
-					</article>
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</section>
-
 	<section class="bg-[#f0faff] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">
 			<div class="flex flex-col items-center gap-5">
@@ -213,13 +178,13 @@ $faq_avatar = $assets . 'b8d113eca40a4fb03d4acb57d2677f94820896f6.png';
 				<?php foreach ( $faq_items as $faq ) : ?>
 					<details class="group" <?php echo ! empty( $faq['open'] ) ? 'open' : ''; ?>>
 						<summary class="flex cursor-pointer list-none items-center gap-4 rounded-full bg-[#00a6f4] px-2 py-2 pl-4 text-white [&::-webkit-details-marker]:hidden">
-							<span class="shrink-0 text-5xl font-bold leading-none" aria-hidden="true">Q</span>
+							<span class="shrink-0 text-5xl font-bold leading-none montserrat" aria-hidden="true">Q</span>
 							<span class="min-w-0 flex-1 text-lg font-bold leading-snug lg:text-2xl"><?php echo esc_html( $faq['question'] ); ?></span>
 							<span class="mr-1 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00a6f4] group-open:hidden" aria-hidden="true">+</span>
 							<span class="mr-1 hidden h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00a6f4] group-open:flex" aria-hidden="true">−</span>
 						</summary>
-						<div class="mt-4 flex gap-2.5 px-1 pl-2 lg:pl-4">
-							<img class="h-[52px] w-[52px] shrink-0 rounded-full object-cover" src="<?php echo esc_url( $faq_avatar ); ?>" alt="" loading="lazy" width="52" height="52">
+						<div class="mt-4 flex gap-4 px-1 pl-2 lg:pl-4">
+							<img class="h-16 w-16 shrink-0 rounded-full object-cover" src="<?php echo esc_url( $faq_avatar ); ?>" alt="" loading="lazy" width="52" height="52">
 							<p class="min-w-0 flex-1 text-base font-medium leading-[1.75] text-slate-700">
 								<?php echo esc_html( $faq['answer'] ); ?>
 							</p>

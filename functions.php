@@ -77,7 +77,7 @@ function gd_aircon_repair_scripts() {
 
 	wp_enqueue_style(
 		'gd-aircon-repair-fonts',
-		'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap',
+		'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;700;900&display=swap',
 		array(),
 		null
 	);

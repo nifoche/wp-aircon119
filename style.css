@@ -13,3 +13,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: gd-aircon-repair
 Tags: custom-menu, featured-images, full-width-template, translation-ready
 */
+
+.montserrat {
+  font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
