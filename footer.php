@@ -122,7 +122,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 	<div class="relative mx-auto flex w-full max-w-[1280px] flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
 		<div class="flex max-w-[560px] flex-col gap-8">
 			<div class="space-y-2 tracking-[-0.05em]">
-				<p class="text-4xl font-bold leading-tight md:text-5xl md:leading-[60px]"><?php esc_html_e( '業務用エアコン修理会社が', 'gd-aircon-repair' ); ?></p>
+				<p class="text-4xl font-bold leading-tight md:text-4xl md:leading-[60px]"><?php esc_html_e( '業務用エアコン修理会社が', 'gd-aircon-repair' ); ?></p>
 				<p class="text-5xl font-bold leading-tight md:text-7xl md:leading-[60px]"><?php esc_html_e( '選ばれる理由', 'gd-aircon-repair' ); ?></p>
 			</div>
 			<p class="text-lg leading-[1.5] text-white/80">
@@ -132,7 +132,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 		</div>
 
 		<div class="relative flex w-full max-w-[420px] flex-col gap-8 pt-2 lg:self-stretch lg:pt-4">
-			<div class="absolute left-[-145px] top-[-54px] z-20 hidden rotate-12 lg:block">
+			<div class="absolute left-[-345px] top-4 z-20 hidden rotate-12 lg:block">
 				<div class="rounded-xl border-4 border-white bg-brand-orange px-6 py-6 text-center shadow-header">
 					<p class="text-[54px] font-extrabold leading-[60px] text-white">4.9/5</p>
 					<div class="mt-1 flex items-center justify-center gap-0.5">
@@ -223,8 +223,8 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 <section class="bg-brand-orange text-white shadow-header">
 	<div class="mx-auto flex w-full max-w-[1280px] flex-col gap-8 px-6 py-10 md:flex-row md:items-center md:justify-between md:gap-6 md:px-10 md:py-14 lg:px-16">
-		<div class="flex max-w-[441px] flex-col gap-4">
-			<h2 class="text-3xl font-bold leading-tight tracking-[-0.06em] md:text-5xl md:leading-[1.2]">
+		<div class="flex grow flex-col gap-4">
+			<h2 class="text-3xl font-bold leading-tight tracking-[-0.06em] md:text-[44px] md:leading-[1.2]">
 				<?php esc_html_e( 'お気軽にご相談ください!!', 'gd-aircon-repair' ); ?>
 			</h2>
 			<p class="text-2xl font-bold leading-7 text-white/90">
@@ -232,7 +232,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 			</p>
 		</div>
 
-		<div class="flex w-full max-w-[450px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
+		<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
 			<a
 				class="inline-flex h-16 flex-1 items-center justify-center gap-3 rounded bg-brand-navy px-6 text-[34px] font-bold leading-8 text-white no-underline shadow-lg ring-1 ring-black/5 transition hover:bg-brand-navy/90"
 				href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
@@ -240,7 +240,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" focusable="false">
 					<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
 				</svg>
-				<span class="text-4xl leading-8"><?php echo esc_html( $phone_display ); ?></span>
+				<span class="text-3xl leading-8"><?php echo esc_html( $phone_display ); ?></span>
 			</a>
 
 			<a

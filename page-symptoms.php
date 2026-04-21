@@ -54,7 +54,7 @@ $symptoms         = array(
 			<span><?php esc_html_e( '症状', 'gd-aircon-repair' ); ?></span>
 		</nav>
 
-		<div class="max-w-[920px] space-y-6">
+		<div class="max-w-[980px] space-y-6">
 			<h1 class="text-4xl font-bold leading-tight tracking-tight lg:text-6xl lg:leading-[1.1]">
 				<?php esc_html_e( 'こんなお困りごとはありませんか？', 'gd-aircon-repair' ); ?>
 			</h1>
@@ -102,11 +102,11 @@ $symptoms         = array(
 					<h2 class="text-3xl font-bold leading-tight text-brand-skydeep lg:text-[40px]">
 						<?php echo esc_html( $symptom['title'] ); ?>
 					</h2>
-					<p class="text-base leading-8 text-slate-700 lg:text-lg">
+					<p class="text-base leading-8 text-slate-700 lg:text-lg/8">
 						<?php echo esc_html( $symptom['description'] ); ?>
 					</p>
 					<a
-						class="inline-flex items-center gap-2 rounded bg-brand-sky px-6 py-3 text-sm font-extrabold text-white no-underline shadow-md transition hover:bg-brand-sky/90"
+						class="inline-flex items-center gap-2 rounded bg-brand-sky px-6 py-3 text-sm md:text-base font-extrabold text-white no-underline shadow-md transition hover:bg-brand-sky/90"
 						href="<?php echo esc_url( $symptom['url'] ); ?>"
 					>
 						<span><?php echo esc_html( $symptom['button'] ); ?></span>
