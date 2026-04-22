@@ -51,6 +51,13 @@ $symptoms         = array(
 		'image'       => get_template_directory_uri() . '/assets/images/symptoms/strange-noise/01.jpg',
 		'url'         => home_url( '/symptoms/strange-noise/' ),
 	),
+	array(
+		'title'       => '霜・氷がつく',
+		'description' => '業務用エアコンの暖房時に、室外機やその周辺に霜や氷が付く状態です。低温で湿度が高い環境では、暖房の仕組み上ある程度は正常に起こり得ます。霜が付くと暖房能力が落ちるため、エアコンは霜取り運転に入り、一時的に暖房を止めて霜を溶かします。ただし、霜や氷が過剰に残り続ける、何度も止まる、暖房が戻らない場合は、設置環境や不具合の確認が必要になることがあります。',
+		'button'      => '霜・氷がつく症状について詳しく見る',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/frost-ice/01.jpg',
+		'url'         => home_url( '/symptoms/frost-ice/' ),
+	),
 );
 ?>
 
