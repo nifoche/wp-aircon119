@@ -58,6 +58,13 @@ $symptoms         = array(
 		'image'       => get_template_directory_uri() . '/assets/images/symptoms/frost-ice/01.jpg',
 		'url'         => home_url( '/symptoms/frost-ice/' ),
 	),
+	array(
+		'title'       => '風が出ない',
+		'description' => '業務用エアコンを運転しても室内機から風が出ない、または運転開始直後にしばらく送風されない状態です。暖房開始時や冷房・除湿開始直後、停止後すぐの再運転時などは、機器保護やにおい抑制、室内機を暖める制御のため一時的に風が出ないことがあります。一方で、長く待っても出ない、何度も繰り返す、ランプ異常や冷暖房不良を伴う場合は、設定以外の不具合も疑う必要があります。',
+		'button'      => '風が出ない症状について詳しく見る',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/no-airflow/01.jpg',
+		'url'         => home_url( '/symptoms/no-airflow/' ),
+	),
 );
 ?>
 
