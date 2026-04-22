@@ -1,9 +1,9 @@
 <?php
 /**
- * 固定ページ: 症状「水漏れ」
- * URL 例: /symptoms/water-leak/
+ * 固定ページ: 症状「冷えない」
+ * URL 例: /symptoms/not-cooling/
  *
- * Template Name: 症状詳細（水漏れ）
+ * Template Name: 症状詳細（冷えない）
  *
  * @package gd-aircon-repair
  */
@@ -19,28 +19,28 @@ $phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
 $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) );
 
-$assets = get_template_directory_uri() . '/assets/images/symptoms/water-leak/';
+$assets = get_template_directory_uri() . '/assets/images/symptoms/not-cooling/';
 $hero_bg = $assets . '01.jpg';
 
 $info_blocks = array(
 	array(
-		'title' => __( '水漏れの主な原因', 'gd-aircon-repair' ),
-		'text'  => __( '業務用エアコンの水漏れは、冷房／除湿で発生した結露水（ドレン）が排水できず、ドレンパンからあふれるケースが典型です。原因として多いのはドレンホースの詰まり（ホコリ・カビ・スライム等）や折れ、勾配不良による排水不良です。加えて、ドレンポンプ不良、ドレンパンの汚れ・破損、室内機の傾き、冷媒配管の断熱材ズレによる結露、高湿度下で低温設定を続けた吹出口結露も原因になり得ます。', 'gd-aircon-repair' ),
+		'title' => __( '冷えない主な原因', 'gd-aircon-repair' ),
+		'text'  => __( '冷えない原因は、風量が低下している場合と、冷房の効き自体が悪い場合（または両方）が考えられます。フィルターの目詰まりや室外機の吹出口・吸込口を塞ぐ障害物は効き低下につながります。急に効きが著しく悪化した場合は冷媒系の不具合の可能性もあります。リモコン設定や風向などの要因もあるため、まずは基本チェックを行い、改善しなければ点検を依頼しましょう。', 'gd-aircon-repair' ),
 		'image' => $assets . '02.jpg',
 	),
 	array(
 		'title' => __( '自分で確認して良い範囲', 'gd-aircon-repair' ),
-		'text'  => __( 'まず運転を停止し、可能なら主電源もOFFにして安全を確保しましょう。次にバケツやタオルで養生し、漏れている位置・量・発生条件（冷房／除湿、換気中、高湿度、雨天など）を記録してください。外観で確認できる範囲として、フィルターの目詰まり、吹出口やパネル周辺の結露、ドレンホース先端の潰れ／障害物、露出配管の断熱材ズレを確認してください。エラー表示があれば控え、天井内や機器内部には触れず業者へ相談しましょう。', 'gd-aircon-repair' ),
+		'text'  => __( 'まずは、運転モードが冷房／除湿か、設定温度が高すぎないか、風量が弱になっていないかを確認しましょう。室内機フィルターの汚れ、吹出口や吸込口の塞がり、室外機周りの障害物や直射日光の影響を外観で確認し、可能なら改善してください。改善しない場合はエラー表示の有無を控え、無理な分解や冷媒作業はせずに業者へ相談しましょう。', 'gd-aircon-repair' ),
 		'image' => $assets . '03.jpg',
 	),
 	array(
 		'title' => __( '放置するとどうなるのか', 'gd-aircon-repair' ),
-		'text'  => __( '放置すると天井材・壁紙・床材が濡れて劣化し、カビや異臭が発生して店舗・オフィス環境が悪化します。水が照明や配線、室内機の電装部に及ぶと漏電・ショートの危険が増え、停止や重大故障、火災リスクにつながる可能性があります。漏水が長引くほど修繕範囲が広がり、什器・商品・PCへの二次被害や営業停止リスクも高まります。被害が小さいうちに原因を切り分け、点検・清掃を手配することが重要です。', 'gd-aircon-repair' ),
+		'text'  => __( '冷えない状態が続くと室内の暑熱環境が悪化し、体調不良や業務効率低下につながります。無理な連続運転で負荷が増えると、故障や停止リスクが高まる可能性があります。結果として修理・入替工事の影響が大きくなり、営業や業務が止まる原因にもなります。早めに原因を切り分けて点検を手配することが、損失と復旧時間を抑える近道です。', 'gd-aircon-repair' ),
 		'image' => $assets . '04.jpg',
 	),
 	array(
 		'title' => __( 'やってはいけないこと', 'gd-aircon-repair' ),
-		'text'  => __( '水漏れ状態のまま運転を続ける、濡れた状態で電源やブレーカー周りに触るのは避けてください。自己判断で分解・配線・天井内作業を行うと感電や破損の恐れがあります。また、市販の洗浄スプレー等で内部洗浄すると、流し切れない汚れがドレンパン／ホースに残って詰まりを悪化させたり、薬剤が電装部にかかって故障する可能性があります。ほこり取り棒やエアダスター等の使用も破損や事故につながり得るためそれらは控え、応急は養生までに留めて業者へ依頼してください。', 'gd-aircon-repair' ),
+		'text'  => __( '設定を変えずに長時間運転し続ける、室外機を塞いだまま運転するのは避けてください。自己判断で分解・配線・冷媒（ガス）関連の作業を行うのは危険です。また、市販の洗浄スプレー等で内部洗浄すると故障につながる恐れがあります。異常が続く場合はエラー表示の有無を控え、早めにメーカーや業者へ相談するのが安全です。', 'gd-aircon-repair' ),
 		'image' => $assets . '05.jpg',
 		'title_class' => 'text-4xl lg:text-[36px]',
 	),
@@ -49,18 +49,18 @@ $info_blocks = array(
 
 $faq_items = array(
 	array(
-		'question' => __( '水漏れっぽいのですが、故障ではないケースもありますか？', 'gd-aircon-repair' ),
-		'answer'   => __( '冷房／除湿中の結露水が屋外へ排水されているだけなら正常な場合があります。室内機から床へ垂れる、天井材が濡れる場合は異常の可能性が高いです。', 'gd-aircon-repair' ),
+		'question' => __( '冷えない時、まず確認すべき設定は何ですか？', 'gd-aircon-repair' ),
+		'answer'   => __( '冷房／除湿モード、設定温度、風量（弱／しずか等）を先に確認しましょう。設定が原因で体感が大きく変わる場合があります。', 'gd-aircon-repair' ),
 		'open'     => false,
 	),
 	array(
-		'question' => __( '応急対応で、まず何を優先すればよいですか？', 'gd-aircon-repair' ),
-		'answer'   => __( '運転停止（可能なら主電源OFF）→養生（バケツ・タオル）→什器退避→発生箇所／量／条件／エラーを記録→管理会社・施工店・メーカーへ連絡の順が安全です。', 'gd-aircon-repair' ),
+		'question' => __( '室外機が原因で冷えないことはありますか？', 'gd-aircon-repair' ),
+		'answer'   => __( '吸込・吹出口が塞がれていたり、直射日光で放熱しにくいと冷房能力が落ちる場合があります。まずは、周囲の障害物を避けることを試してみましょう。', 'gd-aircon-repair' ),
 		'open'     => false,
 	),
 	array(
-		'question' => __( '修理依頼時に、業者へ何を伝えると早いですか？', 'gd-aircon-repair' ),
-		'answer'   => __( 'メーカー／型番、室内機タイプ、漏れている場所、発生条件、水の量、エラーコード有無を伝えると初動が早いです。写真があるとさらにスムーズです。', 'gd-aircon-repair' ),
+		'question' => __( 'どのような状態なら業者点検を急いだ方がよいですか？', 'gd-aircon-repair' ),
+		'answer'   => __( 'フィルター清掃や設定見直しでも改善しない、効きが急に著しく悪化した、エラー表示が出る場合は点検推奨です。無理に触らず相談しましょう。', 'gd-aircon-repair' ),
 		'open'     => false,
 	),
 );
@@ -83,16 +83,16 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 				<span class="inline-flex h-6 w-6 shrink-0 items-center justify-center opacity-90" aria-hidden="true">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 				</span>
-				<span class="text-white"><?php esc_html_e( '水漏れ', 'gd-aircon-repair' ); ?></span>
+				<span class="text-white"><?php esc_html_e( '冷えない', 'gd-aircon-repair' ); ?></span>
 			</nav>
 
 			<div class="max-w-[920px] space-y-7">
 				<h1 class="text-4xl font-bold leading-tight tracking-tight lg:text-[60px] lg:leading-[60px]">
-					<?php esc_html_e( '症状: 水漏れ', 'gd-aircon-repair' ); ?>
+					<?php esc_html_e( '症状: 冷えない', 'gd-aircon-repair' ); ?>
 				</h1>
 
 				<p class="text-base leading-relaxed text-white/90 lg:text-xl">
-					<?php esc_html_e( '業務用エアコン（天井カセット形など）の室内機から水滴が落ちる、吹出口から水が飛ぶ、天井点検口やパネル周辺が濡れる状態です。冷房／除湿で発生する結露水（ドレン）が排水しきれない場合や、配管など別の箇所で結露して水漏れのように見える場合があります。床・天井材や什器への二次被害が出やすいため、早めの切り分けが重要です。', 'gd-aircon-repair' ); ?>
+					<?php esc_html_e( '業務用エアコンを冷房しても室温が下がらない、冷たい風が弱い、設定温度にならない状態です。外気温の上昇や室外機の設置環境、室内の熱負荷によって体感が落ちることもあります。風量低下や熱交換の効率低下、冷媒系の不具合など複数要因があり、症状の出方で切り分けが必要です。', 'gd-aircon-repair' ); ?>
 				</p>
 
 				<div class="flex flex-wrap gap-3 pt-1">
@@ -152,14 +152,14 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 	<section class="bg-[#f0faff] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">
 			<div class="flex flex-col items-center gap-5">
-				<h2 class="text-center text-4xl font-bold text-brand-navy"><?php esc_html_e( '水漏れ修理に関するよくある質問', 'gd-aircon-repair' ); ?></h2>
+				<h2 class="text-center text-4xl font-bold text-brand-navy"><?php esc_html_e( '冷えない症状に関するよくある質問', 'gd-aircon-repair' ); ?></h2>
 				<span class="h-2 w-24 bg-brand-orange" aria-hidden="true"></span>
 			</div>
 
 			<div class="mx-auto mt-10 flex max-w-[1120px] flex-col gap-6">
 				<?php foreach ( $faq_items as $faq_index => $faq ) : ?>
 					<?php
-					$faq_control_id = 'symptom-water-leak-faq-' . (int) $faq_index;
+					$faq_control_id = 'symptom-water-not-cooling-faq-' . (int) $faq_index;
 					?>
 					<div class="group">
 						<input

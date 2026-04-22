@@ -17,54 +17,36 @@ $area_map_url  = 'http://localhost:3845/assets/65aa4862c51ae3de0be7725b1f13968c0
 $repair_steps  = array(
 	array(
 		'number'      => '1',
-		'title'       => 'WEB・お電話でお問い合わせ',
+		'title'       => 'ご依頼 ~ 現地調査',
 		'description' => array(
-			'お問い合わせフォームまたはお電話でお問い合わせください。',
-			'当日から2営業日以内に当社より折り返しご連絡いたします。',
+			'業務用エアコンに異臭や異音、水漏れ、効きの低下などの不調が見られた場合は、まずご相談ください。ご依頼内容をもとに症状や設置状況を確認し、必要に応じて現地調査を行います。現場の状況や機器の状態を把握したうえで、修理が必要か、どのような対応が適しているかを確認します。症状の内容や設置環境によっては、事前に機種名や不具合の状況を共有いただくことで、確認がスムーズになる場合があります。',
 		),
-		'image'       => 'http://localhost:3845/assets/472979eb76a7bd5d547bcfb3ccbe3ec303d24102.png',
+		'image'       => get_template_directory_uri() . '/assets/images/flow/01.jpg',
 	),
 	array(
 		'number'      => '2',
-		'title'       => '担当者より折り返しのご連絡',
+		'title'       => 'お見積もり',
 		'description' => array(
-			'担当者よりメールもしくはお電話でご連絡させて頂きます。ご要望をお伺いし、現場調査の日程調整をお願いします。',
+			'現地調査の内容をもとに、必要な作業内容や交換部品の有無を整理し、お見積もりをご案内します。費用だけでなく、修理の内容や想定される対応範囲を確認したうえでご検討いただけます。症状や機器の状態によっては、修理よりも入替えや別の対応が適しているケースもあるため、その場合は状況に応じてご案内します。内容にご納得いただいてから次の工程へ進むため、状況が不明なまま作業が進んでしまう心配はありません。',
 		),
-		'image'       => 'http://localhost:3845/assets/144038db0673843c409d9f3c781f8f2ee44c569d.png',
+		'image'       => get_template_directory_uri() . '/assets/images/flow/02.jpg',
 	),
 	array(
 		'number'      => '3',
-		'title'       => '現場調査',
+		'title'       => '受注 ~ 着工',
 		'description' => array(
-			'担当者が訪問して設置場所や広さなど、環境に合わせて最適な製品や工事内容を調査いたします。',
+			'お見積もり内容にご納得いただけましたら、日程を調整のうえ修理作業に入ります。作業当日は、現場状況や機器の状態を再確認し、安全に配慮しながら必要な修理・交換作業を進めます。不調の原因や機器の状態によっては、作業内容が一部調整される場合もありますが、その際は内容をご説明したうえで対応します。業務への影響をできるだけ抑えながら、現場に合わせて進めることを前提に対応します。',
 		),
-		'image'       => 'http://localhost:3845/assets/e064500b2b6892321455680f682aca0c34b79282.png',
+		'image'       => get_template_directory_uri() . '/assets/images/flow/03.jpg',
 	),
 	array(
 		'number'      => '4',
-		'title'       => 'お見積ものご確認（無料）',
+		'title'       => '施工完了',
 		'description' => array(
-			'調査内容をもとに選定した機器の説明、工事内容のお見積書を作成いたします。',
+			'修理作業が完了したあとは、動作確認を行い、不具合が改善しているかを確認します。必要に応じて、今回の不調内容や今後注意したいポイントについてもご案内します。気になる症状が再発しないか、しばらく様子を見ていただき、違和感がある場合は早めにご相談ください。修理後も安心して使用できるよう、状況に応じた確認とご案内を行います。',
 		),
-		'image'       => 'http://localhost:3845/assets/cc9468e46d3579180c0b51a0bcf366bdb9126207.png',
-	),
-	array(
-		'number'      => '5',
-		'title'       => 'ご契約',
-		'description' => array(
-			'お見積もりの内容をご承認いただけましたらご契約となります。',
-			'工事の日程や流れについての打ち合わせをお願いします。',
-		),
-		'image'       => 'http://localhost:3845/assets/c440ccdcabb8b0182c28e58e721c2cbf6f7e0efe.png',
-	),
-	array(
-		'number'      => '6',
-		'title'       => '設置工事・修理',
-		'description' => array(
-			'既存設備の撤去。新しい設備の設置。配管、配線工事。清掃と養生材の撤去までプロスタッフが丁寧な工事を行います。',
-		),
-		'image'       => 'http://localhost:3845/assets/9beaf56f40b1cc9bde2c262485d21ab095419342.png',
-	),
+		'image'       => get_template_directory_uri() . '/assets/images/flow/04.jpg',
+	)
 );
 $reason_bg_icon_url = 'http://localhost:3845/assets/9c3e3553b9f1ae18f1c7c9984e64c21d2107da9e.svg';
 $reason_check_icon  = 'http://localhost:3845/assets/c19d4babfa819cb8c1e47f6263b9dc9de32bf824.svg';
@@ -83,14 +65,14 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 		<div class="flex flex-col gap-6 lg:gap-10">
 			<?php foreach ( $repair_steps as $step ) : ?>
-				<div class="flex flex-col gap-5 rounded-2xl bg-white p-4 shadow-[0_5px_25px_0_rgba(0,0,0,0.2)] lg:flex-row lg:items-center lg:gap-10">
-					<div class="flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-full bg-brand-orange">
-						<span class="text-[42px] font-extrabold leading-[48px] text-white"><?php echo esc_html( $step['number'] ); ?></span>
+				<div class="flex flex-col gap-5 rounded-2xl bg-white p-6 shadow-[0_5px_25px_0_rgba(0,0,0,0.2)] lg:flex-row lg:items-center lg:gap-10">
+					<div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-brand-orange">
+						<span class="text-[42px] font-extrabold leading-[48px] text-white montserrat"><?php echo esc_html( $step['number'] ); ?></span>
 					</div>
 
 					<div class="min-w-0 flex-1">
 						<p class="text-2xl font-bold leading-tight text-brand-skydeep lg:text-[36px]"><?php echo esc_html( $step['title'] ); ?></p>
-						<div class="mt-2 space-y-0.5 text-base leading-7 text-slate-700 lg:text-lg">
+						<div class="mt-4 space-y-0.5 text-base leading-7 text-slate-700">
 							<?php foreach ( $step['description'] as $description_line ) : ?>
 								<p><?php echo esc_html( $description_line ); ?></p>
 							<?php endforeach; ?>

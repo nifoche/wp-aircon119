@@ -13,15 +13,15 @@ $symptoms         = array(
 		'title'       => '水漏れ',
 		'description' => '業務用エアコン（天井カセット形など）の室内機から水滴が落ちる、吹出口から水が飛ぶ、天井点検口やパネル周辺が濡れる状態です。冷房・除湿で発生する結露水（ドレン）が排水しきれない場合や、配管など別の箇所で結露して水漏れのように見える場合があります。',
 		'button'      => '水漏れ症状について詳しく見る',
-		'image'       => 'http://localhost:3845/assets/775fb1b04ed7b64aa65e6171a9966dc04ea17589.png',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/water-leak/01.jpg',
 		'url'         => home_url( '/symptoms/water-leak/' ),
 	),
 	array(
 		'title'       => '冷えない',
 		'description' => '業務用エアコンを冷房しても室温が下がらない、冷たい風が弱い、設定温度にならない状態です。外気温の上昇や室外機の設置環境、室内の熱負荷によって体感が落ちることもあります。風量低下や熱交換の効率低下、冷媒系の不具合など複数要因があるため、症状の出方で切り分けが必要です。',
 		'button'      => '冷えない症状について詳しく見る',
-		'image'       => 'http://localhost:3845/assets/192c9e329e27ee2325c1dbfb8a95b82e512a0b6e.png',
-		'url'         => '#',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/not-cooling/01.jpg',
+		'url'         => home_url( '/symptoms/not-cooling/' ),
 	),
 	array(
 		'title'       => '匂いがする',
