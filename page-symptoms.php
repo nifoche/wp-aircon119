@@ -72,6 +72,20 @@ $symptoms         = array(
 		'image'       => get_template_directory_uri() . '/assets/images/symptoms/remote-control-issues/01.jpg',
 		'url'         => home_url( '/symptoms/remote-control-issues/' ),
 	),
+	array(
+		'title'       => '漏電ブレーカーが落ちる',
+		'description' => '業務用エアコンの運転中や運転開始時に、専用の漏電ブレーカーやブレーカーが落ちて停止する状態です。単なる一時的な電源トラブルではなく、漏電やショートなど電気系統の異常が背景にある可能性があります。各社の案内でも、漏電が疑われる場合はそのまま使い続けず、まず安全確保を優先する扱いです。電気まわりの症状なので、他の症状よりも危険度が高いと考えて対応する必要があります。',
+		'button'      => '漏電ブレーカーが落ちる症状について詳しく見る',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/power-outage/01.jpg',
+		'url'         => home_url( '/symptoms/power-outage/' ),
+	),
+	array(
+		'title'       => '結露',
+		'description' => '業務用エアコンの吹出口や本体まわり、配管付近などに水滴が付き、結露している状態です。冷房や除湿では空気中の水分が冷やされて結露水になるため、ある程度は仕組み上起こりますが、吹出口から水滴が落ちるほどの結露は、環境条件や汚れ、排水不良の影響が重なっている場合があります。単なる水漏れと見分けにくいこともあるため、どこに付いているか、運転条件は何かを切り分けることが重要です。',
+		'button'      => '結露について詳しく見る',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/condensation/01.jpg',
+		'url'         => home_url( '/symptoms/condensation/' ),
+	),
 );
 ?>
 
