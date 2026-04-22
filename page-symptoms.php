@@ -38,11 +38,11 @@ $symptoms         = array(
 		'url'         => home_url( '/symptoms/stops-unexpectedly/' ),
 	),
 	array(
-		'title'       => '匂いがする',
-		'description' => '業務用エアコンの運転中にカビ臭い・酸っぱい・こもった臭いなどの異臭が出る状態です。停止中は気にならないのに、起動直後や送風時に強く感じることもあります。フィルターや熱交換器の汚れ、ドレン系の状態、設置環境の影響が重なって発生するケースが多くあります。',
-		'button'      => '匂いがする症状について詳しく見る',
-		'image'       => 'http://localhost:3845/assets/2c14a38f821b993d646382daf876213f56ade137.png',
-		'url'         => '#',
+		'title'       => '異臭がする',
+		'description' => 'エアコン運転時にカビ臭・生乾き臭・生活臭などの不快なにおいが発生する状態です。主因はフィルターや熱交換器に付着したホコリや汚れが湿気でカビ・細菌の温床になること、また室内空気の循環により飲食物やタバコ等の臭い成分が内部に吸着・蓄積することです。発生タイミング（起動直後・送風時・停止後）や臭いの種類により原因が異なるため、複数要因を前提に切り分けが必要です。',
+		'button'      => '異臭がする症状について詳しく見る',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/bad-smell/01.jpg',
+		'url'         => home_url( '/symptoms/bad-smell/' ),
 	),
 	array(
 		'title'       => 'うるさい',
