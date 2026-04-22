@@ -65,6 +65,13 @@ $symptoms         = array(
 		'image'       => get_template_directory_uri() . '/assets/images/symptoms/no-airflow/01.jpg',
 		'url'         => home_url( '/symptoms/no-airflow/' ),
 	),
+	array(
+		'title'       => 'リモコン操作できない',
+		'description' => '業務用エアコンのリモコン操作をしても本体が反応しない、電源が入らない、ボタンを押しても指示が通らない状態です。この症状は、リモコン側の電池切れや表示異常、設定・通信不良、本体受信側の問題など複数の原因で起こります。リモコン自体の不具合なのか、本体側が反応できていないのかで対応が変わるため、まずは切り分けが重要です。',
+		'button'      => 'リモコン操作できない症状について詳しく見る',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/remote-control-issues/01.jpg',
+		'url'         => home_url( '/symptoms/remote-control-issues/' ),
+	),
 );
 ?>
 
