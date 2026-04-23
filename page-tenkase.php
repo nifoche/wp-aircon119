@@ -1,7 +1,7 @@
 <?php
 /**
  * 固定ページ: 形状「天井カセット型」
- * URL 例: /types/ceiling-cassette/
+ * URL 例: /types/tenkase/
  *
  * Template Name: 形状詳細（天井カセット型）
  *
@@ -19,14 +19,14 @@ $phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
 $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) );
 
-$assets = 'http://localhost:3845/assets/';
-$hero_bg = $assets . 'e55f40f59b1f786159e5bc3341126f1ca3a06460.png';
+$assets = get_template_directory_uri() . '/assets/images/types/';
+$hero_bg = $assets . '01.jpg';
 
 $info_blocks = array(
 	array(
 		'title' => __( '天井カセット型の特徴', 'gd-aircon-repair' ),
 		'text'  => __( '天井カセット形の大きな特徴は、天井面に自然になじみやすく、壁面や床面を有効活用しやすいことです。吹出口のタイプには4方向・3方向などがあり、空間の中央で広く風を届けたいケースにも、壁際やレイアウト制約のある場所に合わせたいケースにも対応しやすいです。見た目のすっきり感と、空調のしやすさを両立しやすい形状といえます。', 'gd-aircon-repair' ),
-		'image' => $assets . 'e066e74991c270f0317415649e10748752da8acf.png',
+		'image' => $assets . 'tenkase.jpg',
 	),
 	array(
 		'title' => __( '天井カセット型のメリット', 'gd-aircon-repair' ),
@@ -46,49 +46,31 @@ $info_blocks = array(
 	),
 );
 
-$case_studies = array(
-	array(
-		'area'  => __( '東京都 板橋区', 'gd-aircon-repair' ),
-		'label' => __( '飲食店 | 天カセ4台', 'gd-aircon-repair' ),
-		'price' => '¥000,000',
-	),
-	array(
-		'area'  => __( '東京都 板橋区', 'gd-aircon-repair' ),
-		'label' => __( '飲食店 | 天カセ4台', 'gd-aircon-repair' ),
-		'price' => '¥000,000',
-	),
-	array(
-		'area'  => __( '東京都 板橋区', 'gd-aircon-repair' ),
-		'label' => __( '飲食店 | 天カセ4台', 'gd-aircon-repair' ),
-		'price' => '¥000,000',
-	),
-);
-$case_image = $assets . '529fce227844aef2f5321b439c6da99915ee4b59.png';
 
 $faq_items = array(
 	array(
-		'question' => __( 'フィルターや吸込グリルは自分で清掃できますか？', 'gd-aircon-repair' ),
-		'answer'   => __( 'メーカー・機種によりますが、取扱説明書の範囲でフィルターの取り外しや掃除機がけができる場合があります。高所作業が必要な場合や、内部まで触れる必要がある場合は、落下・破損のリスクがあるため業者へ依頼してください。', 'gd-aircon-repair' ),
-		'open'     => true,
+		'question' => __( '天井カセット形は、どんな場所に向いていますか？', 'gd-aircon-repair' ),
+		'answer'   => __( '店舗、事務所、待合スペースなど、空間全体に風を届けながら見た目もすっきり整えたい場所に向いています。壁や床のスペースを有効活用したいレイアウトでも採用しやすい形状です。', 'gd-aircon-repair' ),
+		'open'     => false,
 	),
 	array(
-		'question' => __( '効きが悪い・音が気になるときはどうすればよいですか？', 'gd-aircon-repair' ),
-		'answer'   => __( 'まず運転モード・設定温度・風量を確認し、フィルターの目詰まりがないか外観で確認してください。改善しない場合は、エラー表示の有無や発生タイミングを記録のうえ、点検・修理をご検討ください。', 'gd-aircon-repair' ),
-		'open'     => true,
+		'question' => __( '天井カセット形には、どんな違いがありますか？', 'gd-aircon-repair' ),
+		'answer'   => __( '同じ天井カセット形でも、吹出口の方向数や構成に違いがあります。空間の中央で広く使いたいのか、壁際や制約のある場所に納めたいのかによって、向いているタイプが変わります。', 'gd-aircon-repair' ),
+		'open'     => false,
 	),
 	array(
-		'question' => __( '修理依頼時に、業者へ何を伝えると早いですか？', 'gd-aircon-repair' ),
-		'answer'   => __( '型番・設置場所（室内／室外）・症状の内容・写真・エラー表示・運転モード・発生時刻を共有すると、手元の在庫・工具・人数の調整が早くなります。', 'gd-aircon-repair' ),
+		'question' => __( '効きが悪い、においが気になるときは何を確認すればよいですか？', 'gd-aircon-repair' ),
+		'answer'   => __( 'まずは吸込グリルやフィルターまわりの汚れ、におい、効きの変化などを安全な範囲で確認します。内部洗浄や分解は行わず、違和感が続く場合は機種情報と症状を整理して業者へ相談するのが安心です。', 'gd-aircon-repair' ),
 		'open'     => false,
 	),
 );
-$faq_avatar = $assets . 'b8d113eca40a4fb03d4acb57d2677f94820896f6.png';
+$faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 ?>
 
 <div class="bg-[#f9fcff]">
 	<section class="relative overflow-hidden bg-[#006ca2] pb-10 pt-8 text-white lg:pb-12 lg:pt-16">
 		<div class="pointer-events-none absolute inset-0 mix-blend-overlay opacity-30">
-			<img class="h-full w-full object-cover" src="<?php echo esc_url( $hero_bg ); ?>" alt="" loading="eager" width="1200" height="800">
+			<img class="h-full w-full object-cover" src="<?php echo esc_url( $assets . 'tenkase.jpg' ); ?>" alt="" loading="eager" width="1200" height="800">
 		</div>
 
 		<div class="relative mx-auto w-full max-w-[1280px] px-4 lg:px-10">
@@ -167,41 +149,6 @@ $faq_avatar = $assets . 'b8d113eca40a4fb03d4acb57d2677f94820896f6.png';
 		<?php endforeach; ?>
 	</div>
 
-	<section class="bg-white py-16 lg:py-24">
-		<div class="mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 lg:gap-10 lg:px-6">
-			<div class="flex flex-col items-center gap-8">
-				<h2 class="text-center text-4xl font-black text-brand-navy"><?php esc_html_e( '天井カセット型の修理実績', 'gd-aircon-repair' ); ?></h2>
-				<span class="h-2 w-24 bg-brand-orange" aria-hidden="true"></span>
-			</div>
-
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-8">
-				<?php foreach ( $case_studies as $case ) : ?>
-					<article class="overflow-hidden rounded-lg bg-white shadow-[0_10px_15px_-3px_rgba(0,0,0,0.16),0_4px_6px_-4px_rgba(0,0,0,0.1)]">
-						<div class="relative h-[280px] overflow-hidden">
-							<img
-								class="absolute inset-0 h-full w-full object-cover"
-								src="<?php echo esc_url( $case_image ); ?>"
-								alt=""
-								loading="lazy"
-								width="400"
-								height="280"
-							>
-							<div class="absolute left-5 top-5 rounded bg-brand-navy px-3 py-2 text-base font-bold leading-none text-white">
-								<?php echo esc_html( $case['area'] ); ?>
-							</div>
-						</div>
-						<div class="flex flex-col gap-2 p-6">
-							<div class="flex flex-wrap items-start justify-between gap-2 text-xl font-bold">
-								<span class="text-brand-navy"><?php echo esc_html( $case['label'] ); ?></span>
-								<span class="text-right text-xl font-extrabold text-brand-orange"><?php echo esc_html( $case['price'] ); ?></span>
-							</div>
-						</div>
-					</article>
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</section>
-
 	<section class="bg-[#f0faff] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">
 			<div class="flex flex-col items-center gap-5">
@@ -210,21 +157,41 @@ $faq_avatar = $assets . 'b8d113eca40a4fb03d4acb57d2677f94820896f6.png';
 			</div>
 
 			<div class="mx-auto mt-10 flex max-w-[1120px] flex-col gap-6">
-				<?php foreach ( $faq_items as $faq ) : ?>
-					<details class="group" <?php echo ! empty( $faq['open'] ) ? 'open' : ''; ?>>
-						<summary class="flex cursor-pointer list-none items-center gap-4 rounded-full bg-[#00a6f4] px-2 py-2 pl-4 text-white [&::-webkit-details-marker]:hidden">
-							<span class="shrink-0 text-5xl font-bold leading-none" aria-hidden="true">Q</span>
+				<?php foreach ( $faq_items as $faq_index => $faq ) : ?>
+					<?php
+					$faq_control_id = 'symptom-tenkase-faq-' . (int) $faq_index;
+					?>
+					<div class="group">
+						<input
+							class="sr-only"
+							type="checkbox"
+							id="<?php echo esc_attr( $faq_control_id ); ?>"
+							<?php echo ! empty( $faq['open'] ) ? 'checked' : ''; ?>
+						>
+						<label
+							class="flex cursor-pointer list-none items-center gap-4 rounded-full bg-[#00a6f4] px-2 py-2 pl-4 text-white"
+							for="<?php echo esc_attr( $faq_control_id ); ?>"
+						>
+							<span class="shrink-0 text-5xl font-bold leading-none montserrat" aria-hidden="true">Q</span>
 							<span class="min-w-0 flex-1 text-lg font-bold leading-snug lg:text-2xl"><?php echo esc_html( $faq['question'] ); ?></span>
-							<span class="mr-1 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00a6f4] group-open:hidden" aria-hidden="true">+</span>
-							<span class="mr-1 hidden h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00a6f4] group-open:flex" aria-hidden="true">−</span>
-						</summary>
-						<div class="mt-4 flex gap-2.5 px-1 pl-2 lg:pl-4">
-							<img class="h-[52px] w-[52px] shrink-0 rounded-full object-cover" src="<?php echo esc_url( $faq_avatar ); ?>" alt="" loading="lazy" width="52" height="52">
-							<p class="min-w-0 flex-1 text-base font-medium leading-[1.75] text-slate-700">
-								<?php echo esc_html( $faq['answer'] ); ?>
-							</p>
+							<span class="mr-1 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00a6f4] group-has-[input:checked]:hidden" aria-hidden="true">
+								<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-10 h-auto" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+							</span>
+							<span class="mr-1 hidden h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00a6f4] group-has-[input:checked]:flex" aria-hidden="true">
+								<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-10 h-auto" viewBox="0 0 24 24"><title>minus</title><path d="M19,13H5V11H19V13Z" /></svg>
+							</span>
+						</label>
+						<div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-has-[input:checked]:grid-rows-[1fr]">
+							<div class="min-h-0 overflow-hidden">
+								<div class="mt-4 flex gap-2.5 px-1 pl-2 lg:pl-4">
+									<img class="h-[52px] w-[52px] shrink-0 rounded-full object-cover" src="<?php echo esc_url( $faq_avatar ); ?>" alt="" loading="lazy" width="52" height="52">
+									<p class="min-w-0 flex-1 text-base font-medium leading-[1.75] text-slate-700">
+										<?php echo esc_html( $faq['answer'] ); ?>
+									</p>
+								</div>
+							</div>
 						</div>
-					</details>
+					</div>
 				<?php endforeach; ?>
 			</div>
 		</div>
