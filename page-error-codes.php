@@ -28,7 +28,7 @@ $brand_logos = array(
 	),
 	array(
 		'label'  => __( 'パナソニック', 'gd-aircon-repair' ),
-		'url'    => '#',
+		'url'    => home_url( '/error-codes/panasonic/' ),
 		'active' => false,
 		'type'   => 'image',
 		'src'    => $assets . 'panasonic.webp',
