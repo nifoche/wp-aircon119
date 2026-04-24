@@ -62,9 +62,6 @@ $brand_logos = array(
 	),
 );
 
-$icon_plus  = $assets . 'ec9c73688b2dab9d929ae36754bc8cd0f7fcc480.svg';
-$icon_minus = $assets . '6131c5bcf144c1da8aaae2dc0c3a723248a51746.svg';
-
 $error_rows = array(
 	array(
 		'code'    => 'A0',
@@ -831,6 +828,7 @@ $error_rows = array(
 				<?php
 				$row_bg = ( 0 === $index % 2 ) ? 'bg-white' : 'bg-slate-50';
 				$has_detail = ! empty( $row['detail'] );
+				$row_control_id = 'error-code-row-' . (int) $index;
 				?>
 				<div class="flex w-full flex-col border-t border-[#99a1af] lg:flex-row">
 					<div class="<?php echo esc_attr( $row_bg ); ?> flex w-full shrink-0 items-center justify-center px-2 py-2 lg:w-[140px]">
@@ -838,8 +836,14 @@ $error_rows = array(
 					</div>
 
 					<div class="<?php echo esc_attr( $row_bg ); ?> min-w-0 flex-1 border-t border-[#99a1af] lg:border-l lg:border-t-0">
-						<details class="group" <?php echo ! empty( $row['open'] ) ? 'open' : ''; ?>>
-							<summary class="flex cursor-pointer list-none items-start gap-2 p-2 [&::-webkit-details-marker]:hidden">
+						<div class="group">
+							<input
+								class="sr-only"
+								type="checkbox"
+								id="<?php echo esc_attr( $row_control_id ); ?>"
+								<?php echo ! empty( $row['open'] ) ? 'checked' : ''; ?>
+							>
+							<label class="flex cursor-pointer list-none items-start gap-2 p-2" for="<?php echo esc_attr( $row_control_id ); ?>">
 								<div class="min-w-0 flex-1 text-base leading-[1.75] text-[#364153]">
 									<?php
 									if ( is_array( $row['summary'] ) ) {
@@ -851,61 +855,67 @@ $error_rows = array(
 									}
 									?>
 								</div>
-								<span class="relative mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center p-1" aria-hidden="true">
-									<img class="group-open:hidden" src="<?php echo esc_url( $icon_plus ); ?>" alt="" width="24" height="24">
-									<img class="hidden group-open:block" src="<?php echo esc_url( $icon_minus ); ?>" alt="" width="24" height="24">
+								<span class="mr-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00598a] group-has-[input:checked]:hidden" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-6 h-auto" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
 								</span>
-							</summary>
+								<span class="mr-1 hidden h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00598a] group-has-[input:checked]:flex" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-6 h-auto" viewBox="0 0 24 24"><title>minus</title><path d="M19,13H5V11H19V13Z" /></svg>
+								</span>
+							</label>
 
 							<?php if ( $has_detail ) : ?>
-								<div class="border-t border-[#99a1af] px-4 pb-3 pt-0">
-									<div class="mt-2 space-y-3 rounded border border-[#99a1af] bg-white px-4 py-3 text-sm leading-[1.75] text-[#364153]">
-										<?php
-										$intro_lines = $row['detail']['intro'];
-										if ( ! is_array( $intro_lines ) ) {
-											$intro_lines = array( $intro_lines );
-										}
-										foreach ( $intro_lines as $intro_line ) {
-											echo '<p class="mb-0">' . esc_html( $intro_line ) . '</p>';
-										}
-										?>
+								<div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-has-[input:checked]:grid-rows-[1fr]">
+									<div class="min-h-0 overflow-hidden">
+										<div class="border-t border-[#99a1af] px-4 pb-3 pt-0">
+											<div class="mt-2 space-y-3 rounded border border-[#99a1af] bg-white px-4 py-3 text-sm leading-[1.75] text-[#364153]">
+												<?php
+												$intro_lines = $row['detail']['intro'];
+												if ( ! is_array( $intro_lines ) ) {
+													$intro_lines = array( $intro_lines );
+												}
+												foreach ( $intro_lines as $intro_line ) {
+													echo '<p class="mb-0">' . esc_html( $intro_line ) . '</p>';
+												}
+												?>
 
-										<?php if ( ! empty( $row['detail']['causes'] ) ) : ?>
-										<div>
-											<p class="mb-1 text-base font-bold text-[#00598a]"><?php esc_html_e( 'よくある原因', 'gd-aircon-repair' ); ?></p>
-											<ul class="list-disc space-y-1 pl-5">
-												<?php foreach ( $row['detail']['causes'] as $cause ) : ?>
-													<li>
-														<?php echo esc_html( $cause['title'] ); ?>
-														<br>
-														<?php echo esc_html( '　' . $cause['text'] ); ?>
-													</li>
-												<?php endforeach; ?>
-											</ul>
-										</div>
-										<?php endif; ?>
+												<?php if ( ! empty( $row['detail']['causes'] ) ) : ?>
+												<div>
+													<p class="mb-1 text-base font-bold text-[#00598a]"><?php esc_html_e( 'よくある原因', 'gd-aircon-repair' ); ?></p>
+													<ul class="list-disc space-y-1 pl-5">
+														<?php foreach ( $row['detail']['causes'] as $cause ) : ?>
+															<li>
+																<?php echo esc_html( $cause['title'] ); ?>
+																<br>
+																<?php echo esc_html( '　' . $cause['text'] ); ?>
+															</li>
+														<?php endforeach; ?>
+													</ul>
+												</div>
+												<?php endif; ?>
 
-										<?php if ( ! empty( $row['detail']['checks'] ) ) : ?>
-										<div>
-											<p class="mb-1 text-base font-bold text-[#00598a]"><?php esc_html_e( '確認事項', 'gd-aircon-repair' ); ?></p>
-											<ol class="list-decimal space-y-1 pl-5">
-												<?php foreach ( $row['detail']['checks'] as $check ) : ?>
-													<li><?php echo esc_html( $check ); ?></li>
-												<?php endforeach; ?>
-											</ol>
-										</div>
-										<?php endif; ?>
+												<?php if ( ! empty( $row['detail']['checks'] ) ) : ?>
+												<div>
+													<p class="mb-1 text-base font-bold text-[#00598a]"><?php esc_html_e( '確認事項', 'gd-aircon-repair' ); ?></p>
+													<ol class="list-decimal space-y-1 pl-5">
+														<?php foreach ( $row['detail']['checks'] as $check ) : ?>
+															<li><?php echo esc_html( $check ); ?></li>
+														<?php endforeach; ?>
+													</ol>
+												</div>
+												<?php endif; ?>
 
-										<?php if ( ! empty( $row['detail']['notice'] ) ) : ?>
-										<div>
-											<p class="mb-1 text-base font-bold text-[#00598a]"><?php esc_html_e( '注意事項', 'gd-aircon-repair' ); ?></p>
-											<p><?php echo esc_html( $row['detail']['notice'] ); ?></p>
+												<?php if ( ! empty( $row['detail']['notice'] ) ) : ?>
+												<div>
+													<p class="mb-1 text-base font-bold text-[#00598a]"><?php esc_html_e( '注意事項', 'gd-aircon-repair' ); ?></p>
+													<p><?php echo esc_html( $row['detail']['notice'] ); ?></p>
+												</div>
+												<?php endif; ?>
+											</div>
 										</div>
-										<?php endif; ?>
 									</div>
 								</div>
 							<?php endif; ?>
-						</details>
+						</div>
 					</div>
 				</div>
 			<?php endforeach; ?>
