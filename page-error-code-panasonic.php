@@ -29,14 +29,14 @@ $brand_logos = array(
 	),
 	array(
 		'label'  => __( 'パナソニック', 'gd-aircon-repair' ),
-		'url'    => '#',
+		'url'    => home_url( '/error-codes/panasonic/' ),
 		'active' => true,
 		'type'   => 'image',
 		'src'    => $assets . 'panasonic.webp',
 	),
 	array(
 		'label'  => __( '三菱重工', 'gd-aircon-repair' ),
-		'url'    => '#',
+		'url'    => home_url( '/error-codes/mitsubishi/' ),
 		'active' => false,
 		'type'   => 'mitsubishi',
 		'src'    => $assets . 'mitsubishi.webp',
@@ -1701,11 +1701,11 @@ $error_rows = array(
 				<span class="inline-flex h-6 w-6 shrink-0 items-center justify-center text-[#99a1af]" aria-hidden="true">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 				</span>
-				<span class="font-normal text-[#4a5565]"><?php esc_html_e( 'ダイキン', 'gd-aircon-repair' ); ?></span>
+				<span class="font-normal text-[#4a5565]"><?php esc_html_e( 'パナソニック', 'gd-aircon-repair' ); ?></span>
 			</nav>
 
 			<h1 class="max-w-[920px] text-4xl font-bold leading-tight tracking-tight text-[#364153] lg:text-[60px] lg:leading-[60px]">
-				<?php esc_html_e( 'ダイキンのエラーコード一覧', 'gd-aircon-repair' ); ?>
+				<?php esc_html_e( 'パナソニックのエラーコード一覧', 'gd-aircon-repair' ); ?>
 			</h1>
 		</div>
 	</section>

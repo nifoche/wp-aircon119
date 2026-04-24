@@ -35,7 +35,7 @@ $brand_logos = array(
 	),
 	array(
 		'label'  => __( '三菱重工', 'gd-aircon-repair' ),
-		'url'    => '#',
+		'url'    => home_url( '/error-codes/mitsubishi/' ),
 		'active' => false,
 		'type'   => 'mitsubishi',
 		'src'    => $assets . 'mitsubishi.webp',
