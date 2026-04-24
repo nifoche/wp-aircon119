@@ -1413,6 +1413,10 @@ body.admin-bar .site-header {
   height: 280px;
 }
 
+.h-\[201px\] {
+  height: 201px;
+}
+
 .min-h-0 {
   min-height: 0px;
 }
@@ -1427,6 +1431,10 @@ body.admin-bar .site-header {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-\[60px\] {
+  min-height: 60px;
 }
 
 .w-10 {
@@ -2126,6 +2134,10 @@ body.admin-bar .site-header {
   font-size: 36px;
 }
 
+.text-\[40px\] {
+  font-size: 40px;
+}
+
 .font-black {
   font-weight: 900;
 }
@@ -2222,6 +2234,10 @@ body.admin-bar .site-header {
   line-height: 1.2;
 }
 
+.leading-\[1\.15\] {
+  line-height: 1.15;
+}
+
 .tracking-\[-0\.05em\] {
   letter-spacing: -0.05em;
 }
@@ -2232,6 +2248,10 @@ body.admin-bar .site-header {
 
 .tracking-tight {
   letter-spacing: -0.025em;
+}
+
+.tracking-\[-0\.03em\] {
+  letter-spacing: -0.03em;
 }
 
 .text-\[\#00598a\] {
@@ -2409,6 +2429,12 @@ body.admin-bar .site-header {
 
 .shadow-\[0px_10px_15px_-3px_rgba\(0\2c 0\2c 0\2c 0\.16\)\2c 0px_4px_6px_-4px_rgba\(0\2c 0\2c 0\2c 0\.1\)\] {
   --tw-shadow: 0px 10px 15px -3px rgba(0,0,0,0.16),0px 4px 6px -4px rgba(0,0,0,0.1);
+  --tw-shadow-colored: 0px 10px 15px -3px var(--tw-shadow-color), 0px 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-\[0px_10px_15px_-3px_rgba\(0\2c 0\2c 0\2c 0\.15\)\2c 0px_4px_6px_-4px_rgba\(0\2c 0\2c 0\2c 0\.1\)\] {
+  --tw-shadow: 0px 10px 15px -3px rgba(0,0,0,0.15),0px 4px 6px -4px rgba(0,0,0,0.1);
   --tw-shadow-colored: 0px 10px 15px -3px var(--tw-shadow-color), 0px 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -2740,6 +2766,10 @@ body.admin-bar .site-header {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -2843,6 +2873,11 @@ body.admin-bar .site-header {
     padding-bottom: 5rem;
   }
 
+  .lg\:py-\[60px\] {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   .lg\:pb-12 {
     padding-bottom: 3rem;
   }
@@ -2911,6 +2946,14 @@ body.admin-bar .site-header {
 
   .lg\:text-\[24px\] {
     font-size: 24px;
+  }
+
+  .lg\:text-\[20px\] {
+    font-size: 20px;
+  }
+
+  .lg\:text-\[56px\] {
+    font-size: 56px;
   }
 
   .lg\:leading-\[1\.1\] {

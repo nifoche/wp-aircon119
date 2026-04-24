@@ -25,6 +25,49 @@ get_header();
 </div>
 
 <?php
+$symptom_cards = array(
+	array(
+		'title' => __( '水漏れ', 'gd-aircon-repair' ),
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/water-leak/01.jpg',
+		'url'   => home_url( '/symptoms/water-leak/' ),
+	),
+	array(
+		'title' => __( '冷えない', 'gd-aircon-repair' ),
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/not-cooling/01.jpg',
+		'url'   => home_url( '/symptoms/not-cooling/' ),
+	),
+	array(
+		'title' => __( '異臭がする', 'gd-aircon-repair' ),
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/bad-smell/01.jpg',
+		'url'   => home_url( '/symptoms/bad-smell/' ),
+	),
+	array(
+		'title' => __( '異音がする', 'gd-aircon-repair' ),
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/strange-noise/01.jpg',
+		'url'   => home_url( '/symptoms/strange-noise/' ),
+	),
+	array(
+		'title' => __( '暖まらない', 'gd-aircon-repair' ),
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/not-heating/01.jpg',
+		'url'   => home_url( '/symptoms/not-heating/' ),
+	),
+	array(
+		'title' => __( '途中で止まる', 'gd-aircon-repair' ),
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/stops-unexpectedly/01.jpg',
+		'url'   => home_url( '/symptoms/stops-unexpectedly/' ),
+	),
+	array(
+		'title' => __( '霜・氷がつく', 'gd-aircon-repair' ),
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/frost-ice/01.jpg',
+		'url'   => home_url( '/symptoms/frost-ice/' ),
+	),
+	array(
+		'title' => __( '風が出ない', 'gd-aircon-repair' ),
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/no-airflow/01.jpg',
+		'url'   => home_url( '/symptoms/no-airflow/' ),
+	),
+);
+
 $ac_types_cards = array(
 	array(
 		'title' => __( '天井カセット型', 'gd-aircon-repair' ),
@@ -58,6 +101,58 @@ $ac_types_cards = array(
 	),
 );
 ?>
+
+<section class="bg-white py-16 lg:py-[60px]">
+	<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">
+		<div class="mb-8 flex flex-col items-center gap-3 lg:mb-12">
+			<p class="text-center text-[32px] font-bold leading-[1.2] tracking-[-0.03em] text-[#00598a]">
+				<?php esc_html_e( 'こんなお困りごとはありませんか？', 'gd-aircon-repair' ); ?>
+			</p>
+			<h2 class="text-center text-[40px] font-bold leading-[1.15] tracking-[-0.03em] text-[#00598a] lg:text-[56px]">
+				<?php esc_html_e( '業務用エアコン修理会社が解決します', 'gd-aircon-repair' ); ?>
+			</h2>
+			<span class="mt-2 block h-2 w-24 bg-[#fe9a00]" aria-hidden="true"></span>
+		</div>
+
+		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			<?php foreach ( $symptom_cards as $symptom_card ) : ?>
+				<a
+					class="block overflow-hidden rounded-lg bg-white no-underline shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.15),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:-translate-y-0.5"
+					href="<?php echo esc_url( $symptom_card['url'] ); ?>"
+				>
+					<div class="h-[201px] overflow-hidden">
+						<img
+							class="h-full w-full object-cover"
+							src="<?php echo esc_url( $symptom_card['image'] ); ?>"
+							alt="<?php echo esc_attr( $symptom_card['title'] ); ?>"
+							loading="lazy"
+							width="290"
+							height="201"
+						>
+					</div>
+					<div class="flex min-h-[60px] items-center justify-center px-4 py-3">
+						<p class="text-center text-[32px] font-bold leading-[1.2] text-[#00598a] lg:text-[20px]">
+							<?php echo esc_html( $symptom_card['title'] ); ?>
+						</p>
+					</div>
+				</a>
+			<?php endforeach; ?>
+		</div>
+
+		<div class="mt-10 flex items-center justify-center lg:mt-12">
+			<a
+				class="inline-flex items-center gap-3 rounded bg-[#0084d1] px-6 py-3 text-2xl font-bold text-white no-underline shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:bg-[#0076bc]"
+				href="<?php echo esc_url( home_url( '/symptoms/' ) ); ?>"
+			>
+				<span><?php esc_html_e( 'すべての症状を見る', 'gd-aircon-repair' ); ?></span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true" focusable="false">
+					<path d="M10 18H26" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+					<path d="M19 11L26 18L19 25" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</section>
 
 <section class="bg-white py-16 lg:py-20">
 	<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-10">
