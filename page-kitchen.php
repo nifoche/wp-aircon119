@@ -26,22 +26,18 @@ $info_blocks = array(
 	array(
 		'title' => __( '厨房用の特徴', 'gd-aircon-repair' ),
 		'text'  => __( '厨房用の特徴は、形状としては天吊形（露出形）でありながら、一般的な天吊形よりも厨房環境に合わせた清潔性と耐久性を重視していることです。ダイキンの製品情報でも、汚れにくく清掃しやすいステンレス仕様や、主要部品の着脱がしやすいメンテナンス性が打ち出されています。厨房は一般事務所や通常店舗より空調負荷が高く、使用環境も厳しいため、用途別エアコンとして切り分けて考えるのが自然です。過酷な厨房環境でも快適性と長持ちを両立しやすい設計が、この形状の特徴です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'kitchen.jpg',
 	),
 	array(
 		'title' => __( '厨房用のメリット', 'gd-aircon-repair' ),
 		'text'  => __( '厨房用のメリットは、油煙や熱気が立ちこめる環境を前提に、汚れにくさ・掃除のしやすさ・耐久性を重視して選べることです。形状としては天吊形のため、厨房空間でレイアウトしやすく、一般的な空調機より厨房環境との相性を考えやすいのが魅力です。また、メンテナンスしやすい構造があることで、日常管理や保守計画も立てやすくなります。厨房のように空調条件が厳しい場所では、用途に合った専用機を選ぶ意味が大きい形状です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'e6a0b9f567dbe293385572f108174508eace24f4.png',
 	),
 	array(
 		'title' => __( '厨房用のデメリット', 'gd-aircon-repair' ),
 		'text'  => __( '一方で、厨房用はどこでも同じように使いやすい万能機ではなく、厨房特有の環境に合わせた選定が前提になります。発熱量、油煙量、レイアウト、換気条件などを見ずに決めると、十分な性能を引き出しにくいことがあります。また、ベース形状は天吊形でも、一般空間向けの天吊形と同じ感覚で選ぶとミスマッチが起きやすく、導入時には負荷条件や清掃運用まで含めて考える必要があります。導入後も、汚れや環境負荷を見越した保守が重要になります。', 'gd-aircon-repair' ),
-		'image' => $assets . '07e203de219e689410a12ccc2cff70baf8712229.png',
 	),
 	array(
 		'title' => __( '厨房用の故障・修理', 'gd-aircon-repair' ),
 		'text'  => __( '厨房用も、油汚れや吸込部の汚れを放置すると効きの低下やにおい、故障リスクにつながります。ダイキンの製品情報でも、吸込グリルや主要部品の着脱がしやすいなど、保守を意識した構造が示されています。とはいえ、内部まで無理に触ったり、自己判断で分解洗浄したりするのは安全ではありません。効きの低下、異音、異臭、汚れの進行が気になる場合は、機種情報と症状を整理して専門業者へ相談するのが安心です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'a8333d94ae81d33350e6a3c8fca447188bdc5ce2.png',
 		'title_class' => 'text-4xl lg:text-[36px]',
 	),
 );
@@ -121,33 +117,37 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 		</div>
 	</section>
 
-	<div class="flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
-		<?php foreach ( $info_blocks as $block ) : ?>
+	<section class="flex justify-center">
+		<div class="max-w-3xl flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
+			<?php foreach ( $info_blocks as $index => $block ) : ?>
 			<?php
 			$title_class = isset( $block['title_class'] ) ? $block['title_class'] : 'text-3xl lg:text-[40px]';
 			?>
-			<div class="mx-auto grid w-full max-w-[1280px] gap-8 px-4 lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-10">
-				<div class="flex min-w-0 flex-col gap-4">
-					<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
-						<?php echo esc_html( $block['title'] ); ?>
-					</h2>
-					<p class="text-lg leading-[1.75] text-slate-700">
-						<?php echo esc_html( $block['text'] ); ?>
-					</p>
+				<div class="mx-auto w-full max-w-[860px] px-4 lg:px-10">
+					<div class="flex min-w-0 flex-col gap-4">
+						<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
+							<?php echo esc_html( $block['title'] ); ?>
+						</h2>
+						<p class="text-lg leading-[1.75] text-slate-700">
+							<?php echo esc_html( $block['text'] ); ?>
+						</p>
+					</div>
+					<?php if ( 0 === (int) $index ) : ?>
+						<div class="mt-8 overflow-hidden">
+							<img
+								class="mx-auto h-auto w-full max-w-[578px]"
+								src="<?php echo esc_url( $assets . 'kitchen.jpg' ); ?>"
+								alt=""
+								loading="lazy"
+								width="578"
+								height="376"
+							>
+						</div>
+					<?php endif; ?>
 				</div>
-				<div class="min-h-[240px] overflow-hidden bg-stone-300 lg:min-h-[400px]">
-					<img
-						class="h-full w-full object-cover"
-						src="<?php echo esc_url( $block['image'] ); ?>"
-						alt=""
-						loading="lazy"
-						width="640"
-						height="400"
-					>
-				</div>
-			</div>
-		<?php endforeach; ?>
-	</div>
+			<?php endforeach; ?>
+		</div>
+	</section>
 
 	<section class="bg-[#f0faff] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">

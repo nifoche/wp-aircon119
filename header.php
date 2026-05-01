@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $phone_display = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' );
 $phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
-$quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) );
+$quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contact/' ) );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

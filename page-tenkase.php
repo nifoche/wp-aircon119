@@ -26,22 +26,18 @@ $info_blocks = array(
 	array(
 		'title' => __( '天井カセット型の特徴', 'gd-aircon-repair' ),
 		'text'  => __( '天井カセット形の大きな特徴は、天井面に自然になじみやすく、壁面や床面を有効活用しやすいことです。吹出口のタイプには4方向・3方向などがあり、空間の中央で広く風を届けたいケースにも、壁際やレイアウト制約のある場所に合わせたいケースにも対応しやすいです。見た目のすっきり感と、空調のしやすさを両立しやすい形状といえます。', 'gd-aircon-repair' ),
-		'image' => $assets . 'tenkase.jpg',
 	),
 	array(
 		'title' => __( '天井カセット型のメリット', 'gd-aircon-repair' ),
 		'text'  => __( '天井カセット形のメリットは、空間全体へ比較的バランスよく送風しやすく、店舗や事務所の見た目を損ねにくいことです。壁に商品棚や掲示物を設けたい場合でも干渉しにくく、レイアウトの自由度を確保しやすいケースがあります。また、吹出口のバリエーションがあるため、部屋の広さや設置位置に応じて選びやすく、意匠性と快適性の両方を重視したい場面にも向いています。', 'gd-aircon-repair' ),
-		'image' => $assets . 'e6a0b9f567dbe293385572f108174508eace24f4.png',
 	),
 	array(
 		'title' => __( '天井カセット型のデメリット', 'gd-aircon-repair' ),
 		'text'  => __( '一方で、天井カセット形は天井内のスペースや梁、照明配置などの条件に影響を受けやすく、建物によっては選べるタイプが限られる場合があります。設置位置や吹出方向が空間に合っていないと、風当たりや空調ムラが気になることもあります。また、高所設置になるため、日常的な確認や清掃がしやすいとは限らず、汚れを放置すると効率低下や臭いの原因につながる可能性があります。', 'gd-aircon-repair' ),
-		'image' => $assets . '07e203de219e689410a12ccc2cff70baf8712229.png',
 	),
 	array(
 		'title' => __( '天井カセット型の故障・修理', 'gd-aircon-repair' ),
 		'text'  => __( '天井カセット形は、吸込グリルやフィルター、内部部品に汚れがたまることで吸込み効率が落ち、効きの低下や臭い、余分な電力消費につながることがあります。高所に設置されるため異常に気づきにくいこともあり、効きが悪い、においが気になる、汚れが目立つといった変化があれば早めの確認が大切です。ただし、内部洗浄や分解を伴う対応は専門業者の領域なので、故障かなと感じたら無理をせず業者へ相談するのが安全です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'a8333d94ae81d33350e6a3c8fca447188bdc5ce2.png',
 		'title_class' => 'text-4xl lg:text-[36px]',
 	),
 );
@@ -121,33 +117,37 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 		</div>
 	</section>
 
-	<div class="flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
-		<?php foreach ( $info_blocks as $block ) : ?>
-			<?php
-			$title_class = isset( $block['title_class'] ) ? $block['title_class'] : 'text-3xl lg:text-[40px]';
-			?>
-			<div class="mx-auto grid w-full max-w-[1280px] gap-8 px-4 lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-10">
-				<div class="flex min-w-0 flex-col gap-4">
-					<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
-						<?php echo esc_html( $block['title'] ); ?>
-					</h2>
-					<p class="text-lg leading-[1.75] text-slate-700">
-						<?php echo esc_html( $block['text'] ); ?>
-					</p>
+	<section class="flex justify-center">
+		<div class="max-w-3xl flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
+			<?php foreach ( $info_blocks as $index => $block ) : ?>
+				<?php
+				$title_class = isset( $block['title_class'] ) ? $block['title_class'] : 'text-3xl lg:text-[40px]';
+				?>
+				<div class="mx-auto w-full max-w-[860px] px-4 lg:px-10">
+					<div class="flex min-w-0 flex-col gap-4">
+						<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
+							<?php echo esc_html( $block['title'] ); ?>
+						</h2>
+						<p class="text-lg leading-[1.75] text-slate-700">
+							<?php echo esc_html( $block['text'] ); ?>
+						</p>
+					</div>
+					<?php if ( 0 === (int) $index ) : ?>
+						<div class="mt-8 overflow-hidden">
+							<img
+								class="mx-auto h-auto w-full max-w-[578px]"
+								src="<?php echo esc_url( $assets . 'tenkase.jpg' ); ?>"
+								alt=""
+								loading="lazy"
+								width="578"
+								height="376"
+							>
+						</div>
+					<?php endif; ?>
 				</div>
-				<div class="min-h-[240px] overflow-hidden bg-stone-300 lg:min-h-[400px]">
-					<img
-						class="h-full w-full object-cover"
-						src="<?php echo esc_url( $block['image'] ); ?>"
-						alt=""
-						loading="lazy"
-						width="640"
-						height="400"
-					>
-				</div>
-			</div>
-		<?php endforeach; ?>
-	</div>
+			<?php endforeach; ?>
+		</div>
+	</section>
 
 	<section class="bg-[#f0faff] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">

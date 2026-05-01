@@ -26,22 +26,18 @@ $info_blocks = array(
 	array(
 		'title' => __( '天井埋込ダクト型の特徴', 'gd-aircon-repair' ),
 		'text'  => __( '天井埋込ダクト形の特徴は、吹出口と吸込口を自在に配置しやすく、空間条件に合わせたレイアウトを組みやすいことです。ダイキンの業務用製品情報でも、ダクト長さなどの条件に合わせて最適風量を実現しやすい点や、天井ふところが狭い建物にも対応しやすい薄型設計が示されています。室内機を天井内へ隠せるため、見た目をすっきり整えながら空調設計の自由度を確保しやすい形状といえます。', 'gd-aircon-repair' ),
-		'image' => $assets . 'duct.jpg',
 	),
 	array(
 		'title' => __( '天井埋込ダクト型のメリット', 'gd-aircon-repair' ),
 		'text'  => __( '天井埋込ダクト形のメリットは、吸込口・吹出口の位置を空間に合わせて計画しやすく、意匠性と設計自由度を両立しやすいことです。本体を天井内へ納められるため、店舗や事務所の見た目を損ねにくく、空調機そのものの存在感を抑えたい場面にも向いています。また、天井条件やダクト条件に合わせて検討しやすいため、標準的な露出形では対応しにくい空間でも採用候補になりやすいです。', 'gd-aircon-repair' ),
-		'image' => $assets . 'e6a0b9f567dbe293385572f108174508eace24f4.png',
 	),
 	array(
 		'title' => __( '天井埋込ダクト型のデメリット', 'gd-aircon-repair' ),
 		'text'  => __( '一方で、天井埋込ダクト形はダクト設計や天井内スペース、点検口、施工条件の影響を受けやすく、単純にどこでも入れやすい形状ではありません。設計や施工の自由度が高い反面、検討すべき条件も増えるため、現場ごとの相性が出やすいです。また、本体が隠れて見えにくい分、日常的に状態を把握しにくく、メンテナンス性やサービススペースの確保も事前に考えておく必要があります。', 'gd-aircon-repair' ),
-		'image' => $assets . '07e203de219e689410a12ccc2cff70baf8712229.png',
 	),
 	array(
 		'title' => __( '天井埋込ダクト型の故障・修理', 'gd-aircon-repair' ),
 		'text'  => __( '天井埋込ダクト形は、吸込部や内部の汚れ、ダクト条件との不整合などで効きの低下やにおい、異常が出ることがあります。ダイキンの製品情報でもメンテナンス性やサービススペース確保が重視されており、導入後の保守を見越した設計が重要です。本体が天井内にあるため、異常に気づきにくいこともあります。効きの悪さやにおい、異音などが続く場合は、無理に内部へ触れず、機種情報と症状を整理して専門業者へ相談するのが安全です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'a8333d94ae81d33350e6a3c8fca447188bdc5ce2.png',
 		'title_class' => 'text-4xl lg:text-[36px]',
 	),
 );
@@ -121,33 +117,37 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 		</div>
 	</section>
 
-	<div class="flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
-		<?php foreach ( $info_blocks as $block ) : ?>
+	<section class="flex justify-center">
+		<div class="max-w-3xl flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
+			<?php foreach ( $info_blocks as $index => $block ) : ?>
 			<?php
 			$title_class = isset( $block['title_class'] ) ? $block['title_class'] : 'text-3xl lg:text-[40px]';
 			?>
-			<div class="mx-auto grid w-full max-w-[1280px] gap-8 px-4 lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-10">
-				<div class="flex min-w-0 flex-col gap-4">
-					<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
-						<?php echo esc_html( $block['title'] ); ?>
-					</h2>
-					<p class="text-lg leading-[1.75] text-slate-700">
-						<?php echo esc_html( $block['text'] ); ?>
-					</p>
+				<div class="mx-auto w-full max-w-[860px] px-4 lg:px-10">
+					<div class="flex min-w-0 flex-col gap-4">
+						<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
+							<?php echo esc_html( $block['title'] ); ?>
+						</h2>
+						<p class="text-lg leading-[1.75] text-slate-700">
+							<?php echo esc_html( $block['text'] ); ?>
+						</p>
+					</div>
+					<?php if ( 0 === (int) $index ) : ?>
+						<div class="mt-8 overflow-hidden">
+							<img
+								class="mx-auto h-auto w-full max-w-[578px]"
+								src="<?php echo esc_url( $assets . 'duct.jpg' ); ?>"
+								alt=""
+								loading="lazy"
+								width="578"
+								height="376"
+							>
+						</div>
+					<?php endif; ?>
 				</div>
-				<div class="min-h-[240px] overflow-hidden bg-stone-300 lg:min-h-[400px]">
-					<img
-						class="h-full w-full object-cover"
-						src="<?php echo esc_url( $block['image'] ); ?>"
-						alt=""
-						loading="lazy"
-						width="640"
-						height="400"
-					>
-				</div>
-			</div>
-		<?php endforeach; ?>
-	</div>
+			<?php endforeach; ?>
+		</div>
+	</section>
 
 	<section class="bg-[#f0faff] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">

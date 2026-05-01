@@ -26,22 +26,18 @@ $info_blocks = array(
 	array(
 		'title' => __( '床置型の特徴', 'gd-aircon-repair' ),
 		'text'  => __( '床置形の特徴は、天井埋込ではなく床まわりに近い位置へ設置するため、天井条件に左右されにくいことです。ダイキンの業務用ラインアップでも独立した室内機タイプとして用意されており、空間条件やインテリアに合わせて選定されます。また、シリーズによっては機種・能力帯が幅広く、用途に応じた組み合わせを検討しやすいのも特徴です。露出形なので本体位置を把握しやすく、日常管理のイメージも持ちやすい形状です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'yukaoki.jpg',
 	),
 	array(
 		'title' => __( '床置型のメリット', 'gd-aircon-repair' ),
 		'text'  => __( '床置形のメリットは、天井内スペースが取りにくい場所でも導入しやすく、埋込工事前提でなくても検討しやすいことです。壁掛形とは異なり床側の設置計画で空調を考えられるため、空間条件によってはレイアウトしやすい場合があります。また、本体が見える位置にある分、存在確認や外観点検がしやすく、運用イメージを持ちやすいのも利点です。設置条件次第では、実用性を優先した選定がしやすい形状といえます。', 'gd-aircon-repair' ),
-		'image' => $assets . 'e6a0b9f567dbe293385572f108174508eace24f4.png',
 	),
 	array(
 		'title' => __( '床置型のデメリット', 'gd-aircon-repair' ),
 		'text'  => __( '一方で、床置形は床まわりのスペースを使うため、動線や家具配置、見た目への影響を考える必要があります。露出設置なので、天井カセット形のようなすっきり感は出しにくく、空間によっては圧迫感が気になることもあります。また、設置位置が悪いと風当たりや温度ムラが出やすく、他形状の方が空間に合うケースもあります。レイアウト性と実用性のバランスを見ながら選ぶことが大切です。', 'gd-aircon-repair' ),
-		'image' => $assets . '07e203de219e689410a12ccc2cff70baf8712229.png',
 	),
 	array(
 		'title' => __( '床置型の故障・修理', 'gd-aircon-repair' ),
 		'text'  => __( '床置形も、フィルターや吸込部の汚れを放置すると効きの低下やにおい、余計な電力消費、故障リスクにつながります。業務用の床置形ラインアップでは、一部能力帯で冷媒センサーの定期交換条件がある機種も見られ、機種ごとの保守条件確認も重要です。見える位置にあるからといって内部まで無理に触るのは安全ではなく、異音・異臭・効きの悪さが続く場合は、専門業者へ相談する前提で考えるのが安心です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'a8333d94ae81d33350e6a3c8fca447188bdc5ce2.png',
 		'title_class' => 'text-4xl lg:text-[36px]',
 	),
 );
@@ -121,33 +117,37 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 		</div>
 	</section>
 
-	<div class="flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
-		<?php foreach ( $info_blocks as $block ) : ?>
+	<section class="flex justify-center">
+		<div class="max-w-3xl flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
+			<?php foreach ( $info_blocks as $index => $block ) : ?>
 			<?php
 			$title_class = isset( $block['title_class'] ) ? $block['title_class'] : 'text-3xl lg:text-[40px]';
 			?>
-			<div class="mx-auto grid w-full max-w-[1280px] gap-8 px-4 lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-10">
-				<div class="flex min-w-0 flex-col gap-4">
-					<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
-						<?php echo esc_html( $block['title'] ); ?>
-					</h2>
-					<p class="text-lg leading-[1.75] text-slate-700">
-						<?php echo esc_html( $block['text'] ); ?>
-					</p>
+				<div class="mx-auto w-full max-w-[860px] px-4 lg:px-10">
+					<div class="flex min-w-0 flex-col gap-4">
+						<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
+							<?php echo esc_html( $block['title'] ); ?>
+						</h2>
+						<p class="text-lg leading-[1.75] text-slate-700">
+							<?php echo esc_html( $block['text'] ); ?>
+						</p>
+					</div>
+					<?php if ( 0 === (int) $index ) : ?>
+						<div class="mt-8 overflow-hidden">
+							<img
+								class="mx-auto h-auto w-full max-w-[578px]"
+								src="<?php echo esc_url( $assets . 'yukaoki.jpg' ); ?>"
+								alt=""
+								loading="lazy"
+								width="578"
+								height="376"
+							>
+						</div>
+					<?php endif; ?>
 				</div>
-				<div class="min-h-[240px] overflow-hidden bg-stone-300 lg:min-h-[400px]">
-					<img
-						class="h-full w-full object-cover"
-						src="<?php echo esc_url( $block['image'] ); ?>"
-						alt=""
-						loading="lazy"
-						width="640"
-						height="400"
-					>
-				</div>
-			</div>
-		<?php endforeach; ?>
-	</div>
+			<?php endforeach; ?>
+		</div>
+	</section>
 
 	<section class="bg-[#f0faff] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">

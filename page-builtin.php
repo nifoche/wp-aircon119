@@ -26,22 +26,18 @@ $info_blocks = array(
 	array(
 		'title' => __( 'ビルトイン型の特徴', 'gd-aircon-repair' ),
 		'text'  => __( 'ビルトインの特徴は、吹出口を本体から分離して送風できるため、空間形状や人の集まり方、日照条件などに合わせて柔軟に空調を設計しやすいことです。ダイキンの製品情報でも、変形店舗に対応しやすい点や、機外静圧可変制御による自動調整、薄型化による設置自由度の広さが示されています。また、パネルの見せ方や吸込方法にも選択肢があり、空調設計と見た目の両立を考えやすい形状です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'builtin.jpg',
 	),
 	array(
 		'title' => __( 'ビルトイン型のメリット', 'gd-aircon-repair' ),
 		'text'  => __( 'ビルトインのメリットは、空調機を目立たせにくくしながら、空間デザインに合わせた吹出し計画を立てやすいことです。意匠性を重視する店舗や、標準的な気流ではムラが出やすい空間でも、設計自由度を取りやすいのが魅力です。また、機外静圧可変制御のように設置条件へ合わせた調整機能があることで、現場条件に応じた納まりや運用を考えやすい点も利点です。見た目と快適性の両方を重視したい場面で候補になりやすい形状といえます。', 'gd-aircon-repair' ),
-		'image' => $assets . 'e6a0b9f567dbe293385572f108174508eace24f4.png',
 	),
 	array(
 		'title' => __( 'ビルトイン型のデメリット', 'gd-aircon-repair' ),
 		'text'  => __( '一方で、ビルトインは設計自由度が高いぶん、天井内スペースやダクト・チャンバー条件、サービススペース、施工精度など確認すべき点も多くなります。空間にうまく合えば魅力的ですが、計画が甘いと気流ムラや保守のしにくさにつながることがあります。また、本体が隠れて見えにくいため、異常や汚れに気づきにくい面もあります。デザイン優先だけでなく、導入後のメンテナンス性まで含めて検討することが大切です。', 'gd-aircon-repair' ),
-		'image' => $assets . '07e203de219e689410a12ccc2cff70baf8712229.png',
 	),
 	array(
 		'title' => __( 'ビルトイン型の故障・修理', 'gd-aircon-repair' ),
 		'text'  => __( 'ビルトインも、吸込部や内部の汚れ、ダクト条件との不整合、設置条件の影響で効きの低下やにおい、異音などが出ることがあります。ダイキンの製品情報でもオートグリルやサービススペース確保など、保守性を意識した設計要素が挙げられています。天井内機器のため、見える範囲だけで判断しにくいこともあり、違和感が続く場合は無理に内部へ触らず、機種情報と症状を整理して専門業者へ相談するのが安全です。', 'gd-aircon-repair' ),
-		'image' => $assets . 'a8333d94ae81d33350e6a3c8fca447188bdc5ce2.png',
 		'title_class' => 'text-4xl lg:text-[36px]',
 	),
 );
@@ -121,33 +117,37 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 		</div>
 	</section>
 
-	<div class="flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
-		<?php foreach ( $info_blocks as $block ) : ?>
+	<section class="flex justify-center">
+		<div class="max-w-3xl flex flex-col gap-12 py-10 lg:gap-12 lg:py-16">
+			<?php foreach ( $info_blocks as $index => $block ) : ?>
 			<?php
 			$title_class = isset( $block['title_class'] ) ? $block['title_class'] : 'text-3xl lg:text-[40px]';
 			?>
-			<div class="mx-auto grid w-full max-w-[1280px] gap-8 px-4 lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-10">
-				<div class="flex min-w-0 flex-col gap-4">
-					<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
-						<?php echo esc_html( $block['title'] ); ?>
-					</h2>
-					<p class="text-lg leading-[1.75] text-slate-700">
-						<?php echo esc_html( $block['text'] ); ?>
-					</p>
+				<div class="mx-auto w-full max-w-[860px] px-4 lg:px-10">
+					<div class="flex min-w-0 flex-col gap-4">
+						<h2 class="<?php echo esc_attr( $title_class ); ?> font-bold leading-tight text-brand-skydeep">
+							<?php echo esc_html( $block['title'] ); ?>
+						</h2>
+						<p class="text-lg leading-[1.75] text-slate-700">
+							<?php echo esc_html( $block['text'] ); ?>
+						</p>
+					</div>
+					<?php if ( 0 === (int) $index ) : ?>
+						<div class="mt-8 overflow-hidden">
+							<img
+								class="mx-auto h-auto w-full max-w-[578px]"
+								src="<?php echo esc_url( $assets . 'builtin.jpg' ); ?>"
+								alt=""
+								loading="lazy"
+								width="578"
+								height="376"
+							>
+						</div>
+					<?php endif; ?>
 				</div>
-				<div class="min-h-[240px] overflow-hidden bg-stone-300 lg:min-h-[400px]">
-					<img
-						class="h-full w-full object-cover"
-						src="<?php echo esc_url( $block['image'] ); ?>"
-						alt=""
-						loading="lazy"
-						width="640"
-						height="400"
-					>
-				</div>
-			</div>
-		<?php endforeach; ?>
-	</div>
+			<?php endforeach; ?>
+		</div>
+	</section>
 
 	<section class="bg-[#f0faff] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">
