@@ -55,10 +55,11 @@ $brand_logos = array(
 		'src'    => $assets . 'mitsubishielectric.webp',
 	),
 	array(
-		'label'  => '',
-		'url'    => '',
+		'label'  => __( '東芝', 'gd-aircon-repair' ),
+		'url'    => home_url( '/error-codes/toshiba/' )	,
 		'active' => false,
-		'type'   => 'empty',
+		'type'   => 'image',
+		'src'    => $assets . 'toshiba.png',
 	),
 );
 
