@@ -213,3 +213,64 @@ function gd_aircon_repair_fallback_footer_menu() {
 
 	echo '</ul>';
 }
+
+/**
+ * エラーコードページ用 ブランドロゴナビゲーション
+ *
+ * active の index だけテンプレート側から渡し、ブランド一覧は関数内で固定します。
+ *
+ * @param int $active_index アクティブにするブランドの index（0始まり）.
+ */
+function gd_aircon_repair_render_error_code_brand_logos( $active_index = 0 ) {
+	$assets = get_template_directory_uri() . '/assets/images/error-codes/';
+
+	$brand_logos = array(
+		array(
+			'label' => __( 'ダイキン', 'gd-aircon-repair' ),
+			'url'   => home_url( '/error-codes/' ),
+			'src'   => $assets . 'daikin.webp',
+		),
+		array(
+			'label' => __( 'パナソニック', 'gd-aircon-repair' ),
+			'url'   => home_url( '/error-codes/panasonic/' ),
+			'src'   => $assets . 'panasonic.webp',
+		),
+		array(
+			'label' => __( '三菱重工', 'gd-aircon-repair' ),
+			'url'   => home_url( '/error-codes/mitsubishi/' ),
+			'src'   => $assets . 'mitsubishi.webp',
+		),
+		array(
+			'label' => __( '日立', 'gd-aircon-repair' ),
+			'url'   => home_url( '/error-codes/hitachi/' ),
+			'src'   => $assets . 'hitachi.webp',
+		),
+		array(
+			'label' => __( '三菱電機', 'gd-aircon-repair' ),
+			'url'   => home_url( '/error-codes/mitsubishi-el/' ),
+			'src'   => $assets . 'mitsubishielectric.webp',
+		),
+		array(
+			'label' => __( '東芝キャリア', 'gd-aircon-repair' ),
+			'url'   => home_url( '/error-codes/toshiba/' ),
+			'src'   => $assets . 'toshiba.png',
+		),
+	);
+
+	?>
+	<section class="mx-auto flex w-full max-w-[1280px] flex-wrap justify-center gap-6 px-4 pb-6 lg:gap-8 lg:px-10">
+		<?php foreach ( $brand_logos as $index => $brand ) : ?>
+			<?php $is_active = ( (int) $active_index === (int) $index ); ?>
+			<a
+				class="<?php echo $is_active ? 'border-[5px] border-[#00598a] shadow-[0_10px_15px_0_rgba(0,104,231,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]' : 'border border-transparent shadow-[0_10px_15px_0_rgba(0,0,0,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]'; ?> flex h-auto min-h-[66px] w-[150px] shrink-0 flex-col items-center justify-center rounded-lg bg-white p-4 no-underline transition hover:opacity-90"
+				href="<?php echo esc_url( $brand['url'] ); ?>"
+				<?php echo $is_active ? ' aria-current="page"' : ''; ?>
+			>
+				<span class="block w-full [&_img]:h-auto [&_img]:w-full [&_img]:object-contain">
+					<img src="<?php echo esc_url( $brand['src'] ); ?>" alt="<?php echo esc_attr( $brand['label'] ); ?>" loading="lazy" width="120" height="48">
+				</span>
+			</a>
+		<?php endforeach; ?>
+	</section>
+	<?php
+}

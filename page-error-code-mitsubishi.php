@@ -19,50 +19,6 @@ $hero_texture_url = $assets . 'e55f40f59b1f786159e5bc3341126f1ca3a06460.png';
 $breadcrumb_parent_url = home_url( '/error-codes/' );
 $breadcrumb_parent_is_current = ( trailingslashit( $breadcrumb_parent_url ) === trailingslashit( (string) get_permalink() ) );
 
-$brand_logos = array(
-	array(
-		'label'  => __( 'ダイキン', 'gd-aircon-repair' ),
-		'url'    => home_url( '/error-codes/' ),
-		'active' => false,
-		'type'   => 'image',
-		'src'    => $assets . 'daikin.webp',
-	),
-	array(
-		'label'  => __( 'パナソニック', 'gd-aircon-repair' ),
-		'url'    => home_url( '/error-codes/panasonic/' ),
-		'active' => false,
-		'type'   => 'image',
-		'src'    => $assets . 'panasonic.webp',
-	),
-	array(
-		'label'  => __( '三菱重工', 'gd-aircon-repair' ),
-		'url'    => home_url( '/error-codes/mitsubishi/' ),
-		'active' => true,
-		'type'   => 'mitsubishi',
-		'src'    => $assets . 'mitsubishi.webp',
-	),
-	array(
-		'label'  => __( '日立', 'gd-aircon-repair' ),
-		'url'    => '#',
-		'active' => false,
-		'type'   => 'image',
-		'src'    => $assets . 'hitachi.webp',
-	),
-	array(
-		'label'  => __( '三菱電機', 'gd-aircon-repair' ),
-		'url'    => '#',
-		'active' => false,
-		'type'   => 'image',
-		'src'    => $assets . 'mitsubishielectric.webp',
-	),
-	array(
-		'label'  => '',
-		'url'    => '',
-		'active' => false,
-		'type'   => 'empty',
-	),
-);
-
 $error_rows = array(
 	array(
 		'code'    => 'E1',
@@ -840,23 +796,7 @@ $error_rows = array(
 		</div>
 	</section>
 
-	<section class="mx-auto flex w-full max-w-[1280px] flex-wrap justify-center gap-6 px-4 pb-6 lg:gap-8 lg:px-10">
-		<?php foreach ( $brand_logos as $brand ) : ?>
-			<?php if ( 'empty' === $brand['type'] ) : ?>
-				<div class="h-[66px] w-[150px] shrink-0 rounded-lg bg-white shadow-[0_10px_15px_0_rgba(0,0,0,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]" aria-hidden="true"></div>
-			<?php else : ?>
-				<a
-					class="<?php echo $brand['active'] ? 'border-[5px] border-[#00598a] shadow-[0_10px_15px_0_rgba(0,104,231,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]' : 'border border-transparent shadow-[0_10px_15px_0_rgba(0,0,0,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]'; ?> flex h-auto min-h-[66px] w-[150px] shrink-0 flex-col items-center justify-center rounded-lg bg-white p-4 no-underline transition hover:opacity-90"
-					href="<?php echo esc_url( $brand['url'] ); ?>"
-					<?php echo $brand['active'] ? ' aria-current="page"' : ''; ?>
-				>
-					<span class="block w-full [&_img]:h-auto [&_img]:w-full [&_img]:object-contain">
-						<img src="<?php echo esc_url( $brand['src'] ); ?>" alt="<?php echo esc_attr( $brand['label'] ); ?>" loading="lazy" width="120" height="48">
-					</span>
-				</a>
-			<?php endif; ?>
-		<?php endforeach; ?>
-	</section>
+	<?php gd_aircon_repair_render_error_code_brand_logos( 2 ); ?>
 
 	<section class="mx-auto w-full max-w-[1280px] px-4 pb-16 lg:px-10 lg:pb-20">
 		<div class="overflow-hidden rounded-lg border border-[#99a1af] bg-white">
