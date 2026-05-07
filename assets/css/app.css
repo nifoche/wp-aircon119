@@ -2914,6 +2914,14 @@ body.admin-bar .site-header {
     display: block;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:w-\[300px\] {
+    width: 300px;
+  }
+
   .md\:grid-cols-\[1fr_280px\] {
     grid-template-columns: 1fr 280px;
   }
@@ -2936,6 +2944,10 @@ body.admin-bar .site-header {
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:gap-10 {
+    gap: 2.5rem;
   }
 
   .md\:px-10 {
@@ -3006,6 +3018,10 @@ body.admin-bar .site-header {
     display: block;
   }
 
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:h-\[340px\] {
     height: 340px;
   }
@@ -3060,6 +3076,10 @@ body.admin-bar .site-header {
 
   .lg\:items-center {
     align-items: center;
+  }
+
+  .lg\:justify-center {
+    justify-content: center;
   }
 
   .lg\:justify-between {
@@ -3158,6 +3178,11 @@ body.admin-bar .site-header {
     padding-bottom: 81px;
   }
 
+  .lg\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .lg\:pb-12 {
     padding-bottom: 3rem;
   }
@@ -3247,6 +3272,15 @@ body.admin-bar .site-header {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .lg\:text-\[32px\] {
+    font-size: 32px;
   }
 
   .lg\:leading-\[1\.1\] {

@@ -57,12 +57,12 @@ $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contac
 				?>
 			</nav>
 		<?php else : ?>
-			<nav class="min-w-0 flex-1 sm:flex sm:justify-center" aria-label="<?php esc_attr_e( 'メインメニュー', 'gd-aircon-repair' ); ?>">
+			<nav class="min-w-0 flex-1 hidden lg:flex lg:justify-center" aria-label="<?php esc_attr_e( 'メインメニュー', 'gd-aircon-repair' ); ?>">
 				<?php gd_aircon_repair_fallback_primary_menu(); ?>
 			</nav>
 		<?php endif; ?>
 
-		<div class="flex shrink-0 flex-wrap items-center justify-end gap-3">
+		<div class="hidden lg:flex shrink-0 flex-wrap items-center justify-end gap-3">
 			<a
 				class="inline-flex items-center gap-2 rounded bg-brand-sky px-6 py-3 text-base font-extrabold uppercase tracking-tight text-white shadow-md no-underline ring-1 ring-black/5 transition hover:bg-brand-sky/90"
 				href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
@@ -87,6 +87,6 @@ $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contac
 	</div>
 </header>
 
-<div class="site-header-offset h-[88px] shrink-0" aria-hidden="true"></div>
+<div class="site-header-offset hidden lg:block h-[88px] shrink-0" aria-hidden="true"></div>
 
 <main id="primary" class="site-main w-full flex-1">

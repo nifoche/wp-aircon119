@@ -17,11 +17,11 @@ get_header();
 			<p class="mb-6 inline-flex rounded-sm bg-[#7d0005] px-4 py-1 text-base font-bold leading-6 text-white">
 				<?php esc_html_e( '調査・見積り無料!', 'gd-aircon-repair' ); ?>
 			</p>
-			<h1 class="text-5xl font-bold leading-tight lg:text-5xl">
+			<h1 class="text-3xl font-bold leading-tight lg:text-5xl">
 				<?php esc_html_e( '業務用エアコンの工事・修理', 'gd-aircon-repair' ); ?><br>
 				<?php esc_html_e( 'お任せください', 'gd-aircon-repair' ); ?>
 			</h1>
-			<p class="mt-6 text-xl font-medium leading-7 text-white/90">
+			<p class="mt-6 text-base font-medium leading-7 text-white/90 lg:text-xl">
 				<?php esc_html_e( '即日・土日も対応！ 他社で断られた難工事も一度ご相談ください。', 'gd-aircon-repair' ); ?><br>
 				<?php esc_html_e( 'ルームエアコン1台から大型施設の大規模工事(集中管理システム)まで対応しています。', 'gd-aircon-repair' ); ?>
 			</p>
@@ -43,15 +43,15 @@ get_header();
 
 		<div class="relative w-full rounded-lg bg-white p-6 text-slate-900 shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:w-[410px]">
 			<div class="mb-4 flex items-end justify-center gap-1 border-b-4 border-[#fe9a00] pb-3 text-center">
-				<span class="text-2xl font-bold leading-8 text-[#00598a]"><?php esc_html_e( 'WEBでカンタン', 'gd-aircon-repair' ); ?></span>
-				<span class="text-4xl font-black leading-[1] text-[#fe9a00]"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
-				<span class="text-2xl font-bold leading-8 text-[#00598a]"><?php esc_html_e( 'お見積り', 'gd-aircon-repair' ); ?></span>
+				<span class="text-lg font-bold leading-8 text-[#00598a] lg:text-2xl"><?php esc_html_e( 'WEBでカンタン', 'gd-aircon-repair' ); ?></span>
+				<span class="text-4xl font-black leading-[1] text-[#fe9a00] lg:text-4xl"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
+				<span class="text-lg font-bold leading-8 text-[#00598a] lg:text-2xl"><?php esc_html_e( 'お見積り', 'gd-aircon-repair' ); ?></span>
 			</div>
 			<form class="space-y-4" action="<?php echo esc_url( apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) ) ); ?>" method="get">
 				<input class="w-full rounded-sm border-2 border-[#c2c6d3] px-3 py-2 text-base leading-6 text-slate-700 placeholder:text-slate-500" type="text" name="name" placeholder="<?php esc_attr_e( 'お名前', 'gd-aircon-repair' ); ?>">
 				<input class="w-full rounded-sm border-2 border-[#c2c6d3] px-3 py-2 text-base leading-6 text-slate-700 placeholder:text-slate-500" type="tel" name="phone" placeholder="<?php esc_attr_e( '電話番号', 'gd-aircon-repair' ); ?>">
 				<textarea class="h-24 w-full rounded-sm border-2 border-[#c2c6d3] px-3 py-2 text-base leading-6 text-slate-700 placeholder:text-slate-500" name="message" placeholder="<?php esc_attr_e( 'お問い合わせ内容', 'gd-aircon-repair' ); ?>"></textarea>
-				<button class="w-full rounded-sm bg-[#fe9a00] px-4 py-4 text-2xl font-bold leading-7 text-white shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)] transition hover:bg-[#e78d00]" type="submit">
+				<button class="w-full rounded-sm bg-[#fe9a00] px-4 py-3 lg:py-4 text-xl font-bold leading-7 text-white shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)] transition hover:bg-[#e78d00] lg:text-2xl" type="submit">
 					<?php esc_html_e( '送信する', 'gd-aircon-repair' ); ?>
 				</button>
 			</form>
@@ -141,7 +141,7 @@ $ac_types_cards = array(
 <section class="bg-white py-16 lg:py-[60px]">
 	<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">
 		<div class="mb-8 flex flex-col items-center gap-3 lg:mb-12">
-			<p class="text-center text-[32px] font-bold leading-[1.2] tracking-[-0.03em] text-[#00598a]">
+			<p class="text-center text-2xl font-bold leading-[1.2] tracking-[-0.03em] text-[#00598a] lg:text-[32px]">
 				<?php esc_html_e( 'こんなお困りごとはありませんか？', 'gd-aircon-repair' ); ?>
 			</p>
 			<h2 class="text-center text-[40px] font-bold leading-[1.15] tracking-[-0.03em] text-[#00598a] lg:text-[56px]">
@@ -167,7 +167,7 @@ $ac_types_cards = array(
 						>
 					</div>
 					<div class="flex min-h-[60px] items-center justify-center px-4 py-3">
-						<p class="text-center text-[32px] font-bold leading-[1.2] text-[#00598a] lg:text-[20px]">
+						<p class="text-center text-xl font-bold leading-[1.2] text-[#00598a]">
 							<?php echo esc_html( $symptom_card['title'] ); ?>
 						</p>
 					</div>
@@ -177,7 +177,7 @@ $ac_types_cards = array(
 
 		<div class="mt-10 flex items-center justify-center lg:mt-12">
 			<a
-				class="inline-flex items-center gap-3 rounded bg-[#0084d1] px-6 py-3 text-2xl font-bold text-white no-underline shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:bg-[#0076bc]"
+				class="inline-flex items-center gap-3 rounded bg-[#0084d1] px-6 py-3 text-xl lg:text-2xl font-bold text-white no-underline shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:bg-[#0076bc]"
 				href="<?php echo esc_url( home_url( '/symptoms/' ) ); ?>"
 			>
 				<span><?php esc_html_e( 'すべての症状を見る', 'gd-aircon-repair' ); ?></span>
@@ -193,7 +193,7 @@ $ac_types_cards = array(
 <section class="bg-white py-16 lg:py-20">
 	<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-10">
 		<div class="mb-8 flex flex-col items-center gap-5 lg:mb-12">
-			<h2 class="text-center text-[36px] font-bold leading-[1.1] text-[#00598a]">
+			<h2 class="text-center text-3xl font-bold leading-[1.1] text-[#00598a] lg:text-[36px]">
 				<?php esc_html_e( '業務用エアコンの種類', 'gd-aircon-repair' ); ?>
 			</h2>
 			<span class="block h-2 w-24 bg-[#fe9a00]" aria-hidden="true"></span>
@@ -216,7 +216,7 @@ $ac_types_cards = array(
 						>
 					</div>
 					<div class="p-6">
-						<p class="text-[32px] font-bold leading-[1.2] text-[#00598a] lg:text-[24px]">
+						<p class="text-xl font-bold leading-[1.2] text-[#00598a] lg:text-[24px]">
 							<?php echo esc_html( $type_card['title'] ); ?>
 						</p>
 					</div>
@@ -226,7 +226,7 @@ $ac_types_cards = array(
 
 		<div class="mt-10 flex items-center justify-center lg:mt-12">
 			<a
-				class="inline-flex items-center gap-3 rounded bg-[#0084d1] px-6 py-3 text-2xl font-bold text-white no-underline shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:bg-[#0076bc]"
+				class="inline-flex items-center gap-3 rounded bg-[#0084d1] px-6 py-3 text-xl lg:text-2xl font-bold text-white no-underline shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:bg-[#0076bc]"
 				href="<?php echo esc_url( home_url( '/types/' ) ); ?>"
 			>
 				<span><?php esc_html_e( 'すべての種類を見る', 'gd-aircon-repair' ); ?></span>
@@ -242,55 +242,55 @@ $ac_types_cards = array(
 <?php
 $pricing_rows = array(
 	array(
-		'service'         => __( '水漏れ (Water leak)', 'gd-aircon-repair' ),
+		'service'         => __( '水漏れ', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '15,000',
 		'price_incl_tax'  => '16,500',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/water-leak.jpg',
 	),
 	array(
-		'service'         => __( '冷えない (Doesn\'t cool)', 'gd-aircon-repair' ),
+		'service'         => __( '冷えない', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '35,000',
 		'price_incl_tax'  => '38,500',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/not-cooling.jpg',
 	),
 	array(
-		'service'         => __( 'ガス漏れガス補充 (Gas leak/refill)', 'gd-aircon-repair' ),
+		'service'         => __( 'ガス漏れガス補充', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '35,000',
 		'price_incl_tax'  => '38,500',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/gas-leak.jpg',
 	),
 	array(
-		'service'         => __( '室内機基盤取替 (Indoor unit board replacement)', 'gd-aircon-repair' ),
+		'service'         => __( '室内機基盤取替', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '34,000',
 		'price_incl_tax'  => '37,400',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/indoor-unit-board.jpg',
 	),
 	array(
-		'service'         => __( '室外機基盤取替 (Outdoor unit board replacement)', 'gd-aircon-repair' ),
+		'service'         => __( '室外機基盤取替', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '42,000',
 		'price_incl_tax'  => '46,200',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/outdoor-unit-board.jpg',
 	),
 	array(
-		'service'         => __( 'ファンモーター取替 (Fan motor replacement)', 'gd-aircon-repair' ),
+		'service'         => __( 'ファンモーター取替', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '32,000',
 		'price_incl_tax'  => '35,200',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/fan-motor.jpg',
 	),
 	array(
-		'service'         => __( 'ルーバー取替 (Louver replacement)', 'gd-aircon-repair' ),
+		'service'         => __( 'ルーバー取替', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '14,000',
 		'price_incl_tax'  => '15,400',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/louver.jpg',
 	),
 	array(
-		'service'         => __( '温度センサー取替 (Temperature sensor replacement)', 'gd-aircon-repair' ),
+		'service'         => __( '温度センサー取替', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '18,000',
 		'price_incl_tax'  => '19,800',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/temperature-sensor.jpg',
 	),
 	array(
-		'service'         => __( 'コンプレッサー取替 (Compressor replacement)', 'gd-aircon-repair' ),
+		'service'         => __( 'コンプレッサー取替', 'gd-aircon-repair' ),
 		'price_ex_tax'    => '120,000',
 		'price_incl_tax'  => '132,000',
 		'image'           => get_template_directory_uri() . '/assets/images/pricing/compressor.jpg',

@@ -65,7 +65,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 		<div class="flex flex-col gap-6 lg:gap-10">
 			<?php foreach ( $repair_steps as $step ) : ?>
-				<div class="flex flex-col gap-5 rounded-2xl bg-white p-6 shadow-[0_5px_25px_0_rgba(0,0,0,0.2)] lg:flex-row lg:items-center lg:gap-10">
+				<div class="flex flex-col gap-5 rounded-2xl bg-white p-6 shadow-[0_5px_25px_0_rgba(0,0,0,0.2)] md:flex-row md:items-center md:gap-10">
 					<div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-brand-orange">
 						<span class="text-[42px] font-extrabold leading-[48px] text-white montserrat"><?php echo esc_html( $step['number'] ); ?></span>
 					</div>
@@ -80,7 +80,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 					</div>
 
 					<img
-						class="h-[181px] w-full rounded-md object-cover lg:w-[300px]"
+						class="h-[181px] w-full rounded-md object-cover md:w-[300px]"
 						src="<?php echo esc_url( $step['image'] ); ?>"
 						alt=""
 						loading="lazy"
@@ -182,7 +182,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 	<div class="mx-auto flex w-full max-w-[1280px] flex-col gap-8 px-6 py-7 md:py-12 lg:px-12">
 		<div class="relative z-10 flex max-w-[540px] flex-col gap-5">
 			<h2 class="flex flex-col gap-5 text-[#00598a]">
-				<span class="text-5xl font-bold leading-none"><?php esc_html_e( '対応エリア', 'gd-aircon-repair' ); ?></span>
+				<span class="text-4xl font-bold leading-none lg:text-5xl"><?php esc_html_e( '対応エリア', 'gd-aircon-repair' ); ?></span>
 				<span class="h-2 w-24 bg-brand-orange" aria-hidden="true"></span>
 			</h2>
 
@@ -234,7 +234,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 		<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
 			<a
-				class="inline-flex h-16 flex-1 items-center justify-center gap-3 rounded bg-brand-navy px-6 text-[34px] font-bold leading-8 text-white no-underline shadow-lg ring-1 ring-black/5 transition hover:bg-brand-navy/90"
+				class="inline-flex h-16 flex-1 items-center justify-center gap-3 py-3 rounded bg-brand-navy px-6 text-[34px] font-bold leading-8 text-white no-underline shadow-lg ring-1 ring-black/5 transition hover:bg-brand-navy/90"
 				href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" focusable="false">
