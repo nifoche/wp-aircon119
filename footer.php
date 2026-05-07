@@ -146,8 +146,8 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 					<p class="text-[32px] font-extrabold leading-8"><?php esc_html_e( '実績', 'gd-aircon-repair' ); ?></p>
 					<p class="text-base leading-6 text-white/70">
 						<?php esc_html_e( '年間', 'gd-aircon-repair' ); ?>
-						<span class="px-1 text-[32px] font-extrabold leading-8 text-brand-orange">1,000</span>
-						<?php esc_html_e( '件以上の、豊富な対応実績', 'gd-aircon-repair' ); ?>
+						<span class="px-1 text-[32px] font-extrabold leading-8 text-brand-orange">12,000</span>
+						<?php esc_html_e( '台以上の、豊富な対応実績', 'gd-aircon-repair' ); ?>
 					</p>
 				</div>
 			</div>

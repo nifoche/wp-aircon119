@@ -240,4 +240,128 @@ $ac_types_cards = array(
 </section>
 
 <?php
+$pricing_rows = array(
+	array(
+		'service'         => __( '水漏れ (Water leak)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '15,000',
+		'price_incl_tax'  => '16,500',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/water-leak.jpg',
+	),
+	array(
+		'service'         => __( '冷えない (Doesn\'t cool)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '35,000',
+		'price_incl_tax'  => '38,500',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/not-cooling.jpg',
+	),
+	array(
+		'service'         => __( 'ガス漏れガス補充 (Gas leak/refill)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '35,000',
+		'price_incl_tax'  => '38,500',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/gas-leak.jpg',
+	),
+	array(
+		'service'         => __( '室内機基盤取替 (Indoor unit board replacement)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '34,000',
+		'price_incl_tax'  => '37,400',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/indoor-unit-board.jpg',
+	),
+	array(
+		'service'         => __( '室外機基盤取替 (Outdoor unit board replacement)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '42,000',
+		'price_incl_tax'  => '46,200',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/outdoor-unit-board.jpg',
+	),
+	array(
+		'service'         => __( 'ファンモーター取替 (Fan motor replacement)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '32,000',
+		'price_incl_tax'  => '35,200',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/fan-motor.jpg',
+	),
+	array(
+		'service'         => __( 'ルーバー取替 (Louver replacement)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '14,000',
+		'price_incl_tax'  => '15,400',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/louver.jpg',
+	),
+	array(
+		'service'         => __( '温度センサー取替 (Temperature sensor replacement)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '18,000',
+		'price_incl_tax'  => '19,800',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/temperature-sensor.jpg',
+	),
+	array(
+		'service'         => __( 'コンプレッサー取替 (Compressor replacement)', 'gd-aircon-repair' ),
+		'price_ex_tax'    => '120,000',
+		'price_incl_tax'  => '132,000',
+		'image'           => get_template_directory_uri() . '/assets/images/pricing/compressor.jpg',
+	),
+);
+?>
+
+<section class="bg-[#e8f4fb] py-16 lg:py-20" aria-labelledby="pricing-heading">
+	<div class="mx-auto w-full max-w-[880px] px-4 lg:px-6">
+		<h2 id="pricing-heading" class="mb-8 text-center text-[32px] font-bold leading-tight text-[#00598a] lg:mb-10 lg:text-[36px]">
+			<?php esc_html_e( '透明な料金体系', 'gd-aircon-repair' ); ?>
+		</h2>
+
+		<div class="overflow-hidden rounded-xl bg-white shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.08),0px_8px_10px_-6px_rgba(0,0,0,0.08)]">
+			<div class="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+				<table class="w-full min-w-[480px] border-collapse text-left text-slate-800">
+					<thead>
+						<tr class="bg-[#00598a] text-white">
+							<th scope="col" class="px-4 py-4 text-base font-bold lg:px-6">
+								<?php esc_html_e( 'サービス内容', 'gd-aircon-repair' ); ?>
+							</th>
+							<th scope="col" class="px-4 py-4 text-right text-base font-bold lg:px-6">
+								<?php esc_html_e( '料金（税込）', 'gd-aircon-repair' ); ?>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ( $pricing_rows as $row ) : ?>
+							<tr class="border-b border-slate-200 last:border-b-0">
+								<td class="px-4 py-2 align-middle lg:px-6">
+									<div class="flex items-center gap-3">
+										<img
+											class="h-16 w-16 shrink-0 rounded object-cover"
+											src="<?php echo esc_url( $row['image'] ); ?>"
+											alt="<?php echo esc_attr( $row['service'] ); ?>"
+											loading="lazy"
+											width="32"
+											height="32"
+										>
+										<span class="text-base font-medium leading-snug text-slate-800">
+											<?php echo esc_html( $row['service'] ); ?>
+										</span>
+									</div>
+								</td>
+								<td class="px-4 py-4 align-middle text-right lg:px-6">
+									<div class="flex flex-col items-end gap-0.5">
+										<span class="text-xl font-bold tabular-nums text-[#00598a] lg:text-2xl">
+											<?php
+											/* translators: %s: price amount without currency symbol */
+											echo esc_html( sprintf( __( '¥%s〜', 'gd-aircon-repair' ), $row['price_ex_tax'] ) );
+											?>
+										</span>
+										<span class="text-sm tabular-nums text-slate-500">
+											<?php
+											/* translators: %s: tax-inclusive price amount */
+											echo esc_html( sprintf( __( '(税込 ¥%s〜)', 'gd-aircon-repair' ), $row['price_incl_tax'] ) );
+											?>
+										</span>
+									</div>
+								</td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+			<p class="border-t border-slate-100 px-4 py-4 text-sm leading-relaxed text-slate-500 lg:px-6">
+				<?php esc_html_e( '※上記料金は代表的なモデル（ダイキン FHCP80AB等）に基づいた概算です。機種や設置状況により異なる場合があります。', 'gd-aircon-repair' ); ?>
+			</p>
+		</div>
+	</div>
+</section>
+
+<?php
 get_footer();

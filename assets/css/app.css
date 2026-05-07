@@ -1252,6 +1252,11 @@ body.admin-bar .site-header {
   margin: 0px;
 }
 
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1343,6 +1348,10 @@ body.admin-bar .site-header {
 
 .inline-flex {
   display: inline-flex;
+}
+
+.table {
+  display: table;
 }
 
 .grid {
@@ -1526,12 +1535,20 @@ body.admin-bar .site-header {
   width: 100%;
 }
 
+.w-12 {
+  width: 3rem;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
 
-.max-w-4xl {
-  max-width: 56rem;
+.min-w-\[480px\] {
+  min-width: 480px;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .max-w-6xl {
@@ -1586,8 +1603,8 @@ body.admin-bar .site-header {
   max-width: none;
 }
 
-.max-w-3xl {
-  max-width: 48rem;
+.max-w-\[880px\] {
+  max-width: 880px;
 }
 
 .flex-1 {
@@ -1600,6 +1617,10 @@ body.admin-bar .site-header {
 
 .grow {
   flex-grow: 1;
+}
+
+.border-collapse {
+  border-collapse: collapse;
 }
 
 .rotate-12 {
@@ -1767,6 +1788,10 @@ body.admin-bar .site-header {
   overflow: hidden;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -1852,6 +1877,11 @@ body.admin-bar .site-header {
   border-color: rgb(254 154 0 / var(--tw-border-opacity, 1));
 }
 
+.border-slate-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(241 245 249 / var(--tw-border-opacity, 1));
+}
+
 .border-slate-200 {
   --tw-border-opacity: 1;
   border-color: rgb(226 232 240 / var(--tw-border-opacity, 1));
@@ -1901,6 +1931,11 @@ body.admin-bar .site-header {
   background-color: rgb(218 237 246 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#e8f4fb\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 244 251 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#f0faff\] {
   --tw-bg-opacity: 1;
   background-color: rgb(240 250 255 / var(--tw-bg-opacity, 1));
@@ -1939,6 +1974,11 @@ body.admin-bar .site-header {
 .bg-sky-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity, 1));
+}
+
+.bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1));
 }
 
 .bg-slate-50 {
@@ -2164,8 +2204,20 @@ body.admin-bar .site-header {
   padding-top: 2rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-sans {
@@ -2278,6 +2330,11 @@ body.admin-bar .site-header {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.tabular-nums {
+  --tw-numeric-spacing: tabular-nums;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
 .leading-10 {
@@ -2566,6 +2623,12 @@ body.admin-bar .site-header {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[0px_10px_25px_-5px_rgba\(0\2c 0\2c 0\2c 0\.08\)\2c 0px_8px_10px_-6px_rgba\(0\2c 0\2c 0\2c 0\.08\)\] {
+  --tw-shadow: 0px 10px 25px -5px rgba(0,0,0,0.08),0px 8px 10px -6px rgba(0,0,0,0.08);
+  --tw-shadow-colored: 0px 10px 25px -5px var(--tw-shadow-color), 0px 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-\[0px_25px_50px_-12px_rgba\(0\2c 0\2c 0\2c 0\.25\)\] {
   --tw-shadow: 0px 25px 50px -12px rgba(0,0,0,0.25);
   --tw-shadow-colored: 0px 25px 50px -12px var(--tw-shadow-color);
@@ -2657,6 +2720,10 @@ body.admin-bar .site-header {
 
 .last\:border-0:last-child {
   border-width: 0px;
+}
+
+.last\:border-b-0:last-child {
+  border-bottom-width: 0px;
 }
 
 .last\:pb-0:last-child {
@@ -2795,6 +2862,11 @@ body.admin-bar .site-header {
 }
 
 @media (min-width: 640px) {
+  .sm\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -2829,6 +2901,11 @@ body.admin-bar .site-header {
 
   .sm\:gap-4 {
     gap: 1rem;
+  }
+
+  .sm\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
@@ -2911,6 +2988,10 @@ body.admin-bar .site-header {
 
   .lg\:top-\[-32px\] {
     top: -32px;
+  }
+
+  .lg\:mb-10 {
+    margin-bottom: 2.5rem;
   }
 
   .lg\:mb-12 {
