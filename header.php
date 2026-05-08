@@ -57,7 +57,7 @@ $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contac
 							wp_nav_menu(
 								array(
 									'theme_location' => 'primary',
-									'menu_class'     => 'primary-menu-mobile m-0 flex list-none flex-col gap-3 p-0',
+									'menu_class'     => 'primary-menu-mobile m-0 flex list-none flex-col gap-1 p-0',
 									'container'      => false,
 									'fallback_cb'    => false,
 									'depth'          => 1,
@@ -65,7 +65,7 @@ $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contac
 							);
 							?>
 						<?php else : ?>
-							<?php gd_aircon_repair_fallback_primary_menu(); ?>
+							<?php gd_aircon_repair_fallback_primary_menu( 'mobile' ); ?>
 						<?php endif; ?>
 					</nav>
 				</div>

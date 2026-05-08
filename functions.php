@@ -132,12 +132,15 @@ add_action( 'widgets_init', 'gd_aircon_repair_widgets_init' );
 
 /**
  * メインメニュー未設定時のフォールバック（Figma準拠のラベル）
+ *
+ * @param string $variant 'desktop' ヘッダー横並び用 | 'mobile' ドロップダウン用（primary-menu 相当のクラスなし・アンダーラインなし）
  */
-function gd_aircon_repair_fallback_primary_menu() {
-	$items = array(
+function gd_aircon_repair_fallback_primary_menu( $variant = 'desktop' ) {
+	$variant   = 'mobile' === $variant ? 'mobile' : 'desktop';
+	$items     = array(
 		array(
-			'url'   => home_url( '/' ),
-			'label' => __( 'ホーム', 'gd-aircon-repair' ),
+			'url'     => home_url( '/' ),
+			'label'   => __( 'ホーム', 'gd-aircon-repair' ),
 			'current' => is_front_page() || is_home(),
 		),
 		array(
@@ -157,7 +160,13 @@ function gd_aircon_repair_fallback_primary_menu() {
 		),
 	);
 
-	echo '<ul class="primary-menu flex flex-wrap items-center gap-6 md:gap-8 list-none m-0 p-0">';
+	if ( 'mobile' === $variant ) {
+		$ul_class = 'primary-menu-mobile m-0 flex list-none flex-col gap-1 p-0';
+	} else {
+		$ul_class = 'primary-menu flex flex-wrap items-center gap-6 md:gap-8 list-none m-0 p-0';
+	}
+
+	echo '<ul class="' . esc_attr( $ul_class ) . '">';
 
 	foreach ( $items as $item ) {
 		$classes = array( 'menu-item' );
@@ -165,7 +174,11 @@ function gd_aircon_repair_fallback_primary_menu() {
 			$classes[] = 'current-menu-item';
 		}
 		echo '<li class="' . esc_attr( implode( ' ', $classes ) ) . '">';
-		echo '<a href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['label'] ) . '</a>';
+		echo '<a href="' . esc_url( $item['url'] ) . '"';
+		if ( ! empty( $item['current'] ) ) {
+			echo ' aria-current="page"';
+		}
+		echo '>' . esc_html( $item['label'] ) . '</a>';
 		echo '</li>';
 	}
 

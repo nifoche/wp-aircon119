@@ -12,6 +12,28 @@
 		@apply border-brand-orange text-brand-orange;
 	}
 
+	/* モバイルドロップダウン（primary-menu とは別。アンダーラインなし・タップしやすい行） */
+	.site-header .primary-menu-mobile > li > a {
+		@apply block w-full rounded-md border-0 px-3 py-2.5 text-left text-base font-bold leading-snug tracking-tight text-brand-navy no-underline outline-none transition-colors;
+	}
+
+	.site-header .primary-menu-mobile > li > a:hover,
+	.site-header .primary-menu-mobile > li > a:focus-visible {
+		@apply bg-slate-100 text-brand-navy;
+	}
+
+	.site-header .primary-menu-mobile > li.current-menu-item > a,
+	.site-header .primary-menu-mobile > li.current-menu-ancestor > a {
+		@apply border-0 bg-orange-50 text-brand-orange;
+	}
+
+	.site-header .primary-menu-mobile > li.current-menu-item > a:hover,
+	.site-header .primary-menu-mobile > li.current-menu-item > a:focus-visible,
+	.site-header .primary-menu-mobile > li.current-menu-ancestor > a:hover,
+	.site-header .primary-menu-mobile > li.current-menu-ancestor > a:focus-visible {
+		@apply bg-orange-100 text-brand-orange;
+	}
+
 	body.admin-bar .site-header {
 		top: 32px;
 	}
