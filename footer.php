@@ -260,7 +260,11 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 <footer class="mt-auto bg-[#024a70] text-white">
 	<div class="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-6 px-8 py-12">
-		<p class="text-center text-2xl font-extrabold leading-7"><?php bloginfo( 'name' ); ?></p>
+		<p class="text-xl sm:text-2xl font-extrabold leading-7 flex items-center justify-center gap-2 w-80">
+
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 21.76" class="w-48 h-auto"><defs><style>.cls-1{fill:#fff}</style></defs><g><g><path class="cls-1" d="M16.59 4.87c0-.57.14-4.62 3.34-4.62H2.6V5h14zM17.22 11.73h4.07V7H0v4.7h3.23v4.7H.94v5.11h7.17v-9.78h4.23v9.81h7.07v-.08c0-.61.13-5 3.33-5h-5.52zM85.79 11.41L83 13.15l-2.24 1.37L78 10.14l-6.2 3.8 4.42-12.21L71.41 0 64.2 20l4.7 1.68 7.1-4.3.44.72 2.23 3.64 6.94-4.24v-.07c-.37-.53-2.54-4.35.18-6.02zM27.77 3.4h13.36V1.07H27.92l.06-.82h-3.84v6.37h3.42l.21-3.22z"/><path class="cls-1" d="M29.57 4.76h10.11v2.33H29.57zM43 12.31V8.48H23v3.83h6l-4.11 4 4.33.7-4.45 4.5 11.16-5.06-5.21-1.18 4.49-3h3.23v9.23H43v-.08c0-.63.14-5 3.34-5H43zM108 5.35V1.76h-4.71V.25h-5.1v1.51h-11v3.59h11v1.54h-11v3.59h11v4.59h5.1v-4.59H108V6.89h-4.71V5.35H108z"/><path class="cls-1" d="M94.91 16.43c-3.13 0-2.5-4.46-2.5-4.46h-5.22v2.84c0 5.58 5.33 6.73 8.46 6.73h8.81v-.09c0-.64.14-5 3.33-5H94.91zM57 15.24C52.83 11.09 65.33 1.3 65.33 1.3H43.52v5.11h10.26a20.49 20.49 0 0 0-3.8 7.3c-1.15 5.53 7.83 7.83 7.83 7.83l6.47-5.74s-4.65 2.1-7.28-.56z"/><path class="cls-1" d="M61.22 5.99l-1.63 4.75h2.24l-1.9 4.09 5.54-4.95h-3.12l3.29-3.89h-4.42z"/></g></g></svg>
+			株式会社
+		</p>
 
 		<div class="w-full border-t border-slate-200" aria-hidden="true"></div>
 
@@ -282,7 +286,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 		</nav>
 
 		<p class="text-center text-sm font-medium leading-5 text-slate-100">
-			&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> all rights reserved
+			&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> GENKI DENKI all rights reserved
 		</p>
 	</div>
 </footer>

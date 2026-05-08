@@ -34,6 +34,35 @@
 		@apply bg-orange-100 text-brand-orange;
 	}
 
+	.site-header .primary-menu-mobile > li.menu-item-cta {
+		@apply mt-2 border-t border-slate-200 pt-3;
+	}
+
+	.site-header .primary-menu-mobile > li.menu-item-cta > a.primary-menu-mobile-cta {
+		@apply inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-brand-orange px-4 py-1 text-white shadow-md no-underline ring-1 ring-black/5 transition hover:bg-brand-orange/95 hover:text-white;
+	}
+
+	.site-header .primary-menu-mobile > li.menu-item-cta > a.primary-menu-mobile-cta:hover,
+	.site-header .primary-menu-mobile > li.menu-item-cta > a.primary-menu-mobile-cta:focus-visible {
+		@apply bg-brand-orange/95 text-white;
+	}
+
+	.site-header .primary-menu-mobile > li.menu-item-cta > a.primary-menu-mobile-cta .primary-menu-mobile-cta__label {
+		@apply text-lg font-bold leading-8;
+	}
+
+	.site-header .primary-menu-mobile > li.menu-item-cta.current-menu-item > a.primary-menu-mobile-cta,
+	.site-header .primary-menu-mobile > li.menu-item-cta.current-menu-ancestor > a.primary-menu-mobile-cta {
+		@apply bg-brand-orange text-white shadow-md ring-1 ring-black/5;
+	}
+
+	.site-header .primary-menu-mobile > li.menu-item-cta.current-menu-item > a.primary-menu-mobile-cta:hover,
+	.site-header .primary-menu-mobile > li.menu-item-cta.current-menu-item > a.primary-menu-mobile-cta:focus-visible,
+	.site-header .primary-menu-mobile > li.menu-item-cta.current-menu-ancestor > a.primary-menu-mobile-cta:hover,
+	.site-header .primary-menu-mobile > li.menu-item-cta.current-menu-ancestor > a.primary-menu-mobile-cta:focus-visible {
+		@apply bg-brand-orange/95 text-white;
+	}
+
 	body.admin-bar .site-header {
 		top: 32px;
 	}

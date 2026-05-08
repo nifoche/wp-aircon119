@@ -162,6 +162,12 @@ function gd_aircon_repair_fallback_primary_menu( $variant = 'desktop' ) {
 
 	if ( 'mobile' === $variant ) {
 		$ul_class = 'primary-menu-mobile m-0 flex list-none flex-col gap-1 p-0';
+		$items[]  = array(
+			'url'     => apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contact/' ) ),
+			'label'   => __( 'お問い合わせ', 'gd-aircon-repair' ),
+			'current' => is_page( 'contact' ),
+			'cta'     => true,
+		);
 	} else {
 		$ul_class = 'primary-menu flex flex-wrap items-center gap-6 md:gap-8 list-none m-0 p-0';
 	}
@@ -173,12 +179,28 @@ function gd_aircon_repair_fallback_primary_menu( $variant = 'desktop' ) {
 		if ( ! empty( $item['current'] ) ) {
 			$classes[] = 'current-menu-item';
 		}
-		echo '<li class="' . esc_attr( implode( ' ', $classes ) ) . '">';
-		echo '<a href="' . esc_url( $item['url'] ) . '"';
-		if ( ! empty( $item['current'] ) ) {
-			echo ' aria-current="page"';
+		if ( ! empty( $item['cta'] ) ) {
+			$classes[] = 'menu-item-cta';
 		}
-		echo '>' . esc_html( $item['label'] ) . '</a>';
+		echo '<li class="' . esc_attr( implode( ' ', $classes ) ) . '">';
+		if ( ! empty( $item['cta'] ) ) {
+			echo '<a class="primary-menu-mobile-cta" href="' . esc_url( $item['url'] ) . '"';
+			if ( ! empty( $item['current'] ) ) {
+				echo ' aria-current="page"';
+			}
+			echo '>';
+			echo '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" focusable="false">';
+			echo '<path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />';
+			echo '</svg>';
+			echo '<span class="primary-menu-mobile-cta__label">' . esc_html( $item['label'] ) . '</span>';
+			echo '</a>';
+		} else {
+			echo '<a href="' . esc_url( $item['url'] ) . '"';
+			if ( ! empty( $item['current'] ) ) {
+				echo ' aria-current="page"';
+			}
+			echo '>' . esc_html( $item['label'] ) . '</a>';
+		}
 		echo '</li>';
 	}
 

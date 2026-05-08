@@ -77,10 +77,10 @@ if ( $privacy_policy_page instanceof WP_Post ) {
 							</defs>
 						</svg>
 					</span>
-					<span class="text-center text-[48px] font-extrabold leading-[1]"><?php echo esc_html( $phone_display ); ?></span>
+					<span class="text-center text-[36px] sm:text-[48px] font-extrabold leading-[1]"><?php echo esc_html( $phone_display ); ?></span>
 				</a>
 			</div>
-			<p class="mt-1 text-center text-2xl font-medium leading-[2] text-[#364153]">
+			<p class="mt-1 text-center text-xl sm:text-2xl font-medium leading-[2] text-[#364153]">
 				<?php esc_html_e( '受付時間: 9:00~17:00（土日祝を除く）', 'gd-aircon-repair' ); ?>
 			</p>
 		</div>
@@ -111,7 +111,7 @@ if ( $privacy_policy_page instanceof WP_Post ) {
 
 					<div class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-3">
 						<p class="w-[140px] shrink-0 text-base font-bold leading-5 text-[#4a5565]"><?php esc_html_e( 'お問い合わせ項目', 'gd-aircon-repair' ); ?></p>
-						<div class="flex h-12 flex-wrap items-center gap-6" role="radiogroup" aria-label="<?php esc_attr_e( 'お問い合わせ項目', 'gd-aircon-repair' ); ?>">
+						<div class="flex sm:h-12 flex-wrap items-center gap-6" role="radiogroup" aria-label="<?php esc_attr_e( 'お問い合わせ項目', 'gd-aircon-repair' ); ?>">
 							<label class="inline-flex items-center gap-2 text-base font-medium text-[#1e2939]">
 								<input type="radio" name="contact-type" checked class="h-5 w-5 accent-[#2b7fff]">
 								<span><?php esc_html_e( '見積の依頼', 'gd-aircon-repair' ); ?></span>
@@ -153,7 +153,7 @@ if ( $privacy_policy_page instanceof WP_Post ) {
 					</div>
 
 					<div class="flex justify-center pt-5">
-						<button type="button" class="inline-flex w-60 items-center justify-center gap-3 rounded bg-[#0084d1] px-5 py-4 text-2xl font-bold leading-6 text-white shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:bg-[#0076bc]">
+						<button type="button" class="inline-flex w-60 items-center justify-center gap-3 rounded bg-[#0084d1] px-5 py-4 text-xl sm:text-2xl font-bold leading-6 text-white shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:bg-[#0076bc]">
 							<span class="grow text-center"><?php esc_html_e( '送信する', 'gd-aircon-repair' ); ?></span>
 							<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M3.5 23.3327V4.66602L25.6667 13.9993M5.83333 19.8327L19.6583 13.9993L5.83333 8.16602V12.2493L12.8333 13.9993L5.83333 15.7493M5.83333 19.8327V8.16602V15.7493V19.8327Z" fill="white"/>
