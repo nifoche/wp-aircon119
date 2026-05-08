@@ -65,13 +65,13 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 		<div class="flex flex-col gap-6 lg:gap-10">
 			<?php foreach ( $repair_steps as $step ) : ?>
-				<div class="flex flex-col gap-5 rounded-2xl bg-white p-6 shadow-[0_5px_25px_0_rgba(0,0,0,0.2)] md:flex-row md:items-center md:gap-10">
-					<div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-brand-orange">
+				<div class="flex flex-col gap-5 rounded-2xl bg-white p-6 shadow-[0_5px_25px_0_rgba(0,0,0,0.2)] md:flex-row items-center md:gap-10">
+					<div class="flex h-16 sm:h-20 w-16 sm:w-20 shrink-0 items-center justify-center rounded-full bg-brand-orange">
 						<span class="text-[42px] font-extrabold leading-[48px] text-white montserrat"><?php echo esc_html( $step['number'] ); ?></span>
 					</div>
 
 					<div class="min-w-0 flex-1">
-						<p class="text-2xl font-bold leading-tight text-brand-skydeep lg:text-[36px]"><?php echo esc_html( $step['title'] ); ?></p>
+						<p class="text-2xl font-bold leading-tight text-brand-skydeep lg:text-[36px] text-center sm:text-left"><?php echo esc_html( $step['title'] ); ?></p>
 						<div class="mt-4 space-y-0.5 text-base leading-7 text-slate-700">
 							<?php foreach ( $step['description'] as $description_line ) : ?>
 								<p><?php echo esc_html( $description_line ); ?></p>

@@ -144,7 +144,7 @@ $ac_types_cards = array(
 			<p class="text-center text-2xl font-bold leading-[1.2] tracking-[-0.03em] text-[#00598a] lg:text-[32px]">
 				<?php esc_html_e( 'こんなお困りごとはありませんか？', 'gd-aircon-repair' ); ?>
 			</p>
-			<h2 class="text-center text-[40px] font-bold leading-[1.15] tracking-[-0.03em] text-[#00598a] lg:text-[56px]">
+			<h2 class="text-center text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-[#00598a] lg:text-[56px]">
 				<?php esc_html_e( '業務用エアコン修理会社が解決します', 'gd-aircon-repair' ); ?>
 			</h2>
 			<span class="mt-2 block h-2 w-24 bg-[#fe9a00]" aria-hidden="true"></span>
@@ -305,57 +305,74 @@ $pricing_rows = array(
 		</h2>
 
 		<div class="overflow-hidden rounded-xl bg-white shadow-[0px_10px_25px_-5px_rgba(0,0,0,0.08),0px_8px_10px_-6px_rgba(0,0,0,0.08)]">
-			<div class="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-				<table class="w-full min-w-[480px] border-collapse text-left text-slate-800">
-					<thead>
-						<tr class="bg-[#00598a] text-white">
-							<th scope="col" class="px-4 py-4 text-base font-bold lg:px-6">
-								<?php esc_html_e( 'サービス内容', 'gd-aircon-repair' ); ?>
-							</th>
-							<th scope="col" class="px-4 py-4 text-right text-base font-bold lg:px-6">
-								<?php esc_html_e( '料金（税込）', 'gd-aircon-repair' ); ?>
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ( $pricing_rows as $row ) : ?>
-							<tr class="border-b border-slate-200 last:border-b-0">
-								<td class="px-4 py-2 align-middle lg:px-6">
-									<div class="flex items-center gap-3">
-										<img
-											class="h-16 w-16 shrink-0 rounded object-cover"
-											src="<?php echo esc_url( $row['image'] ); ?>"
-											alt="<?php echo esc_attr( $row['service'] ); ?>"
-											loading="lazy"
-											width="32"
-											height="32"
-										>
+			<div class="bg-[#00598a] px-4 py-4 text-center text-base font-bold text-white sm:hidden">
+				<?php esc_html_e( 'サービス内容', 'gd-aircon-repair' ); ?>
+			</div>
+			<table class="w-full border-collapse text-left text-slate-800">
+				<thead class="hidden sm:table-header-group">
+					<tr class="bg-[#00598a] text-white">
+						<th scope="col" class="px-4 py-4 text-base font-bold lg:px-6">
+							<?php esc_html_e( 'サービス内容', 'gd-aircon-repair' ); ?>
+						</th>
+						<th scope="col" class="px-4 py-4 text-right text-base font-bold lg:px-6">
+							<?php esc_html_e( '料金（税込）', 'gd-aircon-repair' ); ?>
+						</th>
+					</tr>
+				</thead>
+				<tbody class="block sm:table-row-group">
+					<?php foreach ( $pricing_rows as $row ) : ?>
+						<tr class="block border-b border-slate-200 last:border-b-0 sm:table-row">
+							<td class="block px-4 py-3 align-middle sm:table-cell sm:py-2 lg:px-6">
+								<div class="flex items-center gap-3">
+									<img
+										class="h-16 w-16 shrink-0 rounded object-cover"
+										src="<?php echo esc_url( $row['image'] ); ?>"
+										alt="<?php echo esc_attr( $row['service'] ); ?>"
+										loading="lazy"
+										width="64"
+										height="64"
+									>
+									<div class="flex min-w-0 flex-1 flex-col gap-1.5">
 										<span class="text-base font-medium leading-snug text-slate-800">
 											<?php echo esc_html( $row['service'] ); ?>
 										</span>
+										<div class="flex flex-col items-start gap-0.5 sm:hidden">
+											<span class="text-xl font-bold tabular-nums text-[#00598a]">
+												<?php
+												/* translators: %s: price amount without currency symbol */
+												echo esc_html( sprintf( __( '¥%s〜', 'gd-aircon-repair' ), $row['price_ex_tax'] ) );
+												?>
+											</span>
+											<span class="text-sm tabular-nums text-slate-500">
+												<?php
+												/* translators: %s: tax-inclusive price amount */
+												echo esc_html( sprintf( __( '(税込 ¥%s〜)', 'gd-aircon-repair' ), $row['price_incl_tax'] ) );
+												?>
+											</span>
+										</div>
 									</div>
-								</td>
-								<td class="px-4 py-4 align-middle text-right lg:px-6">
-									<div class="flex flex-col items-end gap-0.5">
-										<span class="text-xl font-bold tabular-nums text-[#00598a] lg:text-2xl">
-											<?php
-											/* translators: %s: price amount without currency symbol */
-											echo esc_html( sprintf( __( '¥%s〜', 'gd-aircon-repair' ), $row['price_ex_tax'] ) );
-											?>
-										</span>
-										<span class="text-sm tabular-nums text-slate-500">
-											<?php
-											/* translators: %s: tax-inclusive price amount */
-											echo esc_html( sprintf( __( '(税込 ¥%s〜)', 'gd-aircon-repair' ), $row['price_incl_tax'] ) );
-											?>
-										</span>
-									</div>
-								</td>
-							</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
-			</div>
+								</div>
+							</td>
+							<td class="hidden align-middle sm:table-cell sm:px-4 sm:py-4 sm:text-right lg:px-6">
+								<div class="flex flex-col items-end gap-0.5">
+									<span class="text-xl font-bold tabular-nums text-[#00598a] lg:text-2xl">
+										<?php
+										/* translators: %s: price amount without currency symbol */
+										echo esc_html( sprintf( __( '¥%s〜', 'gd-aircon-repair' ), $row['price_ex_tax'] ) );
+										?>
+									</span>
+									<span class="text-sm tabular-nums text-slate-500">
+										<?php
+										/* translators: %s: tax-inclusive price amount */
+										echo esc_html( sprintf( __( '(税込 ¥%s〜)', 'gd-aircon-repair' ), $row['price_incl_tax'] ) );
+										?>
+									</span>
+								</div>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
 			<p class="border-t border-slate-100 px-4 py-4 text-sm leading-relaxed text-slate-500 lg:px-6">
 				<?php esc_html_e( '※上記料金は代表的なモデル（ダイキン FHCP80AB等）に基づいた概算です。機種や設置状況により異なる場合があります。', 'gd-aircon-repair' ); ?>
 			</p>

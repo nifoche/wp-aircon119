@@ -29,7 +29,7 @@ $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contac
 </a>
 
 <header class="site-header fixed left-0 right-0 top-0 z-50 border-b-4 border-brand-orange bg-brand-navy shadow-header">
-	<div class="mx-auto flex max-w-[1280px] flex-col gap-4 px-4 pb-5 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 lg:px-6">
+	<div class="mx-auto flex max-w-[1280px] flex-col gap-4 px-4 pb-3 sm:pb-5 pt-2 sm:pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 lg:px-6">
 		<div class="flex shrink-0 items-center justify-between sm:justify-start">
 			<?php if ( has_custom_logo() ) : ?>
 				<div class="custom-logo-wrap [&_img]:max-h-8 [&_img]:w-auto">
@@ -40,10 +40,40 @@ $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contac
 					<?php bloginfo( 'name' ); ?>
 				</a>
 			<?php endif; ?>
+
+			<details class="relative ml-3 lg:hidden">
+				<summary
+					class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded border border-white/30 text-white transition hover:bg-white/10 [&::-webkit-details-marker]:hidden"
+					aria-label="<?php esc_attr_e( 'メニューを開く', 'gd-aircon-repair' ); ?>"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+						<path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
+					</svg>
+				</summary>
+				<div class="absolute right-0 top-12 z-[60] min-w-[220px] rounded-md border border-slate-200 bg-white p-4 shadow-xl">
+					<nav aria-label="<?php esc_attr_e( 'モバイルメニュー', 'gd-aircon-repair' ); ?>">
+						<?php if ( has_nav_menu( 'primary' ) ) : ?>
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'primary',
+									'menu_class'     => 'primary-menu-mobile m-0 flex list-none flex-col gap-3 p-0',
+									'container'      => false,
+									'fallback_cb'    => false,
+									'depth'          => 1,
+								)
+							);
+							?>
+						<?php else : ?>
+							<?php gd_aircon_repair_fallback_primary_menu(); ?>
+						<?php endif; ?>
+					</nav>
+				</div>
+			</details>
 		</div>
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
-			<nav class="min-w-0 flex-1 sm:flex sm:justify-center" aria-label="<?php esc_attr_e( 'メインメニュー', 'gd-aircon-repair' ); ?>">
+			<nav class="min-w-0 hidden flex-1 lg:flex lg:justify-center" aria-label="<?php esc_attr_e( 'メインメニュー', 'gd-aircon-repair' ); ?>">
 				<?php
 				wp_nav_menu(
 					array(
