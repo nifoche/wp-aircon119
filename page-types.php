@@ -125,7 +125,7 @@ $types = array(
 						<?php echo esc_html( $type['description'] ); ?>
 					</p>
 					<a
-						class="relative inline-flex w-fit items-center gap-3 rounded bg-brand-sky px-6 py-3 text-base font-extrabold text-white no-underline shadow-md ring-1 ring-black/5 transition hover:bg-brand-sky/90"
+						class="relative hidden w-fit items-center gap-3 rounded bg-brand-sky px-6 py-3 text-base font-extrabold text-white no-underline shadow-md ring-1 ring-black/5 transition hover:bg-brand-sky/90 lg:inline-flex"
 						href="<?php echo esc_url( $type['url'] ); ?>"
 					>
 						<span><?php echo esc_html( $type['button'] ); ?></span>
@@ -145,6 +145,16 @@ $types = array(
 						height="400"
 					>
 				</div>
+
+				<a
+					class="relative flex w-full items-center gap-3 rounded bg-brand-sky px-6 py-3 text-base font-extrabold text-white no-underline shadow-md ring-1 ring-black/5 transition hover:bg-brand-sky/90 lg:hidden"
+					href="<?php echo esc_url( $type['url'] ); ?>"
+				>
+					<span class="grow"><?php echo esc_html( $type['button'] ); ?></span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="shrink-0 text-white" aria-hidden="true" focusable="false">
+						<path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</a>
 			</article>
 		<?php endforeach; ?>
 	</div>

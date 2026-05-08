@@ -155,7 +155,7 @@ $symptoms         = array(
 						<?php echo esc_html( $symptom['description'] ); ?>
 					</p>
 					<a
-						class="inline-flex items-center gap-2 rounded bg-brand-sky px-6 py-3 text-sm md:text-base font-extrabold text-white no-underline shadow-md transition hover:bg-brand-sky/90"
+						class="hidden items-center gap-2 rounded bg-brand-sky px-6 py-3 text-sm md:text-base font-extrabold text-white no-underline shadow-md transition hover:bg-brand-sky/90 lg:inline-flex"
 						href="<?php echo esc_url( $symptom['url'] ); ?>"
 					>
 						<span><?php echo esc_html( $symptom['button'] ); ?></span>
@@ -173,6 +173,16 @@ $symptoms         = array(
 						loading="lazy"
 					>
 				</div>
+
+				<a
+					class="inline-flex items-center gap-2 rounded bg-brand-sky px-6 py-3 text-sm md:text-base font-extrabold text-white no-underline shadow-md transition hover:bg-brand-sky/90 lg:hidden"
+					href="<?php echo esc_url( $symptom['url'] ); ?>"
+				>
+					<span class="grow"><?php echo esc_html( $symptom['button'] ); ?></span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+						<path d="M9.29 6.71a1 1 0 0 1 1.42 0l5 5a1 1 0 0 1 0 1.42l-5 5a1 1 0 1 1-1.42-1.42L13.59 12 9.29 7.71a1 1 0 0 1 0-1.42z" />
+					</svg>
+				</a>
 			</article>
 		<?php endforeach; ?>
 	</div>
