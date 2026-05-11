@@ -6,6 +6,7 @@ module.exports = {
 		'./inc/**/*.php',
 		'./assets/js/**/*.js',
 	],
+	safelist: [ 'h-40', 'overflow-y-auto' ],
 	theme: {
 		extend: {
 			colors: {

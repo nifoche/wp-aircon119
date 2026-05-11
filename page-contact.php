@@ -93,74 +93,7 @@ if ( $privacy_policy_page instanceof WP_Post ) {
 					<?php esc_html_e( 'メールフォームでのお問い合わせ', 'gd-aircon-repair' ); ?>
 				</h2>
 
-				<form action="#" method="post" class="space-y-4" novalidate>
-					<div class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-3">
-						<label class="w-[140px] shrink-0 text-base font-bold leading-5 text-[#4a5565]" for="contact-name"><?php esc_html_e( 'お名前', 'gd-aircon-repair' ); ?></label>
-						<input id="contact-name" type="text" class="h-12 w-full rounded-lg border border-[#99a1af] px-3 text-base text-[#1e2939] placeholder:text-[#99a1af]" placeholder="<?php esc_attr_e( '山田 太郎', 'gd-aircon-repair' ); ?>">
-					</div>
-
-					<div class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-3">
-						<label class="w-[140px] shrink-0 text-base font-bold leading-5 text-[#4a5565]" for="contact-email"><?php esc_html_e( 'メールアドレス', 'gd-aircon-repair' ); ?></label>
-						<input id="contact-email" type="email" class="h-12 w-full rounded-lg border border-[#99a1af] px-3 text-base text-[#1e2939] placeholder:text-[#99a1af]" placeholder="<?php esc_attr_e( 'yamada@example.com', 'gd-aircon-repair' ); ?>">
-					</div>
-
-					<div class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-3">
-						<label class="w-[140px] shrink-0 text-base font-bold leading-5 text-[#4a5565]" for="contact-phone"><?php esc_html_e( 'お電話番号', 'gd-aircon-repair' ); ?></label>
-						<input id="contact-phone" type="tel" class="h-12 w-full rounded-lg border border-[#99a1af] px-3 text-base text-[#1e2939] placeholder:text-[#99a1af]" placeholder="<?php esc_attr_e( '080-1234-5678', 'gd-aircon-repair' ); ?>">
-					</div>
-
-					<div class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-3">
-						<p class="w-[140px] shrink-0 text-base font-bold leading-5 text-[#4a5565]"><?php esc_html_e( 'お問い合わせ項目', 'gd-aircon-repair' ); ?></p>
-						<div class="flex sm:h-12 flex-wrap items-center gap-6" role="radiogroup" aria-label="<?php esc_attr_e( 'お問い合わせ項目', 'gd-aircon-repair' ); ?>">
-							<label class="inline-flex items-center gap-2 text-base font-medium text-[#1e2939]">
-								<input type="radio" name="contact-type" checked class="h-5 w-5 accent-[#2b7fff]">
-								<span><?php esc_html_e( '見積の依頼', 'gd-aircon-repair' ); ?></span>
-							</label>
-							<label class="inline-flex items-center gap-2 text-base font-medium text-[#1e2939]">
-								<input type="radio" name="contact-type" class="h-5 w-5 accent-[#2b7fff]">
-								<span><?php esc_html_e( '故障の相談', 'gd-aircon-repair' ); ?></span>
-							</label>
-							<label class="inline-flex items-center gap-2 text-base font-medium text-[#1e2939]">
-								<input type="radio" name="contact-type" class="h-5 w-5 accent-[#2b7fff]">
-								<span><?php esc_html_e( 'その他', 'gd-aircon-repair' ); ?></span>
-							</label>
-						</div>
-					</div>
-
-					<div class="flex flex-col gap-2 lg:flex-row lg:items-start lg:gap-3">
-						<label class="w-[140px] shrink-0 py-[11px] text-base font-bold leading-5 text-[#4a5565]" for="contact-message"><?php esc_html_e( 'お問い合わせ内容', 'gd-aircon-repair' ); ?></label>
-						<textarea id="contact-message" class="h-[140px] w-full rounded-lg border border-[#99a1af] px-3 py-3 text-base text-[#1e2939] placeholder:text-[#99a1af]" placeholder="<?php esc_attr_e( 'お問い合わせ内容を入力してください', 'gd-aircon-repair' ); ?>"></textarea>
-					</div>
-
-					<div class="flex flex-col gap-2 lg:flex-row lg:items-start lg:gap-3">
-						<p class="w-[140px] shrink-0 py-[11px] text-base font-bold leading-5 text-[#4a5565]">
-							<?php esc_html_e( '個人情報の', 'gd-aircon-repair' ); ?><br>
-							<?php esc_html_e( '取り扱いについて', 'gd-aircon-repair' ); ?>
-						</p>
-						<div class="w-full space-y-4">
-							<div class="h-[180px] overflow-y-auto rounded-lg border border-[#99a1af] bg-[#f3f4f6] p-3 text-sm leading-7 text-[#364153]">
-								<?php if ( '' !== $privacy_policy_content ) : ?>
-									<?php echo wp_kses_post( $privacy_policy_content ); ?>
-								<?php else : ?>
-									<p><?php esc_html_e( 'プライバシーポリシーが見つかりませんでした。', 'gd-aircon-repair' ); ?></p>
-								<?php endif; ?>
-							</div>
-							<label class="inline-flex items-center gap-2 text-base font-medium text-[#1e2939]">
-								<input type="checkbox" class="h-5 w-5 accent-[#2b7fff]">
-								<span><?php esc_html_e( '個人情報保護方針に同意します', 'gd-aircon-repair' ); ?></span>
-							</label>
-						</div>
-					</div>
-
-					<div class="flex justify-center pt-5">
-						<button type="button" class="inline-flex w-60 items-center justify-center gap-3 rounded bg-[#0084d1] px-5 py-4 text-xl sm:text-2xl font-bold leading-6 text-white shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition hover:bg-[#0076bc]">
-							<span class="grow text-center"><?php esc_html_e( '送信する', 'gd-aircon-repair' ); ?></span>
-							<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M3.5 23.3327V4.66602L25.6667 13.9993M5.83333 19.8327L19.6583 13.9993L5.83333 8.16602V12.2493L12.8333 13.9993L5.83333 15.7493M5.83333 19.8327V8.16602V15.7493V19.8327Z" fill="white"/>
-							</svg>
-						</button>
-					</div>
-				</form>
+				<?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
 			</div>
 		</div>
 	</section>

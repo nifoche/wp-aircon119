@@ -73,3 +73,7 @@
 		}
 	}
 }
+
+.wpcf7-form-control-wrap {
+	@apply w-full;
+}

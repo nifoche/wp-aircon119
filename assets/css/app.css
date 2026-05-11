@@ -1523,8 +1523,8 @@ body.admin-bar .site-header {
   height: 6rem;
 }
 
-.h-5 {
-  height: 1.25rem;
+.h-40 {
+  height: 10rem;
 }
 
 .h-6 {
@@ -1533,14 +1533,6 @@ body.admin-bar .site-header {
 
 .h-8 {
   height: 2rem;
-}
-
-.h-\[140px\] {
-  height: 140px;
-}
-
-.h-\[180px\] {
-  height: 180px;
 }
 
 .h-\[181px\] {
@@ -1619,6 +1611,10 @@ body.admin-bar .site-header {
   width: 6rem;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -1627,12 +1623,12 @@ body.admin-bar .site-header {
   width: 1.5rem;
 }
 
-.w-60 {
-  width: 15rem;
-}
-
 .w-8 {
   width: 2rem;
+}
+
+.w-80 {
+  width: 20rem;
 }
 
 .w-\[140px\] {
@@ -1666,26 +1662,6 @@ body.admin-bar .site-header {
 
 .w-full {
   width: 100%;
-}
-
-.w-32 {
-  width: 8rem;
-}
-
-.w-64 {
-  width: 16rem;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
-.w-96 {
-  width: 24rem;
-}
-
-.w-48 {
-  width: 12rem;
 }
 
 .min-w-0 {
@@ -2094,11 +2070,6 @@ body.admin-bar .site-header {
   background-color: rgb(240 250 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#f3f4f6\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#f9fcff\] {
   --tw-bg-opacity: 1;
   background-color: rgb(249 252 255 / var(--tw-bg-opacity, 1));
@@ -2178,10 +2149,6 @@ body.admin-bar .site-header {
 
 .p-2 {
   padding: 0.5rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .p-4 {
@@ -2285,11 +2252,6 @@ body.admin-bar .site-header {
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
-}
-
-.py-\[11px\] {
-  padding-top: 11px;
-  padding-bottom: 11px;
 }
 
 .pb-10 {
@@ -2414,10 +2376,6 @@ body.admin-bar .site-header {
 
 .text-\[42px\] {
   font-size: 42px;
-}
-
-.text-\[48px\] {
-  font-size: 48px;
 }
 
 .text-\[54px\] {
@@ -2703,10 +2661,6 @@ body.admin-bar .site-header {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.accent-\[\#2b7fff\] {
-  accent-color: #2b7fff;
-}
-
 .opacity-10 {
   opacity: 0.1;
 }
@@ -2840,14 +2794,8 @@ body.admin-bar .site-header {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.placeholder\:text-\[\#99a1af\]::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(153 161 175 / var(--tw-text-opacity, 1));
-}
-
-.placeholder\:text-\[\#99a1af\]::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(153 161 175 / var(--tw-text-opacity, 1));
+.wpcf7-form-control-wrap {
+  width: 100%;
 }
 
 .placeholder\:text-slate-500::-moz-placeholder {
@@ -3036,10 +2984,6 @@ body.admin-bar .site-header {
     height: 5rem;
   }
 
-  .sm\:h-12 {
-    height: 3rem;
-  }
-
   .sm\:w-20 {
     width: 5rem;
   }
@@ -3106,11 +3050,6 @@ body.admin-bar .site-header {
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .sm\:text-\[48px\] {

@@ -57,6 +57,11 @@ function gd_aircon_repair_setup() {
 }
 add_action( 'after_setup_theme', 'gd_aircon_repair_setup' );
 
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+	return false;
+}
+
 /**
  * コンテンツ幅（ブロックエディタ等で参照）
  */
