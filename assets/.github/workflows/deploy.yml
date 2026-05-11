@@ -1,0 +1,22 @@
+name: Deploy to XServer
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.XSERVER_HOST }}
+          username: ${{ secrets.XSERVER_USER }}
+          key: ${{ secrets.XSERVER_SSH_KEY }}
+          port: ${{ secrets.XSERVER_PORT }}
+          script: |
+            cd trylink.xsrv.jp/public_html/aircon119/wp-content/themes/wp-aircon119/
+            git pull origin master
