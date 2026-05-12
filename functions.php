@@ -108,6 +108,40 @@ function gd_aircon_repair_scripts() {
 add_action( 'wp_enqueue_scripts', 'gd_aircon_repair_scripts' );
 
 /**
+ * お問い合わせページ: プライバシーポリシー本文を REST API で取得して #privacy-policy-content に差し込む
+ */
+function gd_aircon_repair_contact_privacy_policy_script() {
+	if ( ! is_page( 'contact' ) ) {
+		return;
+	}
+	$theme_dir = get_template_directory();
+	$theme_uri = get_template_directory_uri();
+	$path      = $theme_dir . '/assets/js/contact-privacy-policy.js';
+
+	if ( ! file_exists( $path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'gd-aircon-repair-contact-privacy',
+		$theme_uri . '/assets/js/contact-privacy-policy.js',
+		array(),
+		(string) filemtime( $path ),
+		true
+	);
+
+	wp_localize_script(
+		'gd-aircon-repair-contact-privacy',
+		'gdAirconRepairContact',
+		array(
+			'restPages' => esc_url_raw( rest_url( 'wp/v2/pages' ) ),
+			'slug'      => 'privacy-policy',
+		)
+	);
+}
+add_action( 'wp_enqueue_scripts', 'gd_aircon_repair_contact_privacy_policy_script' );
+
+/**
  * スレッドコメント用スクリプト
  */
 function gd_aircon_repair_enqueue_comment_reply() {

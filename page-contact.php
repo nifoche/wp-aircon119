@@ -17,11 +17,6 @@ $phone_display    = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-0
 $phone_tel        = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel        = preg_replace( '/\D+/', '', (string) $phone_tel );
 
-$privacy_policy_page    = get_page_by_path( 'privacy-policy' );
-$privacy_policy_content = '';
-if ( $privacy_policy_page instanceof WP_Post ) {
-	$privacy_policy_content = apply_filters( 'the_content', $privacy_policy_page->post_content );
-}
 ?>
 
 <div class="bg-[#f9fcff]">
@@ -92,7 +87,6 @@ if ( $privacy_policy_page instanceof WP_Post ) {
 				<h2 class="pb-10 text-center text-[32px] font-bold leading-[1.5] tracking-[-0.075em] text-[#1e2939]">
 					<?php esc_html_e( 'メールフォームでのお問い合わせ', 'gd-aircon-repair' ); ?>
 				</h2>
-
 				<?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
 			</div>
 		</div>
