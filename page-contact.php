@@ -12,7 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
-$hero_texture_url = get_template_directory_uri() . '/assets/images/error-codes/e55f40f59b1f786159e5bc3341126f1ca3a06460.png';
 $phone_display    = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' );
 $phone_tel        = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel        = preg_replace( '/\D+/', '', (string) $phone_tel );
@@ -20,11 +19,7 @@ $phone_tel        = preg_replace( '/\D+/', '', (string) $phone_tel );
 ?>
 
 <div class="bg-[#f9fcff]">
-	<section class="relative overflow-hidden pb-10 pt-24 lg:pb-12 lg:pt-28">
-		<div class="pointer-events-none absolute inset-0 mix-blend-overlay opacity-30">
-			<img class="h-full w-full object-cover" src="<?php echo esc_url( $hero_texture_url ); ?>" alt="" loading="eager" width="1200" height="800">
-		</div>
-
+	<section class="relative overflow-hidden pb-10 pt-24 lg:pb-12 lg:pt-8">
 		<div class="relative mx-auto w-full max-w-[1280px] px-4 lg:px-10">
 			<nav class="mb-8 flex flex-wrap items-center gap-2 text-base text-[#4a5565] lg:gap-3 lg:text-xl" aria-label="<?php esc_attr_e( 'パンくず', 'gd-aircon-repair' ); ?>">
 				<a class="font-normal text-[#99a1af] no-underline transition hover:text-[#364153]" href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -54,7 +49,7 @@ $phone_tel        = preg_replace( '/\D+/', '', (string) $phone_tel );
 			</h2>
 			<div class="mt-2 flex justify-center">
 				<a
-					class="inline-flex items-center gap-3 text-sky-700 no-underline transition hover:opacity-80"
+					class="!hidden inline-flex items-center gap-3 text-sky-700 no-underline transition hover:opacity-80"
 					href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
 				>
 					<span class="inline-flex h-[52px] w-[52px] items-center justify-center" aria-hidden="true">

@@ -119,7 +119,7 @@ $symptoms         = array(
 
 			<div class="flex flex-wrap gap-3 pt-1">
 				<a
-					class="inline-flex items-center gap-2 rounded bg-white px-6 py-3 text-sm font-extrabold text-brand-skydeep no-underline shadow-md transition hover:bg-slate-100"
+					class="!hidden inline-flex items-center gap-2 rounded bg-white px-6 py-3 text-sm font-extrabold text-brand-skydeep no-underline shadow-md transition hover:bg-slate-100"
 					href="<?php echo esc_url( 'tel:' . preg_replace( '/\D+/', '', (string) apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' ) ) ); ?>"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">

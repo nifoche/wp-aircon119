@@ -112,7 +112,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 		</div>
 
 		<div class="relative flex w-full max-w-[420px] flex-col gap-8 pt-2 lg:self-stretch lg:pt-4">
-			<div class="absolute left-[-345px] top-4 z-20 hidden rotate-12 lg:block">
+			<div class="absolute left-[-345px] top-4 z-20 hidden rotate-12 xl:block">
 				<div class="rounded-xl border-4 border-white bg-brand-orange px-6 py-6 text-center shadow-header">
 					<p class="text-[54px] font-extrabold leading-[60px] text-white">4.9/5</p>
 					<div class="mt-1 flex items-center justify-center gap-0.5">
@@ -234,7 +234,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 		<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
 			<a
-				class="inline-flex h-16 flex-1 items-center justify-center gap-3 py-3 rounded bg-brand-navy px-6 text-[34px] font-bold leading-8 text-white no-underline shadow-lg ring-1 ring-black/5 transition hover:bg-brand-navy/90"
+				class="!hidden inline-flex h-16 flex-1 items-center justify-center gap-3 py-3 rounded bg-brand-navy px-6 text-[34px] font-bold leading-8 text-white no-underline shadow-lg ring-1 ring-black/5 transition hover:bg-brand-navy/90"
 				href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" focusable="false">

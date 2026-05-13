@@ -17,7 +17,7 @@ get_header();
 $phone_display = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' );
 $phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
-$quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) );
+$quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contact' ) );
 
 $assets = get_template_directory_uri() . '/assets/images/symptoms/not-heating/';
 $hero_bg = $assets . '01.jpg';
@@ -106,7 +106,7 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 						<span><?php echo esc_html( $phone_display ); ?></span>
 					</a>
 					<a
-						class="inline-flex h-12 items-center justify-center gap-1 rounded bg-brand-orange px-6 text-white no-underline shadow-md ring-1 ring-black/5 transition hover:bg-brand-orange/95"
+						class="!hidden inline-flex h-12 items-center justify-center gap-1 rounded bg-brand-orange px-6 text-white no-underline shadow-md ring-1 ring-black/5 transition hover:bg-brand-orange/95"
 						href="<?php echo esc_url( $quote_url ); ?>"
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">

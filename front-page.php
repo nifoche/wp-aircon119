@@ -30,13 +30,13 @@ get_header();
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20" fill="none" aria-hidden="true" focusable="false">
 						<path d="M8 0L0 3V8.4C0 13.2 3.28 17.68 8 20C12.72 17.68 16 13.2 16 8.4V3L8 0ZM8 2.14L14 4.39V8.4C14 12.2 11.57 15.95 8 17.94C4.43 15.95 2 12.2 2 8.4V4.39L8 2.14Z" fill="#FE9A00"/>
 					</svg>
-					<span class="text-base font-medium leading-6 text-white"><?php esc_html_e( '安心の特徴1', 'gd-aircon-repair' ); ?></span>
+					<span class="text-base font-medium leading-6 text-white"><?php esc_html_e( '当日対応可能', 'gd-aircon-repair' ); ?></span>
 				</div>
 				<div class="inline-flex items-center gap-2 rounded bg-white/10 px-4 py-3 backdrop-blur-sm">
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="21" viewBox="0 0 18 21" fill="none" aria-hidden="true" focusable="false">
 						<path d="M9 0.5C4.03 0.5 0 4.53 0 9.5C0 14.47 4.03 18.5 9 18.5C13.97 18.5 18 14.47 18 9.5C18 4.53 13.97 0.5 9 0.5ZM9 16.5C5.14 16.5 2 13.36 2 9.5C2 5.64 5.14 2.5 9 2.5C12.86 2.5 16 5.64 16 9.5C16 13.36 12.86 16.5 9 16.5ZM8 5.5H10V10.5H8V5.5ZM8 12.5H10V14.5H8V12.5Z" fill="#FE9A00"/>
 					</svg>
-					<span class="text-base font-medium leading-6 text-white"><?php esc_html_e( '安心の特徴2', 'gd-aircon-repair' ); ?></span>
+					<span class="text-base font-medium leading-6 text-white"><?php esc_html_e( '全メーカー対応', 'gd-aircon-repair' ); ?></span>
 				</div>
 			</div>
 		</div>

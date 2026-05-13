@@ -17,7 +17,7 @@ get_header();
 $phone_display = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' );
 $phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
-$quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) );
+$quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contact/' ) );
 
 $assets = get_template_directory_uri() . '/assets/images/types/';
 $hero_bg = $assets . 'yukaoki.jpg';
@@ -93,7 +93,7 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 
 				<div class="flex flex-wrap gap-3 pt-1">
 					<a
-						class="inline-flex items-center gap-2 rounded bg-white px-6 py-3 text-base font-extrabold text-brand-skydeep shadow-md no-underline ring-1 ring-black/5 transition hover:bg-slate-100"
+						class="!hidden inline-flex items-center gap-2 rounded bg-white px-6 py-3 text-base font-extrabold text-brand-skydeep shadow-md no-underline ring-1 ring-black/5 transition hover:bg-slate-100"
 						href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
