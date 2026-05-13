@@ -41,20 +41,15 @@ get_header();
 			</div>
 		</div>
 
-		<div class="relative w-full rounded-lg bg-white p-6 text-slate-900 shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:w-[410px]">
+		<div class="relative w-full rounded-lg bg-white px-6 pt-6 text-slate-900 shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:w-[410px]">
 			<div class="mb-4 flex items-end justify-center gap-1 border-b-4 border-[#fe9a00] pb-3 text-center">
 				<span class="text-lg font-bold leading-8 text-[#00598a] lg:text-2xl"><?php esc_html_e( 'WEBでカンタン', 'gd-aircon-repair' ); ?></span>
 				<span class="text-4xl font-black leading-[1] text-[#fe9a00] lg:text-4xl"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
 				<span class="text-lg font-bold leading-8 text-[#00598a] lg:text-2xl"><?php esc_html_e( 'お見積り', 'gd-aircon-repair' ); ?></span>
 			</div>
-			<form class="space-y-4" action="<?php echo esc_url( apply_filters( 'gd_aircon_repair_quote_url', home_url( '/' ) ) ); ?>" method="get">
-				<input class="w-full rounded-sm border-2 border-[#c2c6d3] px-3 py-2 text-base leading-6 text-slate-700 placeholder:text-slate-500" type="text" name="name" placeholder="<?php esc_attr_e( 'お名前', 'gd-aircon-repair' ); ?>">
-				<input class="w-full rounded-sm border-2 border-[#c2c6d3] px-3 py-2 text-base leading-6 text-slate-700 placeholder:text-slate-500" type="tel" name="phone" placeholder="<?php esc_attr_e( '電話番号', 'gd-aircon-repair' ); ?>">
-				<textarea class="h-24 w-full rounded-sm border-2 border-[#c2c6d3] px-3 py-2 text-base leading-6 text-slate-700 placeholder:text-slate-500" name="message" placeholder="<?php esc_attr_e( 'お問い合わせ内容', 'gd-aircon-repair' ); ?>"></textarea>
-				<button class="w-full rounded-sm bg-[#fe9a00] px-4 py-3 lg:py-4 text-xl font-bold leading-7 text-white shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)] transition hover:bg-[#e78d00] lg:text-2xl" type="submit">
-					<?php esc_html_e( '送信する', 'gd-aircon-repair' ); ?>
-				</button>
-			</form>
+			<?php // cf7のフォームを表示 ?>
+			<?php echo do_shortcode( '[contact-form-7 id="e2578fa" title="TOPページお問い合わせ"]' ); ?>
+
 		</div>
 	</div>
 </section>
