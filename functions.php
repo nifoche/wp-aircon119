@@ -195,7 +195,7 @@ function gd_aircon_repair_fallback_primary_menu( $variant = 'desktop' ) {
 		array(
 			'url'     => home_url( '/error-codes/' ),
 			'label'   => __( 'エラーコード', 'gd-aircon-repair' ),
-			'current' => is_page( 'error-codes' ),
+			'current' => is_page( ['error-codes', 'error-codes/panasonic/', 'error-codes/mitsubishi/', 'error-codes/mitsubishi-el/', 'error-codes/hitachi/', 'error-codes/toshiba/'] ),
 		),
 	);
 
