@@ -3,3 +3,7 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# DB ダンプ（引き継ぎ用・コミット禁止）
+*.sql
+*.sql.gz
