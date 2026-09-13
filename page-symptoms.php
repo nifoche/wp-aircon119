@@ -89,14 +89,14 @@ $symptoms         = array(
 );
 ?>
 
-<section class="relative overflow-hidden bg-[#006ca2] pb-10 pt-8 text-white lg:pt-16">
-	<div class="pointer-events-none absolute inset-0 mix-blend-overlay opacity-30">
+<section class="relative overflow-hidden border-b-[6px] border-brand-fire bg-brand-cream pb-10 pt-8 text-brand-ink lg:pt-16">
+	<div class="pointer-events-none absolute inset-0 opacity-[0.07]">
 		<img class="h-full w-full object-cover" src="<?php echo esc_url( $hero_texture_url ); ?>" alt="" loading="lazy">
 	</div>
 
 	<div class="relative mx-auto w-full max-w-[1280px] px-4 lg:px-10">
-		<nav class="mb-6 flex items-center gap-2 text-sm font-bold text-white/90 lg:text-base" aria-label="<?php esc_attr_e( 'パンくず', 'gd-aircon-repair' ); ?>">
-			<a class="no-underline transition hover:text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<nav class="mb-6 flex items-center gap-2 text-sm font-bold text-[#42566a] lg:text-base" aria-label="<?php esc_attr_e( 'パンくず', 'gd-aircon-repair' ); ?>">
+			<a class="no-underline transition hover:text-brand-fire" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php esc_html_e( 'ホーム', 'gd-aircon-repair' ); ?>
 			</a>
 			<span aria-hidden="true">/</span>
@@ -108,7 +108,7 @@ $symptoms         = array(
 				<?php esc_html_e( 'こんなお困りごとはありませんか？', 'gd-aircon-repair' ); ?>
 			</h1>
 
-			<div class="space-y-4 text-base leading-7 text-white/90 lg:text-lg">
+			<div class="space-y-4 text-base leading-7 text-[#42566a] lg:text-lg">
 				<p>
 					<?php esc_html_e( '業務用エアコンの不調は、症状によって原因や対処方法が異なります。水漏れ・冷えない・異臭・異音など、よくあるトラブルを一覧でご案内しています。', 'gd-aircon-repair' ); ?>
 				</p>
@@ -135,7 +135,7 @@ $symptoms         = array(
 						<path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
 					</svg>
 					<span class="text-sm font-bold"><?php esc_html_e( 'WEBで', 'gd-aircon-repair' ); ?></span>
-					<span class="text-xl font-black text-brand-skydeep"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
+					<span class="rounded-sm bg-white px-1.5 py-0.5 text-lg font-black leading-none text-brand-fire"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
 					<span class="text-sm font-bold"><?php esc_html_e( 'お見積り', 'gd-aircon-repair' ); ?></span>
 				</a>
 			</div>
@@ -143,7 +143,7 @@ $symptoms         = array(
 	</div>
 </section>
 
-<section class="bg-[#f9fcff] py-10 lg:py-14">
+<section class="bg-[#FFFBF9] py-10 lg:py-14">
 	<div class="mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 lg:gap-12 lg:px-10">
 		<?php foreach ( $symptoms as $symptom ) : ?>
 			<article class="grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-10">

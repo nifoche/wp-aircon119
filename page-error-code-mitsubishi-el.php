@@ -203,7 +203,7 @@ $error_rows = array(
 );
 ?>
 
-<div class="bg-[#f9fcff]">
+<div class="bg-[#FFFBF9]">
 	<section class="relative overflow-hidden pb-10 pt-24 lg:pb-12 lg:pt-28">
 		<div class="pointer-events-none absolute inset-0 mix-blend-overlay opacity-30">
 			<img class="h-full w-full object-cover" src="<?php echo esc_url( $hero_texture_url ); ?>" alt="" loading="eager" width="1200" height="800">
@@ -240,7 +240,7 @@ $error_rows = array(
 
 	<section class="mx-auto w-full max-w-[1280px] px-4 pb-16 lg:px-10 lg:pb-20">
 		<div class="overflow-hidden rounded-lg border border-[#99a1af] bg-white">
-			<div class="flex w-full bg-[#00598a] text-lg font-bold text-white">
+			<div class="flex w-full bg-[#16374F] text-lg font-bold text-white">
 				<div class="w-[140px] shrink-0 px-3 py-2"><?php esc_html_e( 'エラーコード', 'gd-aircon-repair' ); ?></div>
 				<div class="min-w-0 flex-1 px-3 py-2"><?php esc_html_e( '症状', 'gd-aircon-repair' ); ?></div>
 			</div>
@@ -253,7 +253,7 @@ $error_rows = array(
 				?>
 				<div class="flex w-full flex-col border-t border-[#99a1af] lg:flex-row">
 					<div class="<?php echo esc_attr( $row_bg ); ?> flex w-full shrink-0 items-center justify-center px-2 py-2 lg:w-[140px]">
-						<p class="text-xl font-bold text-[#00598a]"><?php echo esc_html( $row['code'] ); ?></p>
+						<p class="text-xl font-bold text-[#16374F]"><?php echo esc_html( $row['code'] ); ?></p>
 					</div>
 
 					<div class="<?php echo esc_attr( $row_bg ); ?> min-w-0 flex-1 border-t border-[#99a1af] lg:border-l lg:border-t-0">
@@ -276,10 +276,10 @@ $error_rows = array(
 									}
 									?>
 								</div>
-								<span class="mr-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00598a] group-has-[input:checked]:hidden" aria-hidden="true">
+								<span class="mr-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#16374F] group-has-[input:checked]:hidden" aria-hidden="true">
 									<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-6 h-auto" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
 								</span>
-								<span class="mr-1 hidden h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#00598a] group-has-[input:checked]:flex" aria-hidden="true">
+								<span class="mr-1 hidden h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-[#16374F] group-has-[input:checked]:flex" aria-hidden="true">
 									<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-6 h-auto" viewBox="0 0 24 24"><title>minus</title><path d="M19,13H5V11H19V13Z" /></svg>
 								</span>
 							</label>

@@ -67,23 +67,23 @@ $faq_items = array(
 $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 ?>
 
-<div class="bg-[#f9fcff]">
-	<section class="relative overflow-hidden bg-[#006ca2] pb-10 pt-8 text-white lg:pb-12 lg:pt-16">
-		<div class="pointer-events-none absolute inset-0 mix-blend-overlay opacity-30">
+<div class="bg-[#FFFBF9]">
+	<section class="relative overflow-hidden border-b-[6px] border-brand-fire bg-brand-cream pb-10 pt-8 text-brand-ink lg:pb-12 lg:pt-16">
+		<div class="pointer-events-none absolute inset-0 opacity-[0.07]">
 			<img class="h-full w-full object-cover" src="<?php echo esc_url( $hero_bg ); ?>" alt="" loading="eager" width="1200" height="800">
 		</div>
 
 		<div class="relative mx-auto w-full max-w-[1280px] px-4 lg:px-10">
-			<nav class="mb-6 flex flex-wrap items-center gap-2 text-base font-bold text-white/90 lg:text-xl" aria-label="<?php esc_attr_e( 'パンくず', 'gd-aircon-repair' ); ?>">
-				<a class="no-underline transition hover:text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'ホーム', 'gd-aircon-repair' ); ?></a>
+			<nav class="mb-6 flex flex-wrap items-center gap-2 text-base font-bold text-[#42566a] lg:text-xl" aria-label="<?php esc_attr_e( 'パンくず', 'gd-aircon-repair' ); ?>">
+				<a class="no-underline transition hover:text-brand-fire" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'ホーム', 'gd-aircon-repair' ); ?></a>
 				<span class="inline-flex h-6 w-6 shrink-0 items-center justify-center opacity-90" aria-hidden="true">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 				</span>
-				<a class="no-underline transition hover:text-white" href="<?php echo esc_url( home_url( '/symptoms/' ) ); ?>"><?php esc_html_e( '症状', 'gd-aircon-repair' ); ?></a>
+				<a class="no-underline transition hover:text-brand-fire" href="<?php echo esc_url( home_url( '/symptoms/' ) ); ?>"><?php esc_html_e( '症状', 'gd-aircon-repair' ); ?></a>
 				<span class="inline-flex h-6 w-6 shrink-0 items-center justify-center opacity-90" aria-hidden="true">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 				</span>
-				<span class="text-white"><?php esc_html_e( '異臭がする', 'gd-aircon-repair' ); ?></span>
+				<span class="font-extrabold text-brand-ink"><?php esc_html_e( '異臭がする', 'gd-aircon-repair' ); ?></span>
 			</nav>
 
 			<div class="max-w-[920px] space-y-7">
@@ -91,7 +91,7 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 					<?php esc_html_e( '症状: 異臭がする', 'gd-aircon-repair' ); ?>
 				</h1>
 
-				<p class="text-base leading-relaxed text-white/90 lg:text-xl">
+				<p class="text-base leading-relaxed text-[#42566a] lg:text-xl">
 					<?php esc_html_e( 'エアコン運転時にカビ臭・生乾き臭・生活臭などの不快なにおいが発生する状態です。主因はフィルターや熱交換器に付着したホコリや汚れが湿気でカビ・細菌の温床になること、また室内空気の循環により飲食物やタバコ等の臭い成分が内部に吸着・蓄積することです。発生タイミング（起動直後・送風時・停止後）や臭いの種類により原因が異なるため、複数要因を前提に切り分けが必要です。', 'gd-aircon-repair' ); ?>
 				</p>
 
@@ -113,7 +113,7 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 							<path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
 						</svg>
 						<span class="text-base font-extrabold"><?php esc_html_e( 'WEBで', 'gd-aircon-repair' ); ?></span>
-						<span class="text-[26px] font-black leading-none text-brand-skydeep"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
+						<span class="rounded-sm bg-white px-1.5 py-0.5 text-[22px] font-black leading-none text-brand-fire"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
 						<span class="text-base font-extrabold"><?php esc_html_e( 'お見積り', 'gd-aircon-repair' ); ?></span>
 					</a>
 				</div>
@@ -149,7 +149,7 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 		<?php endforeach; ?>
 	</div>
 
-	<section class="bg-[#f0faff] py-12 lg:py-16">
+	<section class="bg-[#FFF7F3] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">
 			<div class="flex flex-col items-center gap-5">
 				<h2 class="text-center text-4xl font-bold text-brand-navy"><?php esc_html_e( '異臭がする症状に関するよくある質問', 'gd-aircon-repair' ); ?></h2>
@@ -169,15 +169,15 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 							<?php echo ! empty( $faq['open'] ) ? 'checked' : ''; ?>
 						>
 						<label
-							class="flex cursor-pointer list-none items-center gap-4 rounded-full bg-sky-500 px-2 py-2 pl-4 text-white"
+							class="flex cursor-pointer list-none items-center gap-4 rounded-full bg-brand-fire px-2 py-2 pl-4 text-white"
 							for="<?php echo esc_attr( $faq_control_id ); ?>"
 						>
 							<span class="shrink-0 text-5xl font-bold leading-none montserrat" aria-hidden="true">Q</span>
 							<span class="min-w-0 flex-1 text-lg font-bold leading-snug lg:text-2xl"><?php echo esc_html( $faq['question'] ); ?></span>
-							<span class="mr-1 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-sky-500 group-has-[input:checked]:hidden" aria-hidden="true">
+							<span class="mr-1 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-brand-fire group-has-[input:checked]:hidden" aria-hidden="true">
 								<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-10 h-auto" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
 							</span>
-							<span class="mr-1 hidden h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-sky-500 group-has-[input:checked]:flex" aria-hidden="true">
+							<span class="mr-1 hidden h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-white text-5xl leading-none text-brand-fire group-has-[input:checked]:flex" aria-hidden="true">
 								<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-10 h-auto" viewBox="0 0 24 24"><title>minus</title><path d="M19,13H5V11H19V13Z" /></svg>
 							</span>
 						</label>

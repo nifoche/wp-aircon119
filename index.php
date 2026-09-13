@@ -55,7 +55,7 @@ get_header();
 							<?php the_excerpt(); ?>
 						</div>
 						<p class="mt-4">
-							<a class="text-sm font-medium text-blue-700 no-underline hover:underline" href="<?php the_permalink(); ?>">
+							<a class="text-sm font-medium text-brand-firedeep no-underline hover:underline" href="<?php the_permalink(); ?>">
 								<?php esc_html_e( '続きを読む', 'gd-aircon-repair' ); ?>
 							</a>
 						</p>

@@ -11,10 +11,15 @@ module.exports = {
 		extend: {
 			colors: {
 				brand: {
-					navy: '#00598a',
-					orange: '#fe9a00',
-					sky: '#0084d1',
-					skydeep: '#0069a8',
+					navy: '#16374F',
+					orange: '#FF681F',
+					sky: '#1A4E7A',
+					skydeep: '#16374F',
+					fire: '#FF681F',
+					firedeep: '#D8480A',
+					ink: '#16374F',
+					blue: '#1A4E7A',
+					cream: '#FFF7F3',
 				},
 			},
 			boxShadow: {

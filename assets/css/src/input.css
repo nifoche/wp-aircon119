@@ -4,12 +4,12 @@
 
 @layer components {
 	.site-header .primary-menu > li > a {
-		@apply inline-flex items-center border-b-2 border-transparent pb-1.5 text-base font-black tracking-tight text-white/90 no-underline transition-colors hover:text-white;
+		@apply inline-flex items-center border-b-[3px] border-transparent pb-1.5 text-[15px] font-bold tracking-tight text-[#3a4a57] no-underline transition-colors hover:text-brand-fire;
 	}
 
 	.site-header .primary-menu > li.current-menu-item > a,
 	.site-header .primary-menu > li.current-menu-ancestor > a {
-		@apply border-brand-orange text-brand-orange;
+		@apply border-brand-fire text-brand-fire;
 	}
 
 	/* モバイルドロップダウン（primary-menu とは別。アンダーラインなし・タップしやすい行） */
@@ -70,6 +70,23 @@
 	@media screen and (max-width: 782px) {
 		body.admin-bar .site-header {
 			top: 46px;
+		}
+	}
+}
+
+@layer components {
+	/* トップFVの見出し：白フチ＋極太 */
+	.fv-title {
+		font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+		font-feature-settings: "palt" 1;
+		-webkit-text-stroke: 6px #fff;
+		paint-order: stroke fill;
+		filter: drop-shadow(0 3px 10px rgba(120, 60, 20, 0.2));
+	}
+
+	@media (min-width: 1024px) {
+		.fv-title {
+			-webkit-text-stroke-width: 10px;
 		}
 	}
 }

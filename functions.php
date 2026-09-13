@@ -336,7 +336,7 @@ function gd_aircon_repair_render_error_code_brand_logos( $active_index = 0 ) {
 		<?php foreach ( $brand_logos as $index => $brand ) : ?>
 			<?php $is_active = ( (int) $active_index === (int) $index ); ?>
 			<a
-				class="<?php echo $is_active ? 'border-[5px] border-[#00598a] shadow-[0_10px_15px_0_rgba(0,104,231,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]' : 'border border-transparent shadow-[0_10px_15px_0_rgba(0,0,0,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]'; ?> flex h-auto min-h-[66px] w-[150px] shrink-0 flex-col items-center justify-center rounded-lg bg-white p-4 no-underline transition hover:opacity-90"
+				class="<?php echo $is_active ? 'border-[5px] border-[#16374F] shadow-[0_10px_15px_0_rgba(255,104,31,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]' : 'border border-transparent shadow-[0_10px_15px_0_rgba(0,0,0,0.15),0_4px_6px_0_rgba(0,0,0,0.1)]'; ?> flex h-auto min-h-[66px] w-[150px] shrink-0 flex-col items-center justify-center rounded-lg bg-white p-4 no-underline transition hover:opacity-90"
 				href="<?php echo esc_url( $brand['url'] ); ?>"
 				<?php echo $is_active ? ' aria-current="page"' : ''; ?>
 			>

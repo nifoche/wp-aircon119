@@ -178,10 +178,10 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 	</div>
 </section>
 
-<section class="relative overflow-hidden bg-[#daedf6] py-5">
+<section class="relative overflow-hidden bg-[#FFF1EA] py-5">
 	<div class="mx-auto flex w-full max-w-[1280px] flex-col gap-8 px-6 py-7 md:py-12 lg:px-12">
 		<div class="relative z-10 flex max-w-[540px] flex-col gap-5">
-			<h2 class="flex flex-col gap-5 text-[#00598a]">
+			<h2 class="flex flex-col gap-5 text-[#16374F]">
 				<span class="text-4xl font-bold leading-none lg:text-5xl"><?php esc_html_e( '対応エリア', 'gd-aircon-repair' ); ?></span>
 				<span class="h-2 w-24 bg-brand-orange" aria-hidden="true"></span>
 			</h2>
@@ -192,15 +192,15 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 			<div class="flex flex-col gap-6">
 				<div class="space-y-2">
-					<p class="text-[20px] font-medium leading-7 text-[#875200]"><?php esc_html_e( '関東エリア', 'gd-aircon-repair' ); ?></p>
+					<p class="text-[20px] font-medium leading-7 text-[#C2440A]"><?php esc_html_e( '関東エリア', 'gd-aircon-repair' ); ?></p>
 					<p class="text-base font-medium leading-6 text-slate-900"><?php esc_html_e( '東京都 / 神奈川県 / 埼玉県 / 千葉県 / 茨城県 / 栃木県 / 群馬県', 'gd-aircon-repair' ); ?></p>
 				</div>
 				<div class="space-y-2">
-					<p class="text-[20px] font-medium leading-7 text-[#875200]"><?php esc_html_e( '中部エリア', 'gd-aircon-repair' ); ?></p>
+					<p class="text-[20px] font-medium leading-7 text-[#C2440A]"><?php esc_html_e( '中部エリア', 'gd-aircon-repair' ); ?></p>
 					<p class="text-base font-medium leading-6 text-slate-900"><?php esc_html_e( '愛知県 / 岐阜県 / 三重県 / 静岡県', 'gd-aircon-repair' ); ?></p>
 				</div>
 				<div class="space-y-2">
-					<p class="text-[20px] font-medium leading-7 text-[#875200]"><?php esc_html_e( '関西エリア', 'gd-aircon-repair' ); ?></p>
+					<p class="text-[20px] font-medium leading-7 text-[#C2440A]"><?php esc_html_e( '関西エリア', 'gd-aircon-repair' ); ?></p>
 					<p class="text-base font-medium leading-6 text-slate-900"><?php esc_html_e( '大阪府 / 京都府 / 兵庫県 / 奈良県 / 滋賀県 / 和歌山県', 'gd-aircon-repair' ); ?></p>
 				</div>
 			</div>
@@ -258,7 +258,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 	</div>
 </section>
 
-<footer class="mt-auto bg-[#024a70] text-white">
+<footer class="mt-auto bg-[#16374F] text-white">
 	<div class="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-6 px-8 py-12">
 		<p class="text-xl sm:text-2xl font-extrabold leading-7 flex items-center justify-center gap-2 w-80">
 

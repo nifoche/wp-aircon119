@@ -77,20 +77,20 @@ $types = array(
 );
 ?>
 
-<section class="relative overflow-hidden bg-[#006ca2] pb-10 pt-8 text-white lg:pb-12 lg:pt-16">
-	<div class="pointer-events-none absolute inset-0 mix-blend-overlay opacity-30">
+<section class="relative overflow-hidden border-b-[6px] border-brand-fire bg-brand-cream pb-10 pt-8 text-brand-ink lg:pb-12 lg:pt-16">
+	<div class="pointer-events-none absolute inset-0 opacity-[0.07]">
 		<img class="h-full w-full object-cover" src="<?php echo esc_url( $hero_texture_url ); ?>" alt="" loading="eager" width="1200" height="800">
 	</div>
 
 	<div class="relative mx-auto w-full max-w-[1280px] px-4 lg:px-10">
-		<nav class="mb-6 flex flex-wrap items-center gap-2 text-base font-bold text-white/90 lg:text-xl" aria-label="<?php esc_attr_e( 'パンくず', 'gd-aircon-repair' ); ?>">
-			<a class="no-underline transition hover:text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<nav class="mb-6 flex flex-wrap items-center gap-2 text-base font-bold text-[#42566a] lg:text-xl" aria-label="<?php esc_attr_e( 'パンくず', 'gd-aircon-repair' ); ?>">
+			<a class="no-underline transition hover:text-brand-fire" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php esc_html_e( 'ホーム', 'gd-aircon-repair' ); ?>
 			</a>
 			<span class="inline-flex h-6 w-6 shrink-0 items-center justify-center opacity-90" aria-hidden="true">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 			</span>
-			<span class="text-white"><?php esc_html_e( '業務用エアコンの形状', 'gd-aircon-repair' ); ?></span>
+			<span class="font-extrabold text-brand-ink"><?php esc_html_e( '業務用エアコンの形状', 'gd-aircon-repair' ); ?></span>
 		</nav>
 
 		<div class="max-w-[920px] space-y-7">
@@ -98,7 +98,7 @@ $types = array(
 				<?php esc_html_e( '業務用エアコンの形状', 'gd-aircon-repair' ); ?>
 			</h1>
 
-			<div class="space-y-4 text-base leading-relaxed text-white/90 lg:text-xl">
+			<div class="space-y-4 text-base leading-relaxed text-[#42566a] lg:text-xl">
 				<p>
 					<?php esc_html_e( '業務用エアコンには、天井埋込型・天井吊型・壁掛型など、設置場所や用途に応じたさまざまな形状があります。', 'gd-aircon-repair' ); ?>
 				</p>
@@ -110,7 +110,7 @@ $types = array(
 	</div>
 </section>
 
-<section class="bg-[#f9fcff] py-10 lg:py-16">
+<section class="bg-[#FFFBF9] py-10 lg:py-16">
 	<div class="mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 lg:gap-12 lg:px-10">
 		<?php foreach ( $types as $type ) : ?>
 			<?php
