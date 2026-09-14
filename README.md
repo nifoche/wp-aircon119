@@ -334,3 +334,24 @@ claude
 Claude Code はコマンド実行のたびに承認を求めます。環境構築のように連続してコマンドを流す作業では、承認の挙動を理解したうえで進めてください。`master` への push は本番デプロイなので、Claude Code に push を任せる場合は差分を確認してから実行してください。
 
 Figma のデザインを参照する作業では、Figma デスクトップアプリを起動し Dev Mode MCP サーバーを有効にしておく必要があります。
+
+## 7. 記事の自動登録（content/ → WordPress）
+
+記事ページの本文・タイトル・URL・SEO設定・画像は `content/` で管理し、`master` への push 時に GitHub Actions が本番へ同期します（`tools/sync-content.php`）。
+
+```
+content/
+├── site.json                 サイト名・トップのSEO・既存ページのSEO・ページの移動/ゴミ箱
+└── pages/<任意のID>/
+    ├── page.json             path（例 guide/where-to-ask）・title・seo_title・description・status・eyecatch・images
+    ├── body.html             本文。{{HOME}} はサイトURLに、<!-- image:ファイル名 --> は画像に置換
+    └── *.jpg                 アイキャッチ・本文中の画像
+```
+
+- **新規ページは `status`（既定 `draft`）で作成**します。既存ページの公開状態は変更しません。公開は管理画面で行ってください。
+- 何度実行しても重複しません（ページは URL で、画像はファイル内容のハッシュで照合）。
+- 親ページは先に作られます。親が存在しない場合はスキップしてログに出します。
+- ローカルでの確認：`php tools/sync-content.php --dry-run`（変更せず予定だけ表示）→ `php tools/sync-content.php`
+- 手動で本番に同期したい場合は、GitHub の Actions 画面から「Deploy to XServer」を `Run workflow` で実行できます。
+- `tools/` と `content/` は `.htaccess` で Web からのアクセスを禁止し、スクリプト自体も CLI 以外では動きません。
+- 管理画面の固定ページ編集画面に「SEO（検索結果の表示）」欄があり、SEOタイトルと説明文を手で直せます。ただし `content/` に同じページがある場合、次回の同期で `content/` の値に戻ります。

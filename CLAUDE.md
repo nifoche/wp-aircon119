@@ -26,3 +26,4 @@
 - リモート名は `github`（`origin` ではない）。ブランチは `master`。
 - `master` への push は GitHub Actions で本番（XServer）に即時デプロイされる。push は必ずユーザーの確認を取ってから行う。
 - `*.sql` はコミットしない（`.gitignore` 済み）。
+- `master` への push 時は `tools/sync-content.php` が `content/` の記事を本番 WordPress に同期する（新規は下書き）。詳細は README「7. 記事の自動登録」。

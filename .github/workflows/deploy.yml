@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -18,5 +19,11 @@ jobs:
           key: ${{ secrets.XSERVER_SSH_KEY }}
           port: ${{ secrets.XSERVER_PORT }}
           script: |
+            set -e
             cd trylink.xsrv.jp/public_html/aircon119/wp-content/themes/wp-aircon119/
             git pull origin master
+            # 記事データ（content/）を WordPress に同期。新規ページは下書きで作成し、公開状態は変更しない
+            PHP_BIN=$(ls /usr/bin/php8.[0-9]* 2>/dev/null | sort -V | tail -1)
+            PHP_BIN=${PHP_BIN:-php}
+            "$PHP_BIN" -v | head -1
+            "$PHP_BIN" tools/sync-content.php

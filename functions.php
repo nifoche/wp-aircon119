@@ -482,3 +482,49 @@ function gd_aircon_repair_document_title_parts( $parts ) {
 	return $parts;
 }
 add_filter( 'document_title_parts', 'gd_aircon_repair_document_title_parts' );
+
+/**
+ * 固定ページ編集画面に SEO 入力欄（タイトル・説明文）を追加
+ */
+function gd_aircon_repair_add_seo_meta_box() {
+	add_meta_box( 'gd-aircon-repair-seo', __( 'SEO（検索結果の表示）', 'gd-aircon-repair' ), 'gd_aircon_repair_render_seo_meta_box', 'page', 'normal', 'high' );
+}
+add_action( 'add_meta_boxes', 'gd_aircon_repair_add_seo_meta_box' );
+
+/**
+ * SEO 入力欄の表示
+ *
+ * @param WP_Post $post 編集中のページ.
+ */
+function gd_aircon_repair_render_seo_meta_box( $post ) {
+	wp_nonce_field( 'gd_aircon_repair_seo', 'gd_aircon_repair_seo_nonce' );
+	$seo_title   = get_post_meta( $post->ID, '_gd_seo_title', true );
+	$description = get_post_meta( $post->ID, '_gd_meta_description', true );
+	?>
+	<p>
+		<label for="gd-seo-title"><strong><?php esc_html_e( 'SEOタイトル', 'gd-aircon-repair' ); ?></strong>（<?php esc_html_e( '空欄ならページタイトルを使用', 'gd-aircon-repair' ); ?>）</label><br>
+		<input type="text" id="gd-seo-title" name="gd_seo_title" value="<?php echo esc_attr( $seo_title ); ?>" class="widefat">
+	</p>
+	<p>
+		<label for="gd-meta-description"><strong><?php esc_html_e( '説明文（メタディスクリプション）', 'gd-aircon-repair' ); ?></strong>（<?php esc_html_e( '目安80〜120字', 'gd-aircon-repair' ); ?>）</label><br>
+		<textarea id="gd-meta-description" name="gd_meta_description" rows="3" class="widefat"><?php echo esc_textarea( $description ); ?></textarea>
+	</p>
+	<?php
+}
+
+/**
+ * SEO 入力欄の保存
+ *
+ * @param int $post_id ページID.
+ */
+function gd_aircon_repair_save_seo_meta_box( $post_id ) {
+	if ( ! isset( $_POST['gd_aircon_repair_seo_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['gd_aircon_repair_seo_nonce'] ) ), 'gd_aircon_repair_seo' ) ) {
+		return;
+	}
+	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ! current_user_can( 'edit_page', $post_id ) ) {
+		return;
+	}
+	update_post_meta( $post_id, '_gd_seo_title', sanitize_text_field( wp_unslash( $_POST['gd_seo_title'] ?? '' ) ) );
+	update_post_meta( $post_id, '_gd_meta_description', sanitize_textarea_field( wp_unslash( $_POST['gd_meta_description'] ?? '' ) ) );
+}
+add_action( 'save_post_page', 'gd_aircon_repair_save_seo_meta_box' );
