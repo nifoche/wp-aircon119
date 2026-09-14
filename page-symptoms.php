@@ -119,13 +119,13 @@ $symptoms         = array(
 
 			<div class="flex flex-wrap gap-3 pt-1">
 				<a
-					class="!hidden inline-flex items-center gap-2 rounded bg-white px-6 py-3 text-sm font-extrabold text-brand-skydeep no-underline shadow-md transition hover:bg-slate-100"
-					href="<?php echo esc_url( 'tel:' . preg_replace( '/\D+/', '', (string) apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' ) ) ); ?>"
+					class="inline-flex items-center gap-2 rounded bg-white px-6 py-3 text-sm font-extrabold text-brand-skydeep no-underline shadow-md transition hover:bg-slate-100"
+					href="<?php echo esc_url( 'tel:' . preg_replace( '/\D+/', '', (string) apply_filters( 'gd_aircon_repair_phone_tel', '05055263005' ) ) ); ?>"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
 						<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
 					</svg>
-					<span><?php echo esc_html( apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' ) ); ?></span>
+					<span><?php echo esc_html( apply_filters( 'gd_aircon_repair_phone_display', '050-5526-3005' ) ); ?></span>
 				</a>
 				<a
 					class="inline-flex items-center gap-1 rounded bg-brand-orange px-4 py-3 text-white no-underline shadow-md transition hover:bg-brand-orange/90"

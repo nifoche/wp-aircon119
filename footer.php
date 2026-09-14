@@ -9,8 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$phone_display = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' );
-$phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
+$phone_display = apply_filters( 'gd_aircon_repair_phone_display', '050-5526-3005' );
+$phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '05055263005' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
 $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contact/' ) );
 $area_map_url  = 'http://localhost:3845/assets/65aa4862c51ae3de0be7725b1f13968c0386a6c3.png';
@@ -234,7 +234,7 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 
 		<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
 			<a
-				class="!hidden inline-flex h-16 flex-1 items-center justify-center gap-3 py-3 rounded bg-brand-navy px-6 text-[34px] font-bold leading-8 text-white no-underline shadow-lg ring-1 ring-black/5 transition hover:bg-brand-navy/90"
+				class="inline-flex h-16 flex-1 items-center justify-center gap-3 py-3 rounded bg-brand-navy px-6 text-[34px] font-bold leading-8 text-white no-underline shadow-lg ring-1 ring-black/5 transition hover:bg-brand-navy/90"
 				href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" focusable="false">

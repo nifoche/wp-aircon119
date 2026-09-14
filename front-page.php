@@ -9,9 +9,9 @@ get_header();
 ?>
 
 <?php
-$fv_phone_display = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' );
-$fv_phone_tel     = preg_replace( '/\D+/', '', (string) apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' ) );
-$fv_show_phone    = (bool) apply_filters( 'gd_aircon_repair_show_phone', false );
+$fv_phone_display = apply_filters( 'gd_aircon_repair_phone_display', '050-5526-3005' );
+$fv_phone_tel     = preg_replace( '/\D+/', '', (string) apply_filters( 'gd_aircon_repair_phone_tel', '05055263005' ) );
+$fv_show_phone    = (bool) apply_filters( 'gd_aircon_repair_show_phone', true );
 $fv_badges        = array(
 	__( '当日対応可能', 'gd-aircon-repair' ),
 	__( '全メーカー対応', 'gd-aircon-repair' ),
@@ -66,7 +66,7 @@ $fv_badges        = array(
 			</ul>
 			<div class="mt-8 flex flex-col gap-3.5 sm:flex-row sm:justify-end">
 				<?php if ( $fv_show_phone ) : ?>
-					<a class="flex items-center rounded-lg border-2 border-brand-blue bg-white px-6 py-3 text-brand-blue no-underline" href="<?php echo esc_url( 'tel:' . $fv_phone_tel ); ?>">
+					<a class="flex items-center justify-center rounded-lg border-2 border-brand-blue bg-white px-6 py-3 text-center text-brand-blue no-underline sm:justify-start sm:text-left" href="<?php echo esc_url( 'tel:' . $fv_phone_tel ); ?>">
 						<span>
 							<span class="block text-[11.5px] font-bold tracking-wide text-slate-500"><?php esc_html_e( 'お電話でのご相談', 'gd-aircon-repair' ); ?></span>
 							<span class="block font-['Helvetica_Neue',Arial,sans-serif] text-[32px] font-extrabold leading-tight"><?php echo esc_html( $fv_phone_display ); ?></span>

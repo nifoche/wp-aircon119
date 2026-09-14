@@ -9,12 +9,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$phone_display = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000' );
-$phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
+$phone_display = apply_filters( 'gd_aircon_repair_phone_display', '050-5526-3005' );
+$phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '05055263005' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
 $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contact/' ) );
-// 正式な電話番号が決まるまでは電話表示を出さない（true を返すフィルタで表示）
-$show_phone    = (bool) apply_filters( 'gd_aircon_repair_show_phone', false );
+// 電話表示が不要な場合は gd_aircon_repair_show_phone フィルタで false を返す
+$show_phone    = (bool) apply_filters( 'gd_aircon_repair_show_phone', true );
 $phone_hours   = apply_filters( 'gd_aircon_repair_phone_hours', '受付 9:00-17:00（土日祝を除く）' );
 ?>
 <!DOCTYPE html>
@@ -97,7 +97,7 @@ $phone_hours   = apply_filters( 'gd_aircon_repair_phone_hours', '受付 9:00-17:
 
 		<div class="hidden lg:flex shrink-0 items-center justify-end gap-4">
 			<?php if ( $show_phone ) : ?>
-				<a class="text-right leading-tight no-underline" href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>">
+				<a class="hidden text-right leading-tight no-underline xl:block" href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>">
 					<span class="block text-[11px] font-bold tracking-wide text-slate-500"><?php echo esc_html( $phone_hours ); ?></span>
 					<span class="block font-['Helvetica_Neue',Arial,sans-serif] text-[26px] font-extrabold text-brand-blue"><?php echo esc_html( $phone_display ); ?></span>
 				</a>
