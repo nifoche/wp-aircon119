@@ -62,9 +62,9 @@ $fv_badges        = array(
 					<li>
 						<img
 							class="block h-auto w-[132px] sm:w-[124px] lg:w-[138px] xl:w-[150px]"
-							src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top/badges/badge-' . $fv_badge_file . '.png' ); ?>"
-							width="598"
-							height="598"
+							src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top/badges/badge-' . $fv_badge_file . '.webp' ); ?>"
+							width="600"
+							height="600"
 							alt="<?php echo esc_attr( $fv_badge_alt ); ?>"
 							decoding="async"
 						>
