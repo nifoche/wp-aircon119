@@ -74,18 +74,18 @@ $fv_badges        = array(
 			<?php // ボタン画像は文字入り（電話番号を変えたら assets/images/top/cta/cta-tel.webp も作り直す） ?>
 			<div class="ml-auto mt-7 flex w-full max-w-[360px] flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-end lg:mt-8">
 				<?php if ( $fv_show_phone ) : ?>
-					<a class="block no-underline transition duration-200 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-px sm:w-[300px] xl:w-[330px]" href="<?php echo esc_url( 'tel:' . $fv_phone_tel ); ?>">
+					<a class="block no-underline transition duration-200 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-px sm:w-[300px] xl:w-[325px]" href="<?php echo esc_url( 'tel:' . $fv_phone_tel ); ?>">
 						<img
 							class="block h-auto w-full"
 							src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top/cta/cta-tel.webp' ); ?>"
 							width="760"
-							height="214"
+							height="207"
 							alt="<?php echo esc_attr( sprintf( __( 'お電話でのご相談 %s', 'gd-aircon-repair' ), $fv_phone_display ) ); ?>"
 							decoding="async"
 						>
 					</a>
 				<?php endif; ?>
-				<a class="block no-underline transition duration-200 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-px sm:w-[292px] xl:w-[320px]" href="#top-quote">
+				<a class="block no-underline transition duration-200 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-px sm:w-[300px] xl:w-[325px]" href="#top-quote">
 					<img
 						class="block h-auto w-full"
 						src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top/cta/cta-web.webp' ); ?>"

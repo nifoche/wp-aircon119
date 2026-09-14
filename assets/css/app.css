@@ -3640,10 +3640,6 @@ body.admin-bar .site-header {
     width: 124px;
   }
 
-  .sm\:w-\[292px\] {
-    width: 292px;
-  }
-
   .sm\:w-\[300px\] {
     width: 300px;
   }
@@ -4188,12 +4184,8 @@ body.admin-bar .site-header {
     width: 150px;
   }
 
-  .xl\:w-\[320px\] {
-    width: 320px;
-  }
-
-  .xl\:w-\[330px\] {
-    width: 330px;
+  .xl\:w-\[325px\] {
+    width: 325px;
   }
 
   .xl\:w-\[760px\] {
