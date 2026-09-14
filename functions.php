@@ -368,12 +368,22 @@ function gd_aircon_repair_render_error_code_brand_logos( $active_index = 0 ) {
  * 記事ページのSEOタグ（メタディスクリプション・構造化データ）を出力
  */
 function gd_aircon_repair_seo_head() {
+	if ( is_front_page() && ! is_singular() ) {
+		$front_description = get_option( 'gd_front_meta_description' );
+		if ( $front_description ) {
+			printf( "<meta name=\"description\" content=\"%s\">\n", esc_attr( $front_description ) );
+		}
+		return;
+	}
+
 	if ( ! is_singular() ) {
 		return;
 	}
 
 	$post_id     = get_queried_object_id();
 	$description = get_post_meta( $post_id, '_gd_meta_description', true );
+	// 本文をDBに持つページ（記事）だけを Article として扱う。テンプレート直書きのページは対象外
+	$is_article = '' !== trim( (string) get_post_field( 'post_content', $post_id ) ) && ! is_page( array( 'contact', 'privacy-policy' ) );
 
 	if ( $description ) {
 		printf( "<meta name=\"description\" content=\"%s\">\n", esc_attr( $description ) );
@@ -415,8 +425,7 @@ function gd_aircon_repair_seo_head() {
 		),
 	);
 
-	// メタディスクリプションを持つページは記事として扱う
-	if ( $description ) {
+	if ( $description && $is_article ) {
 		$schema[] = array(
 			'@context'         => 'https://schema.org',
 			'@type'            => 'Article',
@@ -441,7 +450,7 @@ function gd_aircon_repair_seo_head() {
 		);
 	}
 
-	if ( $description && has_post_thumbnail( $post_id ) ) {
+	if ( $is_article && has_post_thumbnail( $post_id ) ) {
 		printf( "<meta property=\"og:image\" content=\"%s\">\n", esc_url( get_the_post_thumbnail_url( $post_id, 'large' ) ) );
 	}
 
@@ -451,3 +460,25 @@ function gd_aircon_repair_seo_head() {
 	}
 }
 add_action( 'wp_head', 'gd_aircon_repair_seo_head', 1 );
+
+/**
+ * 検索結果用のページタイトル（_gd_seo_title があれば置き換え）
+ *
+ * @param array $parts タイトルの構成要素.
+ * @return array
+ */
+function gd_aircon_repair_document_title_parts( $parts ) {
+	if ( is_singular() ) {
+		$seo_title = get_post_meta( get_queried_object_id(), '_gd_seo_title', true );
+		if ( $seo_title ) {
+			$parts['title'] = $seo_title;
+		}
+	} elseif ( is_front_page() ) {
+		$front_title = get_option( 'gd_front_seo_title' );
+		if ( $front_title ) {
+			$parts = array( 'title' => $front_title );
+		}
+	}
+	return $parts;
+}
+add_filter( 'document_title_parts', 'gd_aircon_repair_document_title_parts' );

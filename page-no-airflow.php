@@ -83,7 +83,7 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 				<span class="inline-flex h-6 w-6 shrink-0 items-center justify-center opacity-90" aria-hidden="true">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 				</span>
-				<span class="font-extrabold text-brand-ink"><?php esc_html_e( '異音がする', 'gd-aircon-repair' ); ?></span>
+				<span class="font-extrabold text-brand-ink"><?php esc_html_e( '風が出ない', 'gd-aircon-repair' ); ?></span>
 			</nav>
 
 			<div class="max-w-[920px] space-y-7">
@@ -152,7 +152,7 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 	<section class="bg-[#FFF7F3] py-12 lg:py-16">
 		<div class="mx-auto w-full max-w-[1280px] px-4 lg:px-6">
 			<div class="flex flex-col items-center gap-5">
-				<h2 class="text-center text-4xl font-bold text-brand-navy"><?php esc_html_e( '異音がする症状に関するよくある質問', 'gd-aircon-repair' ); ?></h2>
+				<h2 class="text-center text-4xl font-bold text-brand-navy"><?php esc_html_e( '風が出ない症状に関するよくある質問', 'gd-aircon-repair' ); ?></h2>
 				<span class="h-2 w-24 bg-brand-orange" aria-hidden="true"></span>
 			</div>
 
