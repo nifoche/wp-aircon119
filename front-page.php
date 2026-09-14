@@ -159,42 +159,42 @@ $fv_badges        = array(
 $symptom_cards = array(
 	array(
 		'title' => __( '水漏れ', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/water-leak/01.jpg',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/water-leak.webp',
 		'url'   => home_url( '/symptoms/water-leak/' ),
 	),
 	array(
 		'title' => __( '冷えない', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/not-cooling/01.jpg',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/not-cooling.webp',
 		'url'   => home_url( '/symptoms/not-cooling/' ),
 	),
 	array(
 		'title' => __( '異臭がする', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/bad-smell/01.jpg',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/bad-smell.webp',
 		'url'   => home_url( '/symptoms/bad-smell/' ),
 	),
 	array(
 		'title' => __( '異音がする', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/strange-noise/01.jpg',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/strange-noise.webp',
 		'url'   => home_url( '/symptoms/strange-noise/' ),
 	),
 	array(
 		'title' => __( '暖まらない', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/not-heating/01.jpg',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/not-heating.webp',
 		'url'   => home_url( '/symptoms/not-heating/' ),
 	),
 	array(
 		'title' => __( '途中で止まる', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/stops-unexpectedly/01.jpg',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/stops-unexpectedly.webp',
 		'url'   => home_url( '/symptoms/stops-unexpectedly/' ),
 	),
 	array(
 		'title' => __( '霜・氷がつく', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/frost-ice/01.jpg',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/frost-ice.webp',
 		'url'   => home_url( '/symptoms/frost-ice/' ),
 	),
 	array(
 		'title' => __( '風が出ない', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/no-airflow/01.jpg',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/no-airflow.webp',
 		'url'   => home_url( '/symptoms/no-airflow/' ),
 	),
 );
