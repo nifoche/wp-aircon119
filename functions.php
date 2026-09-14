@@ -197,6 +197,11 @@ function gd_aircon_repair_fallback_primary_menu( $variant = 'desktop' ) {
 			'label'   => __( 'エラーコード', 'gd-aircon-repair' ),
 			'current' => is_page( ['error-codes', 'error-codes/panasonic/', 'error-codes/mitsubishi/', 'error-codes/mitsubishi-el/', 'error-codes/hitachi/', 'error-codes/toshiba/'] ),
 		),
+		array(
+			'url'     => home_url( '/price/' ),
+			'label'   => __( '修理費用', 'gd-aircon-repair' ),
+			'current' => is_page( 'price' ),
+		),
 	);
 
 	if ( 'mobile' === $variant ) {
@@ -265,6 +270,16 @@ function gd_aircon_repair_fallback_footer_menu() {
 			'url'     => home_url( '/error-codes/' ),
 			'label'   => __( 'エラーコード', 'gd-aircon-repair' ),
 			'current' => is_page( 'error-codes' ),
+		),
+		array(
+			'url'     => home_url( '/price/' ),
+			'label'   => __( '修理費用', 'gd-aircon-repair' ),
+			'current' => is_page( 'price' ),
+		),
+		array(
+			'url'     => home_url( '/guide/' ),
+			'label'   => __( '修理ガイド', 'gd-aircon-repair' ),
+			'current' => is_page( 'guide' ),
 		),
 		array(
 			'url'     => home_url( '/privacy-policy/' ),
@@ -348,3 +363,85 @@ function gd_aircon_repair_render_error_code_brand_logos( $active_index = 0 ) {
 	</section>
 	<?php
 }
+
+/**
+ * 記事ページのSEOタグ（メタディスクリプション・構造化データ）を出力
+ */
+function gd_aircon_repair_seo_head() {
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	$post_id     = get_queried_object_id();
+	$description = get_post_meta( $post_id, '_gd_meta_description', true );
+
+	if ( $description ) {
+		printf( "<meta name=\"description\" content=\"%s\">\n", esc_attr( $description ) );
+	}
+
+	$breadcrumbs = array(
+		array(
+			'name' => __( 'ホーム', 'gd-aircon-repair' ),
+			'url'  => home_url( '/' ),
+		),
+	);
+	foreach ( array_reverse( get_post_ancestors( $post_id ) ) as $ancestor_id ) {
+		$breadcrumbs[] = array(
+			'name' => get_the_title( $ancestor_id ),
+			'url'  => get_permalink( $ancestor_id ),
+		);
+	}
+	$breadcrumbs[] = array(
+		'name' => get_the_title( $post_id ),
+		'url'  => get_permalink( $post_id ),
+	);
+
+	$schema = array(
+		array(
+			'@context'        => 'https://schema.org',
+			'@type'           => 'BreadcrumbList',
+			'itemListElement' => array_map(
+				function ( $crumb, $index ) {
+					return array(
+						'@type'    => 'ListItem',
+						'position' => $index + 1,
+						'name'     => $crumb['name'],
+						'item'     => $crumb['url'],
+					);
+				},
+				$breadcrumbs,
+				array_keys( $breadcrumbs )
+			),
+		),
+	);
+
+	// メタディスクリプションを持つページは記事として扱う
+	if ( $description ) {
+		$schema[] = array(
+			'@context'         => 'https://schema.org',
+			'@type'            => 'Article',
+			'headline'         => get_the_title( $post_id ),
+			'description'      => $description,
+			'datePublished'    => get_the_date( 'c', $post_id ),
+			'dateModified'     => get_the_modified_date( 'c', $post_id ),
+			'mainEntityOfPage' => get_permalink( $post_id ),
+			'author'           => array(
+				'@type' => 'Organization',
+				'name'  => '業務用エアコン修理119（元気でんき株式会社）',
+			),
+			'publisher'        => array(
+				'@type' => 'Organization',
+				'name'  => '業務用エアコン修理119（元気でんき株式会社）',
+				'logo'  => array(
+					'@type' => 'ImageObject',
+					'url'   => get_template_directory_uri() . '/assets/images/logo-119.png',
+				),
+			),
+		);
+	}
+
+	foreach ( $schema as $item ) {
+		printf( "<script type=\"application/ld+json\">%s</script>\n", wp_json_encode( $item, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) );
+	}
+}
+add_action( 'wp_head', 'gd_aircon_repair_seo_head', 1 );

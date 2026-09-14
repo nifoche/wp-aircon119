@@ -91,6 +91,65 @@
 	}
 }
 
+@layer components {
+	/* 記事ページ本文 */
+	.article-body h2 {
+		@apply mt-14 border-l-[6px] border-brand-fire bg-brand-cream py-3 pl-4 pr-3 text-brand-ink;
+	}
+
+	.article-body h3 {
+		@apply mt-10 border-b-2 border-[#ffc9ae] pb-2 text-brand-ink;
+	}
+
+	.article-body a {
+		@apply font-bold text-brand-firedeep underline-offset-4;
+	}
+
+	.article-body strong {
+		@apply text-brand-ink;
+	}
+
+	.article-body blockquote {
+		@apply rounded-r-lg border-l-4 border-brand-fire bg-brand-cream py-1 not-italic text-[#42566a];
+	}
+
+	.article-body .table-scroll {
+		@apply my-6 overflow-x-auto;
+	}
+
+	.article-body table {
+		@apply my-0 min-w-[520px] border-collapse text-[0.9em];
+	}
+
+	.article-body thead th {
+		@apply bg-brand-ink px-3 py-2.5 text-left text-white;
+	}
+
+	.article-body tbody td {
+		@apply border-b border-slate-200 px-3 py-2.5 align-top;
+	}
+
+	.article-body tbody tr:nth-child(even) td {
+		@apply bg-[#fffbf9];
+	}
+
+	.article-body .related-links {
+		@apply mt-12 rounded-lg border-2 border-[#ffc9ae] bg-white px-5 py-4;
+	}
+
+	.article-body .related-links__title {
+		@apply my-0 font-bold text-brand-ink;
+	}
+
+	.article-body .related-links ul {
+		@apply my-2 pl-5;
+	}
+
+	.article-body .article-source {
+		@apply mt-6 text-sm text-slate-500;
+	}
+}
+
 .wpcf7-form-control-wrap {
 	@apply w-full;
 }

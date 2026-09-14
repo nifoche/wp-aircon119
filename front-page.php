@@ -412,6 +412,12 @@ $pricing_rows = array(
 				<?php esc_html_e( '※上記料金は代表的なモデル（ダイキン FHCP80AB等）に基づいた概算です。機種や設置状況により異なる場合があります。', 'gd-aircon-repair' ); ?>
 			</p>
 		</div>
+		<div class="mt-8 flex justify-center">
+			<a class="inline-flex items-center gap-3 rounded-lg bg-brand-fire px-6 py-3 text-lg font-bold text-white no-underline shadow-[0_4px_0_#d8480a] transition hover:bg-brand-fire/90" href="<?php echo esc_url( home_url( '/price/' ) ); ?>">
+				<?php esc_html_e( '修理費用と「修理か交換か」の判断基準を見る', 'gd-aircon-repair' ); ?>
+				<span aria-hidden="true">→</span>
+			</a>
+		</div>
 	</div>
 </section>
 

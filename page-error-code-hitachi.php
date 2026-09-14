@@ -376,6 +376,16 @@ $error_rows = array(
 
 	<?php gd_aircon_repair_render_error_code_brand_logos( 3 ); ?>
 
+	<div class="mx-auto w-full max-w-[1280px] px-4 pb-8 lg:px-10">
+		<a class="flex flex-col gap-1 rounded-lg border-2 border-[#ffc9ae] bg-white px-5 py-4 no-underline transition hover:border-brand-fire sm:flex-row sm:items-center sm:justify-between" href="<?php echo esc_url( home_url( '/error-codes/hitachi/check/' ) ); ?>">
+			<span>
+				<span class="block text-sm font-bold text-brand-firedeep"><?php esc_html_e( 'はじめにお読みください', 'gd-aircon-repair' ); ?></span>
+				<span class="block text-lg font-bold text-brand-ink"><?php esc_html_e( '日立 業務用エアコンのエラーコード確認方法｜表示の見方と伝えるべき3つの情報', 'gd-aircon-repair' ); ?></span>
+			</span>
+			<span class="shrink-0 font-bold text-brand-firedeep"><?php esc_html_e( '確認方法を見る →', 'gd-aircon-repair' ); ?></span>
+		</a>
+	</div>
+
 	<section class="mx-auto w-full max-w-[1280px] px-4 pb-16 lg:px-10 lg:pb-20">
 		<div class="overflow-hidden rounded-lg border border-[#99a1af] bg-white">
 			<div class="flex w-full bg-[#16374F] text-lg font-bold text-white">
