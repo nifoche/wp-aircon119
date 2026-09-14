@@ -64,7 +64,7 @@ $faq_avatar = get_template_directory_uri() . '/assets/images//icon-answer.png';
 ?>
 
 <div class="bg-[#FFFBF9]">
-	<section class="relative overflow-hidden border-b-[6px] border-brand-fire bg-brand-cream pb-10 pt-8 text-brand-ink lg:pb-12 lg:pt-16">
+	<section class="relative overflow-hidden border-b-[6px] border-brand-fire bg-brand-cream pb-10 pt-24 text-brand-ink lg:pb-12 lg:pt-16">
 		<div class="pointer-events-none absolute inset-0 opacity-[0.07]">
 			<img class="h-full w-full object-cover" src="<?php echo esc_url( $assets . 'tentsuri.jpg' ); ?>" alt="" loading="eager" width="1200" height="800">
 		</div>

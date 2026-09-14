@@ -213,7 +213,7 @@ function gd_aircon_repair_fallback_primary_menu( $variant = 'desktop' ) {
 			'cta'     => true,
 		);
 	} else {
-		$ul_class = 'primary-menu flex flex-wrap items-center gap-6 md:gap-8 list-none m-0 p-0';
+		$ul_class = 'primary-menu flex flex-wrap items-center gap-5 xl:gap-8 list-none m-0 p-0';
 	}
 
 	echo '<ul class="' . esc_attr( $ul_class ) . '">';

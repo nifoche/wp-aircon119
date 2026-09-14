@@ -1605,10 +1605,6 @@ body.admin-bar .site-header {
   margin-bottom: 2rem;
 }
 
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -1681,6 +1677,10 @@ body.admin-bar .site-header {
   height: 2.5rem;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -1697,8 +1697,16 @@ body.admin-bar .site-header {
   height: 6rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-40 {
   height: 10rem;
+}
+
+.h-5 {
+  height: 1.25rem;
 }
 
 .h-6 {
@@ -1791,6 +1799,10 @@ body.admin-bar .site-header {
 
 .w-24 {
   width: 6rem;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .w-48 {
@@ -3048,6 +3060,12 @@ body.admin-bar .site-header {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[0_2px_0_\#d8480a\] {
+  --tw-shadow: 0 2px 0 #d8480a;
+  --tw-shadow-colored: 0 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-\[0_3px_0_\#d8480a\] {
   --tw-shadow: 0 3px 0 #d8480a;
   --tw-shadow-colored: 0 3px 0 var(--tw-shadow-color);
@@ -3560,6 +3578,11 @@ body.admin-bar .site-header {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.active\:translate-y-px:active {
+  --tw-translate-y: 1px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .group:has(input:checked) .group-has-\[input\:checked\]\:flex {
   display: flex;
 }
@@ -3579,6 +3602,10 @@ body.admin-bar .site-header {
 }
 
 @media (min-width: 400px) {
+  .min-\[400px\]\:h-12 {
+    height: 3rem;
+  }
+
   .min-\[400px\]\:text-\[34px\] {
     font-size: 34px;
   }
@@ -3725,10 +3752,6 @@ body.admin-bar .site-header {
     gap: 1.5rem;
   }
 
-  .md\:gap-8 {
-    gap: 2rem;
-  }
-
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -3813,8 +3836,8 @@ body.admin-bar .site-header {
     display: none;
   }
 
-  .lg\:h-14 {
-    height: 3.5rem;
+  .lg\:h-12 {
+    height: 3rem;
   }
 
   .lg\:h-\[340px\] {
@@ -4125,8 +4148,45 @@ body.admin-bar .site-header {
     display: block;
   }
 
+  .xl\:inline {
+    display: inline;
+  }
+
+  .xl\:hidden {
+    display: none;
+  }
+
+  .xl\:h-14 {
+    height: 3.5rem;
+  }
+
+  .xl\:h-6 {
+    height: 1.5rem;
+  }
+
+  .xl\:w-6 {
+    width: 1.5rem;
+  }
+
   .xl\:w-\[760px\] {
     width: 760px;
+  }
+
+  .xl\:gap-4 {
+    gap: 1rem;
+  }
+
+  .xl\:gap-8 {
+    gap: 2rem;
+  }
+
+  .xl\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .xl\:text-\[26px\] {
+    font-size: 26px;
   }
 
   .xl\:text-\[62px\] {

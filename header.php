@@ -36,7 +36,7 @@ $phone_hours   = apply_filters( 'gd_aircon_repair_phone_hours', '受付 9:00-17:
 		<div class="flex shrink-0 items-center justify-between">
 			<a class="block shrink-0 no-underline" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<img
-					class="h-12 w-auto lg:h-14"
+					class="h-11 w-auto min-[400px]:h-12 lg:h-12 xl:h-14"
 					src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo-119.png' ); ?>"
 					width="564"
 					height="192"
@@ -44,7 +44,19 @@ $phone_hours   = apply_filters( 'gd_aircon_repair_phone_hours', '受付 9:00-17:
 				>
 			</a>
 
-			<details class="relative ml-3 lg:hidden">
+			<div class="flex items-center gap-2 lg:hidden">
+				<?php if ( $show_phone ) : ?>
+					<a
+						class="inline-flex h-10 items-center gap-1.5 rounded-md bg-brand-fire px-3 text-sm font-extrabold text-white no-underline shadow-[0_2px_0_#d8480a] active:translate-y-px"
+						href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>"
+						aria-label="<?php echo esc_attr( sprintf( __( '電話をかける %s', 'gd-aircon-repair' ), $phone_display ) ); ?>"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" class="h-4 w-4 shrink-0"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg>
+						<span class="sm:hidden"><?php esc_html_e( '電話する', 'gd-aircon-repair' ); ?></span>
+						<span class="hidden font-['Helvetica_Neue',Arial,sans-serif] text-base sm:inline"><?php echo esc_html( $phone_display ); ?></span>
+					</a>
+				<?php endif; ?>
+			<details class="relative lg:hidden">
 				<summary
 					class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded border border-slate-300 text-brand-ink transition hover:bg-slate-100 [&::-webkit-details-marker]:hidden"
 					aria-label="<?php esc_attr_e( 'メニューを開く', 'gd-aircon-repair' ); ?>"
@@ -73,6 +85,7 @@ $phone_hours   = apply_filters( 'gd_aircon_repair_phone_hours', '受付 9:00-17:
 					</nav>
 				</div>
 			</details>
+			</div>
 		</div>
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -81,7 +94,7 @@ $phone_hours   = apply_filters( 'gd_aircon_repair_phone_hours', '受付 9:00-17:
 				wp_nav_menu(
 					array(
 						'theme_location' => 'primary',
-						'menu_class'     => 'primary-menu m-0 flex list-none flex-wrap items-center gap-6 p-0 md:gap-8',
+						'menu_class'     => 'primary-menu m-0 flex list-none flex-wrap items-center gap-5 p-0 xl:gap-8',
 						'container'      => false,
 						'fallback_cb'    => false,
 						'depth'          => 1,
@@ -95,19 +108,22 @@ $phone_hours   = apply_filters( 'gd_aircon_repair_phone_hours', '受付 9:00-17:
 			</nav>
 		<?php endif; ?>
 
-		<div class="hidden lg:flex shrink-0 items-center justify-end gap-4">
+		<div class="hidden lg:flex shrink-0 items-center justify-end gap-3 xl:gap-4">
 			<?php if ( $show_phone ) : ?>
-				<a class="hidden text-right leading-tight no-underline xl:block" href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>">
-					<span class="block text-[11px] font-bold tracking-wide text-slate-500"><?php echo esc_html( $phone_hours ); ?></span>
-					<span class="block font-['Helvetica_Neue',Arial,sans-serif] text-[26px] font-extrabold text-brand-blue"><?php echo esc_html( $phone_display ); ?></span>
+				<a class="block text-right leading-tight no-underline" href="<?php echo esc_url( 'tel:' . $phone_tel ); ?>">
+					<span class="hidden text-[11px] font-bold tracking-wide text-slate-500 xl:block"><?php echo esc_html( $phone_hours ); ?></span>
+					<span class="flex items-center justify-end gap-1.5 font-['Helvetica_Neue',Arial,sans-serif] text-xl font-extrabold text-brand-blue xl:text-[26px]">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" class="h-5 w-5 shrink-0 text-brand-fire xl:h-6 xl:w-6"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg>
+						<?php echo esc_html( $phone_display ); ?>
+					</span>
 				</a>
 			<?php endif; ?>
 			<a
-				class="inline-flex h-12 items-center gap-2 rounded-md bg-brand-fire px-6 text-base font-extrabold text-white no-underline shadow-[0_3px_0_#d8480a] transition hover:bg-brand-fire/90"
+				class="inline-flex h-12 items-center gap-2 rounded-md bg-brand-fire px-4 text-base font-extrabold xl:px-6 text-white no-underline shadow-[0_3px_0_#d8480a] transition hover:bg-brand-fire/90"
 				href="<?php echo esc_url( $quote_url ); ?>"
 			>
-				<span class="rounded-sm bg-white px-2 py-0.5 text-[13px] font-extrabold text-brand-fire"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
-				<span><?php esc_html_e( 'WEBで見積り', 'gd-aircon-repair' ); ?></span>
+				<span class="hidden rounded-sm bg-white px-2 py-0.5 text-[13px] font-extrabold text-brand-fire xl:inline"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>
+				<span class="xl:hidden"><?php esc_html_e( '無料見積り', 'gd-aircon-repair' ); ?></span><span class="hidden xl:inline"><?php esc_html_e( 'WEBで見積り', 'gd-aircon-repair' ); ?></span>
 			</a>
 		</div>
 	</div>
