@@ -13,10 +13,10 @@ $fv_phone_display = apply_filters( 'gd_aircon_repair_phone_display', '050-5526-3
 $fv_phone_tel     = preg_replace( '/\D+/', '', (string) apply_filters( 'gd_aircon_repair_phone_tel', '05055263005' ) );
 $fv_show_phone    = (bool) apply_filters( 'gd_aircon_repair_show_phone', true );
 $fv_badges        = array(
-	__( '当日対応可能', 'gd-aircon-repair' ),
-	__( '全メーカー対応', 'gd-aircon-repair' ),
-	__( '年間 <b>12,000台</b> 以上', 'gd-aircon-repair' ),
-	__( '他社設置もOK', 'gd-aircon-repair' ),
+	'same-day'      => __( '最短当日対応可能', 'gd-aircon-repair' ),
+	'all-makers'    => __( 'メーカー問わず全メーカー修理対応', 'gd-aircon-repair' ),
+	'12000'         => __( '年間12,000台以上の実績', 'gd-aircon-repair' ),
+	'other-install' => __( '他社設置の機器もご相談可能', 'gd-aircon-repair' ),
 );
 ?>
 <section class="relative overflow-hidden bg-brand-cream pt-16 lg:pt-0">
@@ -57,10 +57,17 @@ $fv_badges        = array(
 				<span><?php esc_html_e( '水漏れ・冷えない・エラーコード表示。', 'gd-aircon-repair' ); ?></span><span><?php esc_html_e( '全メーカーに対応し、', 'gd-aircon-repair' ); ?></span><br class="hidden sm:inline">
 				<span><?php esc_html_e( '他社で断られた機器や旧型機も', 'gd-aircon-repair' ); ?></span><span><?php esc_html_e( 'ご相談いただけます。', 'gd-aircon-repair' ); ?></span>
 			</p>
-			<ul class="m-0 mt-6 flex list-none flex-wrap justify-end gap-2.5 p-0">
-				<?php foreach ( $fv_badges as $fv_badge ) : ?>
-					<li class="rounded-[5px] border-2 border-[#ffc9ae] bg-white px-3.5 py-2 text-sm font-extrabold text-[#c2440a] lg:text-[15px] [&_b]:text-[17px] [&_b]:text-brand-fire">
-						<?php echo wp_kses( $fv_badge, array( 'b' => array() ) ); ?>
+			<ul class="m-0 ml-auto mt-5 grid w-fit list-none grid-cols-2 gap-x-2 gap-y-1 p-0 sm:flex sm:gap-2 lg:mt-6 xl:gap-3">
+				<?php foreach ( $fv_badges as $fv_badge_file => $fv_badge_alt ) : ?>
+					<li>
+						<img
+							class="block h-auto w-[132px] sm:w-[124px] lg:w-[138px] xl:w-[150px]"
+							src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top/badges/badge-' . $fv_badge_file . '.png' ); ?>"
+							width="598"
+							height="598"
+							alt="<?php echo esc_attr( $fv_badge_alt ); ?>"
+							decoding="async"
+						>
 					</li>
 				<?php endforeach; ?>
 			</ul>
