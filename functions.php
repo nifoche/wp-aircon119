@@ -425,6 +425,7 @@ function gd_aircon_repair_seo_head() {
 			'datePublished'    => get_the_date( 'c', $post_id ),
 			'dateModified'     => get_the_modified_date( 'c', $post_id ),
 			'mainEntityOfPage' => get_permalink( $post_id ),
+			'image'            => has_post_thumbnail( $post_id ) ? get_the_post_thumbnail_url( $post_id, 'large' ) : null,
 			'author'           => array(
 				'@type' => 'Organization',
 				'name'  => '業務用エアコン修理119（元気でんき株式会社）',
@@ -440,7 +441,12 @@ function gd_aircon_repair_seo_head() {
 		);
 	}
 
+	if ( $description && has_post_thumbnail( $post_id ) ) {
+		printf( "<meta property=\"og:image\" content=\"%s\">\n", esc_url( get_the_post_thumbnail_url( $post_id, 'large' ) ) );
+	}
+
 	foreach ( $schema as $item ) {
+		$item = array_filter( $item, fn( $value ) => null !== $value );
 		printf( "<script type=\"application/ld+json\">%s</script>\n", wp_json_encode( $item, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) );
 	}
 }

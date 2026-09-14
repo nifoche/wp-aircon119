@@ -145,6 +145,14 @@
 		@apply my-2 pl-5;
 	}
 
+	.article-body .article-figure {
+		@apply my-8;
+	}
+
+	.article-body .article-figure img {
+		@apply my-0 h-auto w-full rounded-xl;
+	}
+
 	.article-body .article-source {
 		@apply mt-6 text-sm text-slate-500;
 	}

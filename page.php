@@ -44,6 +44,21 @@ while ( have_posts() ) :
 	</section>
 
 	<div class="mx-auto w-full max-w-[860px] px-4 py-10 lg:py-16">
+		<?php if ( has_post_thumbnail() ) : ?>
+			<figure class="m-0 mb-10 overflow-hidden rounded-xl shadow-[0_10px_30px_-12px_rgba(22,55,79,0.35)]">
+				<?php
+				the_post_thumbnail(
+					'large',
+					array(
+						'class'         => 'block h-auto w-full',
+						'loading'       => 'eager',
+						'fetchpriority' => 'high',
+					)
+				);
+				?>
+			</figure>
+		<?php endif; ?>
+
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'article-body prose prose-slate max-w-none lg:prose-lg' ); ?>>
 			<?php the_content(); ?>
 		</article>
