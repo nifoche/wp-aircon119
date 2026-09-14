@@ -29,6 +29,16 @@ $fv_badges        = array(
 			alt=""
 			fetchpriority="high"
 		>
+		<?php // 背景動画：1回だけ無音で再生し、終わったら上の静止画に切り替える ?>
+		<video
+			class="fv-video pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-1000 motion-reduce:hidden"
+			muted
+			playsinline
+			preload="auto"
+			aria-hidden="true"
+			data-src-pc="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/fv-119.mp4' ); ?>"
+			data-src-sp="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/fv-119-sp.mp4' ); ?>"
+		></video>
 		<div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,247,243,0)_0%,rgba(255,247,243,0)_34%,rgba(255,247,243,0.45)_48%,rgba(255,247,243,0.72)_62%,rgba(255,247,243,0.8)_100%)] lg:hidden" aria-hidden="true"></div>
 		<div class="absolute inset-0 hidden bg-[linear-gradient(100deg,rgba(255,255,255,0)_0%,rgba(255,251,249,0.15)_40%,rgba(255,251,249,0.82)_56%,rgba(255,249,245,0.95)_100%)] lg:block" aria-hidden="true"></div>
 	</div>
@@ -71,6 +81,38 @@ $fv_badges        = array(
 		</div>
 	</div>
 </section>
+
+<script>
+( function () {
+	var video = document.querySelector( '.fv-video' );
+	if ( ! video ) {
+		return;
+	}
+	if ( window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches ) {
+		video.remove();
+		return;
+	}
+	var hide = function () {
+		video.classList.remove( 'opacity-100' );
+		video.classList.add( 'opacity-0' );
+		window.setTimeout( function () {
+			video.remove();
+		}, 1000 );
+	};
+	video.muted = true;
+	video.src = window.matchMedia( '(min-width: 1024px)' ).matches ? video.dataset.srcPc : video.dataset.srcSp;
+	video.addEventListener( 'playing', function () {
+		video.classList.remove( 'opacity-0' );
+		video.classList.add( 'opacity-100' );
+	}, { once: true } );
+	video.addEventListener( 'ended', hide, { once: true } );
+	video.addEventListener( 'error', hide, { once: true } );
+	var playing = video.play();
+	if ( playing && playing.catch ) {
+		playing.catch( hide );
+	}
+} )();
+</script>
 
 <div class="bg-brand-fire px-4 py-4 text-white">
 	<ul class="m-0 mx-auto flex max-w-[1280px] list-none flex-col items-center gap-1.5 p-0 text-center text-sm font-bold lg:flex-row lg:justify-center lg:gap-12 lg:text-base">

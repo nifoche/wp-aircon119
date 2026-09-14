@@ -3002,8 +3002,16 @@ body.admin-bar .site-header {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
 .opacity-10 {
   opacity: 0.1;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .opacity-30 {
@@ -3148,6 +3156,16 @@ body.admin-bar .site-header {
   transition-property: grid-template-rows;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
 }
 
 .duration-300 {
@@ -3556,6 +3574,12 @@ body.admin-bar .site-header {
 
 .group:has(input:checked) .group-has-\[input\:checked\]\:grid-rows-\[1fr\] {
   grid-template-rows: 1fr;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reduce\:hidden {
+    display: none;
+  }
 }
 
 @media (min-width: 400px) {
