@@ -20,7 +20,7 @@ $fv_badges        = array(
 );
 ?>
 <section class="relative overflow-hidden bg-brand-cream pt-16 lg:pt-0">
-	<div class="absolute inset-x-0 top-16 h-[470px] sm:h-[560px] lg:inset-0 lg:h-auto">
+	<div class="absolute inset-x-0 bottom-0 top-6 lg:inset-0">
 		<img
 			class="h-full w-full object-cover object-[12%_0%] sm:object-[18%_4%] lg:object-[center_6%]"
 			src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/top/fv-119.jpg' ); ?>"
@@ -29,11 +29,11 @@ $fv_badges        = array(
 			alt=""
 			fetchpriority="high"
 		>
-		<div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,247,243,0)_0%,rgba(255,247,243,0)_38%,rgba(255,247,243,0.6)_55%,rgba(255,247,243,0.92)_72%,rgb(255,247,243)_100%)] lg:hidden" aria-hidden="true"></div>
+		<div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,247,243,0)_0%,rgba(255,247,243,0)_34%,rgba(255,247,243,0.45)_48%,rgba(255,247,243,0.72)_62%,rgba(255,247,243,0.8)_100%)] lg:hidden" aria-hidden="true"></div>
 		<div class="absolute inset-0 hidden bg-[linear-gradient(100deg,rgba(255,255,255,0)_0%,rgba(255,251,249,0.15)_40%,rgba(255,251,249,0.82)_56%,rgba(255,249,245,0.95)_100%)] lg:block" aria-hidden="true"></div>
 	</div>
 
-	<div class="relative mx-auto flex w-full max-w-[1440px] items-end px-4 pb-8 pt-[250px] sm:pt-[330px] lg:min-h-[640px] lg:items-center lg:justify-end lg:px-14 lg:py-16">
+	<div class="relative mx-auto flex w-full max-w-[1440px] items-end px-4 pb-10 pt-[340px] sm:pt-[400px] lg:min-h-[640px] lg:items-center lg:justify-end lg:px-14 lg:py-16">
 		<div class="w-full text-right text-[#1a2f3e] lg:w-[700px] xl:w-[760px]">
 			<p class="mb-5 inline-flex rounded-full bg-brand-fire px-5 py-2 text-sm font-extrabold text-white shadow-[0_4px_12px_rgba(255,104,31,0.3)] lg:text-base">
 				<?php esc_html_e( '調査・お見積り無料／最短当日で駆けつけ', 'gd-aircon-repair' ); ?>
