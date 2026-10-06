@@ -90,12 +90,13 @@
 	@apply min-h-[120px] resize-y;
 }
 
-.wpcf7-form input[type="submit"] {
+.wpcf7-form input[type="submit"],
+.wpcf7-form button[type="submit"] {
 	@apply w-full cursor-pointer rounded bg-brand-sky px-6 py-3 text-base font-extrabold text-white transition hover:opacity-90;
 }
 
 .wpcf7-form p {
-	@apply mb-4;
+	@apply mb-3;
 }
 
 .wpcf7-not-valid-tip {
