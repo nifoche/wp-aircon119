@@ -18,5 +18,5 @@ jobs:
           key: ${{ secrets.XSERVER_SSH_KEY }}
           port: ${{ secrets.XSERVER_PORT }}
           script: |
-            cd trylink.xsrv.jp/public_html/aircon119/wp-content/themes/wp-aircon119/
+            cd repair-aircon.com/public_html/wp-content/themes/wp-aircon119/
             git pull origin master
