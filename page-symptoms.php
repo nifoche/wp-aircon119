@@ -7,7 +7,6 @@
 
 get_header();
 
-$hero_texture_url = 'http://localhost:3845/assets/e55f40f59b1f786159e5bc3341126f1ca3a06460.png';
 $symptoms         = array(
 	array(
 		'title'       => '水漏れ',
@@ -90,10 +89,6 @@ $symptoms         = array(
 ?>
 
 <section class="relative overflow-hidden border-b-[6px] border-brand-fire bg-brand-cream pb-10 pt-24 text-brand-ink lg:pt-16">
-	<div class="pointer-events-none absolute inset-0 opacity-[0.07]">
-		<img class="h-full w-full object-cover" src="<?php echo esc_url( $hero_texture_url ); ?>" alt="" loading="lazy">
-	</div>
-
 	<div class="relative mx-auto w-full max-w-[1280px] px-4 lg:px-10">
 		<nav class="mb-6 flex items-center gap-2 text-sm font-bold text-[#42566a] lg:text-base" aria-label="<?php esc_attr_e( 'パンくず', 'gd-aircon-repair' ); ?>">
 			<a class="no-underline transition hover:text-brand-fire" href="<?php echo esc_url( home_url( '/' ) ); ?>">
