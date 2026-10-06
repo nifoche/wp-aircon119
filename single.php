@@ -49,7 +49,7 @@ get_header();
 			$repair_symptom     = get_post_meta( get_the_ID(), '_repair_symptom', true );
 			$repair_response    = get_post_meta( get_the_ID(), '_repair_response', true );
 			$repair_work_time   = get_post_meta( get_the_ID(), '_repair_work_time', true );
-			$repair_price_range = trim( preg_replace( '/（[^）]*）/', '', get_post_meta( get_the_ID(), '_repair_price_range', true ) ) );
+			$repair_price_range = trim( preg_replace( '/（[^）]*）/u', '', get_post_meta( get_the_ID(), '_repair_price_range', true ) ) );
 			$repair_photos      = json_decode( get_post_meta( get_the_ID(), '_repair_photos', true ) ?: '[]', true );
 			$repair_related     = json_decode( get_post_meta( get_the_ID(), '_repair_related', true ) ?: '[]', true );
 			$is_repair_case     = ! empty( $repair_pref );

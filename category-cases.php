@@ -76,17 +76,12 @@ get_header();
 							</a>
 						</h2>
 
-						<!-- 費用 + 日付 -->
-						<div class="mt-3 flex items-center justify-between text-xs text-slate-500">
-							<?php if ( $price_range ) : ?>
-								<span class="font-semibold text-brand-orange"><?php echo esc_html( $price_range ); ?></span>
-							<?php else : ?>
-								<span></span>
-							<?php endif; ?>
+						<!-- 日付 -->
+						<p class="mt-3 text-right text-xs text-slate-400">
 							<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>">
 								<?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?>
 							</time>
-						</div>
+						</p>
 					</div>
 				</article>
 			<?php endwhile; ?>
