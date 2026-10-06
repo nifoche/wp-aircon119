@@ -48,7 +48,7 @@ get_header();
 				<span class="text-lg font-bold leading-8 text-[#00598a] lg:text-2xl"><?php esc_html_e( 'お見積り', 'gd-aircon-repair' ); ?></span>
 			</div>
 			<?php // cf7のフォームを表示 ?>
-			<?php echo do_shortcode( '[contact-form-7 id="e2578fa" title="TOPページお問い合わせ"]' ); ?>
+			<?php echo do_shortcode( '[contact-form-7 id="121" title="TOPページお問い合わせ"]' ); ?>
 
 		</div>
 	</div>
