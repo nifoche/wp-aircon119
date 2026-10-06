@@ -77,3 +77,31 @@
 .wpcf7-form-control-wrap {
 	@apply w-full;
 }
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea,
+.wpcf7-form select {
+	@apply w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-brand-sky focus:ring-1 focus:ring-brand-sky;
+}
+
+.wpcf7-form textarea {
+	@apply min-h-[120px] resize-y;
+}
+
+.wpcf7-form input[type="submit"] {
+	@apply w-full cursor-pointer rounded bg-brand-sky px-6 py-3 text-base font-extrabold text-white transition hover:opacity-90;
+}
+
+.wpcf7-form p {
+	@apply mb-4;
+}
+
+.wpcf7-not-valid-tip {
+	@apply mt-1 text-xs text-red-500;
+}
+
+.wpcf7-response-output {
+	@apply mt-4 rounded border border-slate-300 px-4 py-3 text-sm;
+}
