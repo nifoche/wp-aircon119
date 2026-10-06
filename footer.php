@@ -13,7 +13,6 @@ $phone_display = apply_filters( 'gd_aircon_repair_phone_display', '0120-000-000'
 $phone_tel     = apply_filters( 'gd_aircon_repair_phone_tel', '0120000000' );
 $phone_tel     = preg_replace( '/\D+/', '', (string) $phone_tel );
 $quote_url     = apply_filters( 'gd_aircon_repair_quote_url', home_url( '/contact/' ) );
-$area_map_url  = 'http://localhost:3845/assets/65aa4862c51ae3de0be7725b1f13968c0386a6c3.png';
 $repair_steps  = array(
 	array(
 		'number'      => '1',
@@ -48,10 +47,6 @@ $repair_steps  = array(
 		'image'       => get_template_directory_uri() . '/assets/images/flow/04.jpg',
 	)
 );
-$reason_bg_icon_url = 'http://localhost:3845/assets/9c3e3553b9f1ae18f1c7c9984e64c21d2107da9e.svg';
-$reason_check_icon  = 'http://localhost:3845/assets/c19d4babfa819cb8c1e47f6263b9dc9de32bf824.svg';
-$reason_star_full   = 'http://localhost:3845/assets/b2fa53943a184fae6af3e339fec755ced2882e49.svg';
-$reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb32416c9f4f0f739a.svg';
 ?>
 
 </main>
@@ -210,14 +205,6 @@ $reason_star_half   = 'http://localhost:3845/assets/fe93aa5c6ff749c5606554cb3241
 			</p>
 		</div>
 
-		<div class="pointer-events-none absolute -right-24 top-8 hidden w-[760px] rotate-[5.82deg] md:block lg:-right-20 lg:top-[-32px] lg:w-[852px]">
-			<img
-				class="h-auto w-full object-contain opacity-95"
-				src="<?php echo esc_url( $area_map_url ); ?>"
-				alt=""
-				loading="lazy"
-			>
-		</div>
 	</div>
 </section>
 

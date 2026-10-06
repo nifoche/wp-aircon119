@@ -348,3 +348,26 @@ function gd_aircon_repair_render_error_code_brand_logos( $active_index = 0 ) {
 	</section>
 	<?php
 }
+
+// ── 施工事例メタフィールド（WP REST API 経由で migrate_to_wp.py が書き込む） ──
+add_action('init', function () {
+	$fields = [
+		'_repair_pref', '_repair_pref_slug',
+		'_repair_city', '_repair_city_slug',
+		'_repair_industry', '_repair_symptom_tag', '_repair_symptom_slug',
+		'_repair_maker', '_repair_type',
+		'_repair_location', '_repair_machine', '_repair_installed_years',
+		'_repair_symptom', '_repair_response', '_repair_work_time', '_repair_price_range',
+		'_repair_photos', '_repair_related',
+	];
+	foreach ( $fields as $key ) {
+		register_post_meta( 'post', $key, [
+			'show_in_rest'  => true,
+			'single'        => true,
+			'type'          => 'string',
+			'auth_callback' => function () {
+				return current_user_can( 'edit_posts' );
+			},
+		] );
+	}
+} );
