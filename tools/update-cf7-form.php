@@ -1,26 +1,25 @@
 <?php
 /**
- * 一回限りのCF7フォーム更新スクリプト
- * 使用後は削除すること
+ * 一回限りのCF7フォーム更新・作成スクリプト
+ * 実行後は削除すること
  *
  * 実行: https://repair-aircon.com/wp-content/themes/wp-aircon119/tools/update-cf7-form.php?token=gd2026
  */
 
-// シンプルなトークン保護
 if ( ! isset( $_GET['token'] ) || $_GET['token'] !== 'gd2026' ) {
 	http_response_code( 403 );
 	exit( 'Forbidden' );
 }
 
-// WordPress を読み込む
 $wp_load = dirname( __DIR__, 4 ) . '/wp-load.php';
 if ( ! file_exists( $wp_load ) ) {
-	exit( 'wp-load.php not found: ' . $wp_load );
+	exit( 'wp-load.php not found' );
 }
 require_once $wp_load;
 
-$form_id = 121;
-$form_body = '<div class="flex flex-col gap-4">
+// ── フォーム定義 ──────────────────────────────────────────
+
+$contact_form_body = '<div class="flex flex-col gap-4">
 <div class="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-3">
     <label class="w-[140px] shrink-0 text-base font-bold leading-5 text-[#4a5565]" for="contact-name">お名前 <span class="text-red-500">※</span></label>
     [text* your-name id:contact-name placeholder "山田 太郎"]
@@ -67,26 +66,66 @@ $form_body = '<div class="flex flex-col gap-4">
     </button>
 </div>
 
-<div class="hidden">
-    [submit "送信する"]
-</div>
+<input class="wpcf7-form-control wpcf7-submit has-spinner hidden" type="submit" value="送信する" />
 </div>';
 
-// CF7フォームを取得
-$contact_form = WPCF7_ContactForm::get_instance( $form_id );
-if ( ! $contact_form ) {
-	exit( "CF7 form {$form_id} not found." );
-}
+$top_form_body = '<div class="">
+    <div class="mb-4">
+        [text* your-name placeholder "山田 太郎"]
+    </div>
 
-// フォームテンプレートを更新（form は文字列で渡す）
-$contact_form->set_properties( [
-	'form' => $form_body,
-] );
-$result = $contact_form->save();
+    <div class="mb-4">
+        [text* your-phone placeholder "080-1234-5678"]
+    </div>
 
-if ( $result ) {
-	echo "✓ CF7フォームID={$form_id} を更新しました。\n";
-	echo "このファイルは削除してください: tools/update-cf7-form.php\n";
+    <div class="mb-4">
+        [textarea your-message placeholder "お問い合わせ内容をどうぞ"]
+    </div>
+
+    <div class="">
+        <button class="w-full rounded-sm bg-[#fe9a00] px-4 py-3 lg:py-4 text-xl font-bold leading-7 text-white shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)] transition hover:bg-[#e78d00] lg:text-2xl" type="submit">送信する</button>
+    </div>
+</div>
+
+<input class="wpcf7-form-control wpcf7-submit has-spinner hidden" type="submit" value="送信する" />';
+
+// ── 処理 ──────────────────────────────────────────────────
+
+header( 'Content-Type: text/plain; charset=utf-8' );
+
+// 1. Form 121 (contactページ) を更新
+$cf = WPCF7_ContactForm::get_instance( 121 );
+if ( $cf ) {
+	$cf->set_properties( [ 'form' => $contact_form_body ] );
+	$result = $cf->save();
+	echo $result ? "✓ Form 121 (contactページ) 更新完了\n" : "✗ Form 121 更新失敗\n";
 } else {
-	echo "✗ 更新に失敗しました。\n";
+	echo "✗ Form 121 が見つかりません\n";
 }
+
+// 2. トップページ用フォームを新規作成（既存チェック）
+$existing = get_posts( [
+	'post_type'   => 'wpcf7_contact_form',
+	'post_status' => 'publish',
+	'title'       => 'TOPページお問い合わせ（簡易）',
+	'numberposts' => 1,
+] );
+
+if ( $existing ) {
+	$top_id = $existing[0]->ID;
+	$top_cf = WPCF7_ContactForm::get_instance( $top_id );
+	$top_cf->set_properties( [ 'form' => $top_form_body ] );
+	$top_cf->save();
+	echo "✓ TOPフォーム 既存更新 ID={$top_id}\n";
+} else {
+	$top_cf = WPCF7_ContactForm::get_template( [
+		'title' => 'TOPページお問い合わせ（簡易）',
+	] );
+	$top_cf->set_properties( [ 'form' => $top_form_body ] );
+	$top_id = $top_cf->save();
+	echo "✓ TOPフォーム 新規作成 ID={$top_id}\n";
+}
+
+echo "\nfront-page.php の shortcode を以下に変更してください:\n";
+echo "[contact-form-7 id=\"{$top_id}\" title=\"TOPページお問い合わせ（簡易）\"]\n";
+echo "\n完了。このファイルは削除してください。\n";
