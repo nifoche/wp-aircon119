@@ -78,11 +78,9 @@ if ( ! $contact_form ) {
 	exit( "CF7 form {$form_id} not found." );
 }
 
-// フォームテンプレートを更新
+// フォームテンプレートを更新（form は文字列で渡す）
 $contact_form->set_properties( [
-	'form' => [
-		'body' => $form_body,
-	],
+	'form' => $form_body,
 ] );
 $result = $contact_form->save();
 
