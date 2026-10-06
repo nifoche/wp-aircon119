@@ -41,7 +41,7 @@ get_header();
 			</div>
 		</div>
 
-		<div class="relative w-full rounded-lg bg-white px-6 pt-6 text-slate-900 shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:w-[410px]">
+		<div class="top-form-widget relative w-full rounded-lg bg-white px-6 pt-6 text-slate-900 shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:w-[410px]">
 			<div class="mb-4 flex items-end justify-center gap-1 border-b-4 border-[#fe9a00] pb-3 text-center">
 				<span class="text-lg font-bold leading-8 text-[#00598a] lg:text-2xl"><?php esc_html_e( 'WEBでカンタン', 'gd-aircon-repair' ); ?></span>
 				<span class="text-4xl font-black leading-[1] text-[#fe9a00] lg:text-4xl"><?php esc_html_e( '無料', 'gd-aircon-repair' ); ?></span>

@@ -106,3 +106,9 @@
 .wpcf7-response-output {
 	@apply mt-4 rounded border border-slate-300 px-4 py-3 text-sm;
 }
+
+/* TOPページのみテキストエリアの高さをコンパクトに（TryLink参照: 約100px） */
+.top-form-widget .wpcf7-form textarea {
+	min-height: 100px;
+	max-height: 160px;
+}
