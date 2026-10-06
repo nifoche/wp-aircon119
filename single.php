@@ -14,6 +14,18 @@ get_header();
 		the_post();
 		?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+			<!-- パンくず -->
+			<nav class="mb-6 text-sm text-slate-500" aria-label="パンくず">
+				<ol class="flex flex-wrap items-center gap-1">
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:text-brand-orange no-underline">ホーム</a></li>
+					<li class="mx-1 text-slate-400">›</li>
+					<li><a href="<?php echo esc_url( home_url( '/category/cases/' ) ); ?>" class="hover:text-brand-orange no-underline">施工事例</a></li>
+					<li class="mx-1 text-slate-400">›</li>
+					<li class="text-slate-700"><?php the_title(); ?></li>
+				</ol>
+			</nav>
+
 			<header class="mb-6">
 				<h1 class="text-3xl font-bold text-slate-900"><?php the_title(); ?></h1>
 				<p class="mt-2 text-sm text-slate-500">
@@ -54,7 +66,7 @@ get_header();
 								'medium',
 								false,
 								[
-									'class' => 'rounded-lg w-full h-40 object-cover',
+									'class' => 'rounded-lg w-full object-contain bg-gray-50',
 									'alt'   => esc_attr( $photo['alt'] ?? $photo['caption'] ?? '' ),
 								]
 							); ?>
@@ -149,11 +161,6 @@ get_header();
 			);
 			?>
 
-			<?php if ( comments_open() || get_comments_number() ) : ?>
-				<div class="mt-12">
-					<?php comments_template(); ?>
-				</div>
-			<?php endif; ?>
 		</article>
 	<?php endwhile; ?>
 </div>
