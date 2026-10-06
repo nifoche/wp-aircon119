@@ -34,7 +34,7 @@ get_header();
 				$symptom_tag   = get_post_meta( get_the_ID(), '_repair_symptom_tag', true );
 				$pref          = get_post_meta( get_the_ID(), '_repair_pref', true );
 				$city          = get_post_meta( get_the_ID(), '_repair_city', true );
-				$price_range   = get_post_meta( get_the_ID(), '_repair_price_range', true );
+				$price_range   = trim( preg_replace( '/（[^）]*）/', '', get_post_meta( get_the_ID(), '_repair_price_range', true ) ) );
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow' ); ?>>
 
@@ -62,15 +62,12 @@ get_header();
 					<!-- カード本体 -->
 					<div class="flex flex-1 flex-col p-4">
 
-						<!-- タグ -->
-						<div class="mb-2 flex flex-wrap gap-1">
-							<?php if ( $symptom_tag ) : ?>
-								<span class="rounded-full bg-orange-100 px-2 py-0.5 text-xs font-semibold text-orange-700"><?php echo esc_html( $symptom_tag ); ?></span>
-							<?php endif; ?>
-							<?php if ( $pref ) : ?>
-								<span class="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-semibold text-sky-700"><?php echo esc_html( $pref ); ?><?php echo $city ? '・' . esc_html( $city ) : ''; ?></span>
-							<?php endif; ?>
-						</div>
+						<!-- ラベル -->
+						<p class="mb-2 text-xs text-slate-500">
+							<?php if ( $pref ) : ?><?php echo esc_html( $pref ); ?><?php echo $city ? '・' . esc_html( $city ) : ''; ?><?php endif; ?>
+							<?php if ( $symptom_tag && $pref ) : ?>　<?php endif; ?>
+							<?php if ( $symptom_tag ) : ?><span class="text-brand-orange font-medium"><?php echo esc_html( $symptom_tag ); ?></span><?php endif; ?>
+						</p>
 
 						<!-- タイトル -->
 						<h2 class="flex-1 text-base font-bold leading-snug text-slate-900">
