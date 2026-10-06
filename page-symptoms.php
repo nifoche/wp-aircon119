@@ -19,14 +19,14 @@ $symptoms         = array(
 		'title'       => '冷えない',
 		'description' => '業務用エアコンを冷房しても室温が下がらない、冷たい風が弱い、設定温度にならない状態です。外気温の上昇や室外機の設置環境、室内の熱負荷によって体感が落ちることもあります。風量低下や熱交換の効率低下、冷媒系の不具合など複数要因があるため、症状の出方で切り分けが必要です。',
 		'button'      => '冷えない症状について詳しく見る',
-		'image'       => get_template_directory_uri() . '/assets/images/symptoms/illust/not-cooling.webp',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/illust/not-cooling.webp?v=2',
 		'url'         => home_url( '/symptoms/not-cooling/' ),
 	),
 	array(
 		'title'       => '暖まらない',
 		'description' => '業務用エアコンで暖房運転をしても室温が上がりにくい、温風は出るのに部屋全体が暖まらない、設定温度まで届かない状態です。朝晩の外気温低下や部屋の広さ、天井の高さ、窓の多さなど環境要因でも体感は変わります。風量不足、風向設定、フィルター汚れ、室外機まわりの条件、冷媒系の不具合など複数要因が重なることもあるため、順番に切り分けることが大切です。',
 		'button'      => '暖まらない症状について詳しく見る',
-		'image'       => get_template_directory_uri() . '/assets/images/symptoms/illust/not-heating.webp',
+		'image'       => get_template_directory_uri() . '/assets/images/symptoms/illust/not-heating.webp?v=2',
 		'url'         => home_url( '/symptoms/not-heating/' ),
 	),
 	array(

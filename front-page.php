@@ -164,7 +164,7 @@ $symptom_cards = array(
 	),
 	array(
 		'title' => __( '冷えない', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/not-cooling.webp',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/not-cooling.webp?v=2',
 		'url'   => home_url( '/symptoms/not-cooling/' ),
 	),
 	array(
@@ -179,7 +179,7 @@ $symptom_cards = array(
 	),
 	array(
 		'title' => __( '暖まらない', 'gd-aircon-repair' ),
-		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/not-heating.webp',
+		'image' => get_template_directory_uri() . '/assets/images/symptoms/illust/not-heating.webp?v=2',
 		'url'   => home_url( '/symptoms/not-heating/' ),
 	),
 	array(
