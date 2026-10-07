@@ -176,7 +176,7 @@
 
 .wpcf7-form input[type="submit"],
 .wpcf7-form button[type="submit"] {
-	@apply w-full cursor-pointer rounded px-6 py-3 text-base font-extrabold text-white transition;
+	@apply w-full cursor-pointer rounded bg-brand-fire px-6 py-3 text-base font-extrabold text-white transition hover:bg-brand-firedeep;
 }
 
 .wpcf7-form p {
